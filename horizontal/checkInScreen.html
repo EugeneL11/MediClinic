@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="commonStyle.css">
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap');
@@ -30,21 +31,19 @@
             background-color: beige;
             border-radius: 10px;
             width: 30vw;
-            max-height: 550px;
+            height: 550px;
             text-align: center;
             margin-left: 5vw;
-            padding-bottom: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            overflow-y: auto;
         }
         .apps {
             background-color: white;
             border-radius: 10px;
             width: 25vw;
-            min-height: 100px;
+            height: 100px;
         }
         .patientInfo {
             background-color: bisque;
@@ -98,9 +97,16 @@
 </head>
 
 <body>
-    <div class="navbar">
+        <div>
+            <div class="topnav" >
+                <a href="index.html">Home</a>
+                <a href="aboutMe.html">Patient Records</a>
+                <a class="active" href="checkInScreen.html">Check-in</a>
+                <a href="resume.html">Appointments</a>
+                <a href="favourites.html">Payment</a>
 
-    </div>
+            </div>
+        </div>
     <h1 id="title">Patient Check-In</h1>
     <div class="container">
         <div class="upcomingApp">
@@ -113,12 +119,6 @@
             </div>
             <div class="apps">
                 Jimmy Jones     2:45PM
-            </div>
-            <div class="apps">
-                Karl Kones     3:15PM
-            </div>
-            <div class="apps">
-                Rachel Ruthers  3:40PM
             </div>
         </div>
         <div class="patientInfo">
