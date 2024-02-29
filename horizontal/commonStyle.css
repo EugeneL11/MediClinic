@@ -43,10 +43,16 @@ body {
 }
 
 .topnav .logout {
-    float: left;
-    padding: 14px 16px;
+    float: right;
+    padding: 8px 12px;
+    margin: 5px 8px;
     background-color: #555;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 15px;
+}
+
+.topnav .logout:hover {
+    background-color: #444;
 }
