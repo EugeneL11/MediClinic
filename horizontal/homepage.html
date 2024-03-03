@@ -26,10 +26,11 @@
         .columnTitle {
             background-color: #C9D1F8;/*#BDD7FF; /*#C9D1F8;*/
             text-align: center;
-            margin-left: 5vw;
+            margin-left: 2.2vw;
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 30vw;
             border-radius: 10px 10px 0 0;
         }
         .upcomingApp {
@@ -38,7 +39,7 @@
             width: 30vw;
             max-height: 450px;
             text-align: center;
-            margin-left: 5vw;
+            margin-left: 2.2vw;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -51,7 +52,37 @@
             background-color: white;
             border-radius: 10px;
             width: 25vw;
-            min-height: 100px;
+            padding-top:20px;
+            padding-bottom: 20px;
+            /* min-height: 100px; */
+        }
+        .apps .patientName {
+            float: left;
+            margin-left: 50px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .apps .patientTime {
+            float: right;
+            margin-right: 50px;
+            margin-bottom: 10px;
+        }
+        .apps .doctorName {
+            float: left;
+            margin-left: 50px;
+        }
+        .docs {
+            background-color: white;
+            border-radius: 10px;
+            width: 25vw;
+            /* max-height: 100px; */
+            padding-top:20px;
+            padding-bottom: 20px;
+            font-size: 22px;
+        }
+        .docs b{
+            display: block;
+            padding-top: 7px;
         }
         .patientInfo {
             background-color: bisque;
@@ -67,8 +98,15 @@
         .patientInfo h3 {
             margin-top: 60px;
         }
-        h3 {
+        h3, p {
             font-size: 30px;
+        }
+        .infoColumn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding-bottom: 20px;   /* To give space after the last appointment*/
         }
     </style>
 
@@ -104,19 +142,26 @@
             
             <div class="upcomingApp">
                 <div class="apps">
-                    Donald Duck     2:00PM
+                    <a class="patientName">Donald Duck</a> <a class="patientTime">2:00PM</a>
+                    <a class="doctorName">Dr. Warren Waters</a>
                 </div>
                 <div class="apps">
-                    Fred Feet       2:20PM
+                    <a class="patientName">Fred Feet</a> <a class="patientTime">2:20PM</a>
+                    <a class="doctorName">Dr. Carter Cart</a>
+                    <br>
                 </div>
                 <div class="apps">
-                    Jimmy Jones     2:45PM
+                    <a class="patientName">Jimmy Jones</a> <a class="patientTime">2:45PM</a>
+                    <a class="doctorName">Dr. Reese Rogers</a>
+                    <br>
                 </div>
                 <div class="apps">
-                    Karl Kones     3:15PM
+                    <a class="patientName">Karl Kones</a> <a class="patientTime">3:15PM</a>
+                    <a class="doctorName">Dr. Andrew Apple</a>
                 </div>
                 <div class="apps">
-                    Rachel Ruthers  3:40PM
+                    <a class="patientName">Rachel Ruthers</a> <a class="patientTime">3:40PM</a>
+                    <a class="doctorName">Dr. Penny Pepper</a>
                 </div>
             </div>
         </div>
@@ -127,22 +172,35 @@
             </div>
             
             <div class="upcomingApp">
-                <div class="apps">
-                    Donald Duck     2:00PM
+                <div class="docs">
+                    Dr. Andrew Apple <br> <b>Neurologist</b>
                 </div>
-                <div class="apps">
-                    Fred Feet       2:20PM
+                <div class="docs">
+                    Dr. Warren Waters <br> <b>Dermatologist</b>
                 </div>
-                <div class="apps">
-                    Jimmy Jones     2:45PM
+                <div class="docs">
+                    Dr. Penny Pepper <br> <b>Psychiatrist</b>
                 </div>
-                <div class="apps">
-                    Karl Kones     3:15PM
+                <div class="docs">
+                    Dr. Carter Cart <br> <b>Cardiologist</b>
                 </div>
-                <div class="apps">
-                    Rachel Ruthers  3:40PM
+                <div class="docs">
+                    Dr. Reese Rogers <br> <b>Pediatrician</b>
                 </div>
             </div>
+        </div>
+
+        <div class="infoColumn"> <!-- Column -->
+                <div class="columnTitle" style="border-radius: 10px;">
+                
+                <p>Number of visits: </br> <b>4</b> </p>
+                    <!-- <div style="width:100%; border: 1px solid white;"></div> -->
+                </div>
+
+                <div class="columnTitle" style="border-radius: 10px;">
+                    <p>Hours to closing: </br> <b>3 hours 15 min</b> </p>
+                    <!-- <div style="width:100%; border: 1px solid white;"></div> -->
+                </div>
         </div>
 </body>
 </html>
