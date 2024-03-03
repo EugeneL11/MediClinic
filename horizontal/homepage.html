@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
     <link rel="stylesheet" href="commonStyle.css">
-
+    
+    <title>MediClinic</title>
+    
     <style>
         body {
-            /* font-family: 'Gabarito', sans-serif; */
             display: flex;
             flex-direction: column;
             margin: 0;
+            min-height: 100vh;
             background-color: white;
         }
+
         #title {
             margin: 40px 60px;
             font-size: 50px;
         }
+
+        #date {
+            margin: 40px 60px;
+        }
+        
         .container {
             display: flex;
             padding-bottom: 60px;
+            flex:1;
         }
+
+        table,
+        th,
+        td {
+            /* border: 1px solid; */
+            width: max-content;
+        }
+
         .columnTitle {
-            background-color: #C9D1F8;/*#BDD7FF; /*#C9D1F8;*/
+            background-color: #C9D1F8;
+            /*#BDD7FF; /*#C9D1F8;*/
             text-align: center;
             margin-left: 2.2vw;
             display: flex;
@@ -33,9 +50,11 @@
             width: 30vw;
             border-radius: 10px 10px 0 0;
         }
+
         .upcomingApp {
-            background-color: #E9ECFC; /*#DBE0FA;/*#E9ECFC;*/
-            border-radius:  0 0 10px 10px;
+            background-color: #E9ECFC;
+            /*#DBE0FA;/*#E9ECFC;*/
+            border-radius: 0 0 10px 10px;
             width: 30vw;
             max-height: 450px;
             text-align: center;
@@ -44,46 +63,55 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            padding-top: 20px;   /* To give space before the first appointment*/
-            padding-bottom: 20px;   /* To give space after the last appointment*/
+            padding-top: 20px;
+            /* To give space before the first appointment*/
+            padding-bottom: 20px;
+            /* To give space after the last appointment*/
             overflow-y: auto;
         }
+
         .apps {
             background-color: white;
             border-radius: 10px;
             width: 25vw;
-            padding-top:20px;
+            padding-top: 20px;
             padding-bottom: 20px;
             /* min-height: 100px; */
         }
+
         .apps .patientName {
             float: left;
             margin-left: 50px;
             margin-bottom: 10px;
             font-weight: bold;
         }
+
         .apps .patientTime {
             float: right;
             margin-right: 50px;
             margin-bottom: 10px;
         }
+
         .apps .doctorName {
             float: left;
             margin-left: 50px;
         }
+
         .docs {
             background-color: white;
             border-radius: 10px;
             width: 25vw;
             /* max-height: 100px; */
-            padding-top:20px;
+            padding-top: 20px;
             padding-bottom: 20px;
             font-size: 22px;
         }
-        .docs b{
+
+        .docs b {
             display: block;
             padding-top: 7px;
         }
+
         .patientInfo {
             background-color: bisque;
             border-radius: 10px;
@@ -95,40 +123,50 @@
             display: flex;
             flex-direction: column;
         }
+
         .patientInfo h3 {
             margin-top: 60px;
         }
-        h3, p {
+
+        h3,
+        p {
             font-size: 30px;
         }
+
         .infoColumn {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 30px;
-            padding-bottom: 20px;   /* To give space after the last appointment*/
+            padding-bottom: 20px;
+            /* To give space after the last appointment*/
         }
     </style>
 
 </head>
+
 <body>
     <div>
-        <div class="topnav" >
-            <a class="active" href="index.html">Home</a>
+        <div class="topnav">
+            <a class="active" href="homepage.html">Home</a>
             <a href="aboutMe.html">Patient Records</a>
-            <a href="personality.html">Check-in</a>
-            <a href="resume.html">Appointments</a>
+            <a href="checkInScreen.html">Check-in</a>
+            <a href="appointments.html">Appointments</a>
             <a href="favourites.html">Payment</a>
-            
+
             <button class="logout" type="button" onclick="alert('Hello world!')">Logout</button>
         </div>
     </div>
-    
+
     <div>
-        <table style="width: 1160px">
+        <table style="width: 100%;">
             <tr>
-                <td><h1 id="title">Welcome to MediClinic!</h1></td>
-                <td style="text-align: right;"><h1 id="date">1:45 PM, March 21</h1></td>
+                <td style="float:left;">
+                    <h1 id="title">Welcome to <span style="color: #10217d;">Medi</span>Clinic!</h1>
+                </td>
+                <td style="text-align: right;">
+                    <h1 id="date">1:45 PM, March 21</h1>
+                </td>
             </tr>
         </table>
     </div>
@@ -139,7 +177,7 @@
                 <h3>Today's Appointments</h3>
                 <div style="width:100%; border: 1px solid white;"></div>
             </div>
-            
+
             <div class="upcomingApp">
                 <div class="apps">
                     <a class="patientName">Donald Duck</a> <a class="patientTime">2:00PM</a>
@@ -170,7 +208,7 @@
                 <h3>Doctors on Duty</h3>
                 <div style="width:100%; border: 1px solid white;"></div>
             </div>
-            
+
             <div class="upcomingApp">
                 <div class="docs">
                     Dr. Andrew Apple <br> <b>Neurologist</b>
@@ -191,16 +229,25 @@
         </div>
 
         <div class="infoColumn"> <!-- Column -->
-                <div class="columnTitle" style="border-radius: 10px;">
-                
-                <p>Number of visits: </br> <b>4</b> </p>
-                    <!-- <div style="width:100%; border: 1px solid white;"></div> -->
-                </div>
+            <div class="columnTitle" style="border-radius: 10px;">
 
-                <div class="columnTitle" style="border-radius: 10px;">
-                    <p>Hours to closing: </br> <b>3 hours 15 min</b> </p>
-                    <!-- <div style="width:100%; border: 1px solid white;"></div> -->
-                </div>
+                <p>Number of visits: </br> <b>4</b> </p>
+                <!-- <div style="width:100%; border: 1px solid white;"></div> -->
+            </div>
+
+            <div class="columnTitle" style="border-radius: 10px;">
+                <p>Hours to closing: </br> <b>3 hours 15 min</b> </p>
+                <!-- <div style="width:100%; border: 1px solid white;"></div> -->
+            </div>
         </div>
+    </div>  <!-- End of container class -->
+    <div class="footer">
+        <span>
+            &copy; 2024 by Eugene Lee, Steven Nguyen, & Syeda Zainab Khaleel
+            <div style="width:100%; border: 3px solid #10217d;"></div>
+            (Copyright symbol for testing purposes only)
+        </span>
+    </div>
 </body>
+
 </html>
