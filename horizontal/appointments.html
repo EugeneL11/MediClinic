@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="commonStyle.css">
-    
+    <script src="script.js"></script>
+
     <title>MediClinic</title>
 
     <style>
@@ -15,27 +16,267 @@
             min-height: 100vh;
             background-color: white;
         }
+        #title {
+            margin: 40px 60px;
+            font-size: 50px;
+        }
         .container {
             display: flex;
             padding-bottom: 60px;
             flex:1;
+        }
+        table,
+        th,
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        .dayWeekTable .day {
+            padding: 0 5.5px;
+        }
+        tr .timeTitle {
+            width: 70px;
+            font-size: 15px;
+            height: 30px;
+        }
+        table {
+            border:none;
+        }
+        tr .emptyBlock {
+            height: 27px;
+            border: none;
+        }
+        .dayTimeTable {
+            /* width: 95%; */
+        }
+        .columnTitle {
+            background-color: #C9D1F8;
+            /*#BDD7FF; /*#C9D1F8;*/
+            text-align: center;
+            margin-left: 2.5vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 95px;
+            width: 46vw;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .upcomingApp {
+            background-color: #E9ECFC;
+            /*#DBE0FA;/*#E9ECFC;*/
+            border-radius: 0 0 10px 10px;
+            width: 46vw;
+            min-height: 350px;
+            max-height: 450px;
+            text-align: center;
+            margin-left: 2.5vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding-top: 20px;
+            /* To give space before the first appointment*/
+            padding-bottom: 20px;
+            /* To give space after the last appointment*/
+            overflow-y: auto;
+        }
+
+        .apps {
+            background-color: white;
+            border-radius: 10px;
+            width: 25vw;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            /* min-height: 100px; */
+        }
+
+        .apps .patientName {
+            float: left;
+            margin-left: 50px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .apps .patientTime {
+            float: right;
+            margin-right: 50px;
+            margin-bottom: 10px;
+        }
+
+        .apps .doctorName {
+            float: left;
+            margin-left: 50px;
+        }
+
+        .docs {
+            background-color: white;
+            border-radius: 10px;
+            width: 25vw;
+            /* max-height: 100px; */
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .docs b {
+            display: block;
+            padding-top: 7px;
+        }
+
+        .patientInfo {
+            background-color: bisque;
+            border-radius: 10px;
+            width: 50vw;
+            height: 550px;
+            text-align: center;
+            margin-left: 10vw;
+            margin-right: 5vw;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .patientInfo h3 {
+            margin-top: 60px;
+        }
+
+        h3,
+        p {
+            font-size: 30px;
+        }
+
+        .infoColumn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding-bottom: 20px;
+            /* To give space after the last appointment*/
         }
     </style>
 </head>
 <body>
     <div>
         <div class="topnav">
-            <a class="active" href="homepage.html">Home</a>
+            <a href="homepage.html">Home</a>
             <a href="aboutMe.html">Patient Records</a>
             <a href="checkInScreen.html">Check-in</a>
-            <a href="appointments.html">Appointments</a>
+            <a class="active" href="appointments.html">Appointments</a>
             <a href="favourites.html">Payment</a>
 
             <button class="logout" type="button" onclick="alert('Hello world!')">Logout</button>
         </div>
     </div>
 
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <h1 id="title">Appointments</h1>
+    </div>
+
     <div class="container">
+        <div>
+            
+            <div class="columnTitle">
+                <h3>
+                    <table class="dayWeekTable" id="scheduleTable">
+                        <tr>
+                            <td class="emptyBlock"></td>
+                            <td class="day">Mon</td>
+                            <td class="day">Tue</td>
+                            <td class="day">Wed</td>
+                            <td class="day">Thu</td>
+                            <td class="day">Fri</td>
+                            <td class="day">Sat</td>
+                            <td class="day">Sun</td>
+                        </tr>
+                    </table>
+                    <!-- <table class="dayWeekTable">
+                        <tr>
+                            <td class="timeTitle"></td>
+                            <td class="day">Mon</td>
+                            <td class="day">Tue</td>
+                            <td class="day">Wed</td>
+                            <td class="day">Thu</td>
+                            <td class="day">Fri</td>
+                            <td class="day">Sat</td>
+                            <td class="day">Sun</td>
+                        </tr>
+                        <tr>
+                            <td class="timeTitle">8:00 AM</td>
+                            <td class="timeBlock"></td>
+                            <td class="timeBlock"></td>
+                            <td class="timeBlock"></td>
+                            <td class="timeBlock"></td>
+                            <td class="timeBlock"></td>
+                            <td class="timeBlock"></td>
+                            <td class="timeBlock"></td>
+                        </tr>
+                    </table> -->
+                <div style="width:100%; border: 1px solid white;"></div>
+            </div>
+            <div class="upcomingApp">
+                <!-- <table class="dayTimeTable">
+                    <tr>
+                        <td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td><td>Sun</td>
+                    </tr>
+                </table> -->
+            </div>
+        </div>
+
+        <div>
+            <div class="columnTitle">
+                <h3>New Appointment</h3>
+                <div style="width:100%; border: 1px solid white;"></div>
+            </div>
+
+            <div class="upcomingApp">
+                <div class="apps">
+                    <a class="patientName">Donald Duck</a> <a class="patientTime">2:00PM</a>
+                    <a class="doctorName">Dr. Warren Waters</a>
+                </div>
+                <div class="apps">
+                    <a class="patientName">Fred Feet</a> <a class="patientTime">2:20PM</a>
+                    <a class="doctorName">Dr. Carter Cart</a>
+                    <br>
+                </div>
+                <div class="apps">
+                    <a class="patientName">Jimmy Jones</a> <a class="patientTime">2:45PM</a>
+                    <a class="doctorName">Dr. Reese Rogers</a>
+                    <br>
+                </div>
+                <div class="apps">
+                    <a class="patientName">Karl Kones</a> <a class="patientTime">3:15PM</a>
+                    <a class="doctorName">Dr. Andrew Apple</a>
+                </div>
+                <div class="apps">
+                    <a class="patientName">Rachel Ruthers</a> <a class="patientTime">3:40PM</a>
+                    <a class="doctorName">Dr. Penny Pepper</a>
+                </div>
+            </div>
+        </div>
+        <!-- <div>
+            <div class="columnTitle">
+                <h3>Doctors on Duty</h3>
+                <div style="width:100%; border: 1px solid white;"></div>
+            </div>
+
+            <div class="upcomingApp">
+                <div class="docs">
+                    Dr. Andrew Apple <br> <b>Neurologist</b>
+                </div>
+                <div class="docs">
+                    Dr. Warren Waters <br> <b>Dermatologist</b>
+                </div>
+                <div class="docs">
+                    Dr. Penny Pepper <br> <b>Psychiatrist</b>
+                </div>
+                <div class="docs">
+                    Dr. Carter Cart <br> <b>Cardiologist</b>
+                </div>
+                <div class="docs">
+                    Dr. Reese Rogers <br> <b>Pediatrician</b>
+                </div>
+            </div>
+        </div> -->
 
     </div>  <!-- End of container class -->
     
