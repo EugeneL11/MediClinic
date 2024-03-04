@@ -8,7 +8,7 @@
 
     <title>MediClinic</title>
 
-    <style>
+    <style id="style">
         body {
             display: flex;
             flex-direction: column;
@@ -31,15 +31,20 @@
             border: 1px solid;
             border-collapse: collapse;
         }
+        .cellHover {
+            background-color: #C9D1F8;
+            cursor: pointer;
+        }
         .dayWeekTable .day {
-            padding: 0 5.5px;
+            width: 70px;
+            border: none;
         }
         tr .timeTitle {
-            width: 70px;
+            width: 90px;
             font-size: 15px;
-            height: 30px;
+            height: 36px;
         }
-        table {
+        table, .timeTitle {
             border:none;
         }
         tr .emptyBlock {
@@ -49,6 +54,11 @@
         .dayTimeTable {
             /* width: 95%; */
         }
+        .background-div {
+            position: absolute;
+            width: 100%;
+            z-index: 1; /* Behind the table */
+        }
         .columnTitle {
             background-color: #C9D1F8;
             /*#BDD7FF; /*#C9D1F8;*/
@@ -57,8 +67,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 95px;
-            width: 46vw;
+            height: 94.5px;
+            /* width: 46vw; */
             border-radius: 10px 10px 0 0;
         }
 
@@ -66,8 +76,9 @@
             background-color: #E9ECFC;
             /*#DBE0FA;/*#E9ECFC;*/
             border-radius: 0 0 10px 10px;
-            width: 46vw;
-            min-height: 350px;
+            /* width: 46vw; */
+            /* min-height: 350px; */
+            min-height: 450px;
             max-height: 450px;
             text-align: center;
             margin-left: 2.5vw;
@@ -80,6 +91,12 @@
             padding-bottom: 20px;
             /* To give space after the last appointment*/
             overflow-y: auto;
+        }
+        .column1  {
+            width: 54vw;
+        }
+        .column2  {
+            width: 38vw;
         }
 
         .apps {
@@ -169,13 +186,12 @@
     </div>
 
     <div style="display: flex; align-items: center; justify-content: center;">
-        <h1 id="title">Appointments</h1>
+        <h1 id="title" onmouseover="hoverIn()" onmouseout="hoverOut()">Appointments</h1>
     </div>
 
     <div class="container">
         <div>
-            
-            <div class="columnTitle">
+            <div class="columnTitle column1">
                 <h3>
                     <table class="dayWeekTable" id="scheduleTable">
                         <tr>
@@ -189,46 +205,20 @@
                             <td class="day">Sun</td>
                         </tr>
                     </table>
-                    <!-- <table class="dayWeekTable">
-                        <tr>
-                            <td class="timeTitle"></td>
-                            <td class="day">Mon</td>
-                            <td class="day">Tue</td>
-                            <td class="day">Wed</td>
-                            <td class="day">Thu</td>
-                            <td class="day">Fri</td>
-                            <td class="day">Sat</td>
-                            <td class="day">Sun</td>
-                        </tr>
-                        <tr>
-                            <td class="timeTitle">8:00 AM</td>
-                            <td class="timeBlock"></td>
-                            <td class="timeBlock"></td>
-                            <td class="timeBlock"></td>
-                            <td class="timeBlock"></td>
-                            <td class="timeBlock"></td>
-                            <td class="timeBlock"></td>
-                            <td class="timeBlock"></td>
-                        </tr>
-                    </table> -->
-                <div style="width:100%; border: 1px solid white;"></div>
+                    
             </div>
-            <div class="upcomingApp">
-                <!-- <table class="dayTimeTable">
-                    <tr>
-                        <td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td><td>Sun</td>
-                    </tr>
-                </table> -->
+                <div class="background-div" style="border: 1px solid white;"> </div>
+                <div class="upcomingApp column1">
             </div>
         </div>
 
         <div>
-            <div class="columnTitle">
+            <div class="columnTitle column2">
                 <h3>New Appointment</h3>
                 <div style="width:100%; border: 1px solid white;"></div>
             </div>
 
-            <div class="upcomingApp">
+            <div class="upcomingApp column2">
                 <div class="apps">
                     <a class="patientName">Donald Duck</a> <a class="patientTime">2:00PM</a>
                     <a class="doctorName">Dr. Warren Waters</a>
