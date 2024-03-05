@@ -21,7 +21,11 @@
             font-size: 50px;
         }
         .history {
-            margin: 0 20px;
+            float: right;
+            /* margin: 0 20px; */
+            margin-left: -10%;
+            bottom: 20%;
+            right: 0;
         }
         .container {
             display: flex;
@@ -66,6 +70,9 @@
         }
         .green {
             background-color: #90EE90;
+        }
+        .green:hover {
+            background-color: rgb(106, 231, 106);
         }
         .red {
             background-color: #ee9090;
@@ -212,8 +219,9 @@
         </div>
     </div>
 
-    <div style="display: flex; align-items: center; justify-content: center;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
         <h1 id="title">Appointments</h1>
+        <button class="history">History</button>
     </div>
 
     <div class="container">
@@ -299,12 +307,13 @@
                         <input type="text" placeholder="Enter reason of visit">
                     </div>                      
                 </div>
-            </div>
+            <button class="book">Book</button>
+        </div>
         </div>
 
     </div>  <!-- End of container class -->
 
-    <button class="book">Book</button>
+    <!-- <button class="book">Book</button> -->
     
     <div class="footer">
         <span>
