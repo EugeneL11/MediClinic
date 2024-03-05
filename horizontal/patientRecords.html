@@ -4,9 +4,176 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="commonStyle.css">
+    <title>Patient Records</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }        
+        #title {
+            margin: 40px auto;
+            font-size: 50px;
+        }
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topB {
+            margin: auto 50px;
+            padding: 10px;
+        }
+        button {
+            /* font-family: 'Gabarito', sans-serif; */
+            background-color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            height: 500px;
+            margin-top: 30px;
+        }
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 5vw;
+            width: 35vw;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .search-bar {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 80%;
+        }
+        .search-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+        .info {
+            list-style-type: none;
+            margin-top: 40px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 20px;
+        }
+        .editB {
+            width: fit-content;
+            padding: 10px 20px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+        .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 45vw;
+            margin-right: 5vw;
+            gap: 20px;
+        }
+        .rightBox {
+            width: 95%;
+            height: 180px;
+            background-color: skyblue;
+            border: 5px solid blue;
+            border-radius: 10px;
+            padding: 5px;
+            text-align: center;
+        }
+        .rTitle {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .fields {
+            display: flex;
+            flex-direction: column;
+            font-size: 18px;
+            align-items: flex-start;
+            margin-top: 15px;
+            margin-left: 5px;
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
-    PATIENT RECORDS
+    <div>
+        <div class="topnav" >
+            <a href="homepage.html">Home</a>
+            <a href="aboutMe.html">Patient Records</a>
+            <a class="active" href="checkInScreen.html">Check-in</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="favourites.html">Payment</a>
+
+            <button class="logout" type="button" onclick="alert('Hello world!')">Logout</button>
+        </div>
+    </div>
+    <div class="top">
+        <button class="topB">Create New</button>
+        <h1 id="title">Patient Records</h1>
+        <button class="topB">Delete</button>
+    </div>
+    <div class="content">
+        <div class="left">
+            <div class="search">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <button type="submit" class="search-button">Search</button>
+            </div>
+            <ul class="info">
+                <li>Full name: Donald Duck</li>
+                <li>Gender: Male</li>
+                <li>Date of birth: April 1st, 1999</li>
+                <li>Phone number: 4039821486</li>
+                <li>Email address: donalduck00@gmail.com</li>
+                <li>Health care number: 45782-9912</li>
+                <li>Notable conditions: Skin rash</li>                
+            </ul>
+            <button class="editB">Edit</button>
+        </div>
+        <div class="right">
+            <div class="rightBox history">
+                <div class="rTitle">Visit History</div>
+                <div class="fields">
+                    <div class="field">December 10th 11:00 AM 2023, Check-up</div>
+                    <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
+                    <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
+                    <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
+                </div>
+            </div>
+            <div class="rightBox results">
+                <div class="rTitle">Test Results</div>
+                <div class="fields">
+                    <div class="field">X-ray.pdf</div>
+                    <div class="field">Ultrasound.pdf</div>
+                    <div class="field">Medicals.pdf</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
