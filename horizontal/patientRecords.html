@@ -100,9 +100,24 @@
         .rightBox {
             width: 95%;
             height: 180px;
+            background-color: skyblue;
             border: 5px solid blue;
             border-radius: 10px;
             padding: 5px;
+            text-align: center;
+        }
+        .rTitle {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .fields {
+            display: flex;
+            flex-direction: column;
+            font-size: 18px;
+            align-items: flex-start;
+            margin-top: 15px;
+            margin-left: 5px;
+            gap: 10px;
         }
     </style>
 </head>
@@ -142,10 +157,21 @@
         </div>
         <div class="right">
             <div class="rightBox history">
-                Visit History
+                <div class="rTitle">Visit History</div>
+                <div class="fields">
+                    <div class="field">December 10th 11:00 AM 2023, Check-up</div>
+                    <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
+                    <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
+                    <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
+                </div>
             </div>
             <div class="rightBox results">
-                Test Results
+                <div class="rTitle">Test Results</div>
+                <div class="fields">
+                    <div class="field">X-ray.pdf</div>
+                    <div class="field">Ultrasound.pdf</div>
+                    <div class="field">Medicals.pdf</div>
+                </div>
             </div>
         </div>
     </div>
