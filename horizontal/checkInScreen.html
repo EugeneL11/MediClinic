@@ -110,14 +110,16 @@
         .box {
             display: flex;
             justify-content: space-evenly;
-            margin-top: 40px;
+            margin-top: 45px;
+            gap: 30px;
+            width: 90%;
         }
         .infoBox {
             text-align: left;
-            font-size: 25px;
+            font-size: 20px;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 60px;
         }
         .field h5{
             margin: 0;
@@ -125,10 +127,33 @@
         .field p{
             margin: 0;
         }
+        .fieldT {
+            font-weight: bold;
+        }
+        /* Style the search bar */
+        .textbox input[type="text"] {
+            width: 250px;
+            margin-top: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        /* Style the search bar on focus */
+        .textbox input[type="text"]:focus {
+            outline: none;
+        }
+        .verifyB {
+            margin-top: 28px;
+            width: fit-content;
+            padding: 10px;
+        }
         .check {
             width: fit-content;
-            margin: 50px auto;
-            font-size: 25px;
+            margin: 40px auto;
+            font-size: 17px;
+            padding: 10px;
         }
         h3 {
             font-size: 30px;
@@ -202,28 +227,30 @@
                 <div class="box">
                     <div class="infoBox">
                         <div class="field">
-                            <h5>Name</h5>
+                            <div class="fieldT">Name</div>
                             <p>Donald Duck</p>
                         </div>
                         <div class="field">
-                            <h5>Time & Date</h5>
+                            <div class="fieldT">Time & Date</div>
                             <p>2:00 PM, February 28th</p>
                         </div>
                         <div class="field">
-                            <h5>Health Care Number</h5>
-                            <input type="text" class="textbox" placeholder="Enter patient's health care number">
+                            <div class="fieldT">Health Care Number</div>
+                            <div class="textbox">
+                                <input type="text" placeholder="Enter patient's health care number">
+                            </div>
                         </div>
                     </div>
                     <div class="infoBox">
                         <div class="field">
-                            <h5>Doctor</h5>
+                            <div class="fieldT">Doctor</div>
                             <p>Warren Waters</p>
                         </div>
                         <div class="field">
-                            <h5>Reason</h5>
+                            <div class="fieldT">Reason</div>
                             <p>Skin Rash</p>
                         </div>
-                        <button>Verify</button>
+                        <button class="verifyB">Verify</button>
                     </div>
                 </div>
                 <button class="check">Check-In</button>
