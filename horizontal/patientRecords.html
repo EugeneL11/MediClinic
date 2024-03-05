@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="commonStyle.css">
+    <title>Patient Records</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }        
+        #title {
+            margin: 40px auto;
+            font-size: 50px;
+        }
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topB {
+            margin: auto 50px;
+            padding: 10px;
+        }
+        button {
+            /* font-family: 'Gabarito', sans-serif; */
+            background-color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    PATIENT RECORDS
+    <div>
+        <div class="topnav" >
+            <a href="homepage.html">Home</a>
+            <a href="aboutMe.html">Patient Records</a>
+            <a class="active" href="checkInScreen.html">Check-in</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="favourites.html">Payment</a>
+
+            <button class="logout" type="button" onclick="alert('Hello world!')">Logout</button>
+        </div>
+    </div>
+    <div class="top">
+        <button class="topB">Create New</button>
+        <h1 id="title">Patient Records</h1>
+        <button class="topB">Delete</button>
+    </div>
 </body>
 </html>
