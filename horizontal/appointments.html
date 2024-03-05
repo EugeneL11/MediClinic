@@ -20,9 +20,12 @@
             margin: 40px 60px;
             font-size: 50px;
         }
+        .history {
+            margin: 0 20px;
+        }
         .container {
             display: flex;
-            padding-bottom: 60px;
+            padding-bottom: 20px;
             flex:1;
         }
         table,
@@ -127,73 +130,85 @@
         .apps {
             background-color: white;
             border-radius: 10px;
-            width: 25vw;
+            width: 80%;
             padding-top: 20px;
             padding-bottom: 20px;
             /* min-height: 100px; */
-        }
-
-        .apps .patientName {
-            float: left;
-            margin-left: 50px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .apps .patientTime {
-            float: right;
-            margin-right: 50px;
-            margin-bottom: 10px;
-        }
-
-        .apps .doctorName {
-            float: left;
-            margin-left: 50px;
-        }
-
-        .docs {
-            background-color: white;
-            border-radius: 10px;
-            width: 25vw;
-            /* max-height: 100px; */
-            padding-top: 20px;
-            padding-bottom: 20px;
-            font-size: 22px;
-        }
-
-        .docs b {
-            display: block;
-            padding-top: 7px;
-        }
-
-        .patientInfo {
-            background-color: bisque;
-            border-radius: 10px;
-            width: 50vw;
-            height: 550px;
-            text-align: center;
-            margin-left: 10vw;
-            margin-right: 5vw;
             display: flex;
             flex-direction: column;
         }
+        .appsT {
+            align-self: flex-start;
+            margin-left: 27px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        /* Style the dropdown */
+        .dropdown select {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        /* Style the dropdown options */
+        .dropdown select option {
+            padding: 10px;
+            font-size: 16px;
+        }
+        /* Style the search bar */
+        .search-bar input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        /* Style the search bar on focus */
+        .search-bar input[type="text"]:focus {
+            outline: none;
+        }
+        .prButton {
+            padding: 10px;
+            border-radius: 10px;
+            background-color: lightblue;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .prButton:hover {
+            background-color: lightskyblue;
+        }
+        .appDate {
+            align-self: flex-start;
+            margin-left: 27px;
+        }
+        /* Style the text field */
+        .text-field input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        /* Style the text field on focus */
+        .text-field input[type="text"]:focus {
+            outline: none;
+        }
 
-        .patientInfo h3 {
-            margin-top: 60px;
+        .book {
+            width: fit-content;
+            margin: 0 auto 35px auto;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         h3,
         p {
             font-size: 30px;
-        }
-
-        .infoColumn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            padding-bottom: 20px;
-            /* To give space after the last appointment*/
         }
     </style>
 </head>
@@ -201,7 +216,7 @@
     <div>
         <div class="topnav">
             <a href="homepage.html">Home</a>
-            <a href="aboutMe.html">Patient Records</a>
+            <a href="patientRecords.html">Patient Records</a>
             <a href="checkInScreen.html">Check-in</a>
             <a class="active" href="appointments.html">Appointments</a>
             <a href="payments.html">Payment</a>
@@ -210,8 +225,14 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <div style="display: flex; align-items: center; justify-content: center;">
         <h1 id="title">Appointments</h1>
+=======
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h1 id="title">Appointments</h1>
+        <button class="history">History</button>
+>>>>>>> 043c8ba648fb2f84b193786b7fa99ae4323397c6
     </div>
 
     <div class="container">
@@ -268,31 +289,41 @@
 
             <div class="upcomingApp column2">
                 <div class="apps">
-                    <a class="patientName">Donald Duck</a> <a class="patientTime">2:00PM</a>
-                    <a class="doctorName">Dr. Warren Waters</a>
+                    <div class="appsT">Doctor</div>
+                    <div class="dropdown">
+                        <select>
+                            <option disabled selected hidden></option>
+                            <option>Dr.Apple</option>
+                            <option>Dr.Waters</option>
+                            <option>Dr.Pepper</option>
+                            <option>Dr.Cart</option>
+                            <option>Dr.Rogers</option>
+                        </select>
+                    </div>                      
                 </div>
                 <div class="apps">
-                    <a class="patientName">Fred Feet</a> <a class="patientTime">2:20PM</a>
-                    <a class="doctorName">Dr. Carter Cart</a>
-                    <br>
+                    <div class="appsT">Date & Time</div>
+                    <div class="appDate">March 7th 2:00 PM</div>
                 </div>
                 <div class="apps">
-                    <a class="patientName">Jimmy Jones</a> <a class="patientTime">2:45PM</a>
-                    <a class="doctorName">Dr. Reese Rogers</a>
-                    <br>
+                    <div class="appsT">Patient Name</div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search...">
+                    </div>                      
                 </div>
+                <button class="prButton">Patient Record</button>
                 <div class="apps">
-                    <a class="patientName">Karl Kones</a> <a class="patientTime">3:15PM</a>
-                    <a class="doctorName">Dr. Andrew Apple</a>
-                </div>
-                <div class="apps">
-                    <a class="patientName">Rachel Ruthers</a> <a class="patientTime">3:40PM</a>
-                    <a class="doctorName">Dr. Penny Pepper</a>
+                    <div class="appsT">Reason</div>
+                    <div class="text-field">
+                        <input type="text" placeholder="Enter reason of visit">
+                    </div>                      
                 </div>
             </div>
         </div>
 
     </div>  <!-- End of container class -->
+
+    <button class="book">Book</button>
     
     <div class="footer">
         <span>
