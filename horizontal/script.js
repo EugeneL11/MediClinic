@@ -20,7 +20,10 @@ function init() {
             if(d == "")
                 timeBlock.classList.add("emptyBlock");
             else
+            {
                 timeBlock.classList.add("timeBlock");
+                timeBlock.classList.add("green");
+            }
             
             idName = "cell" + (day+1) + "" + i;
             timeBlock.setAttribute("id", idName);
@@ -32,22 +35,22 @@ function init() {
         table.appendChild(timeRow);
     }
 
-    //Generating 2 empty rows for spacing
+    //Generating 1 empty rows for spacing
     generateTimeSlots("");
-    generateTimeSlots("");
-    for(var i=8; i<19; i++)
-    {   var m;
-        if(i < 12)
-            m = i + ":00 AM";
-        else if (i == 12)
-            m = i + ":00 PM";
-        else
-            m = (i - 12) + ":00 PM";
+    // for(var i=9; i<18; i++)
+    // {   var m;
+    //     if(i < 12)
+    //         m = i + ":00 AM";
+    //     else if (i == 12)
+    //         m = i + ":00 PM";
+    //     else
+    //         m = (i - 12) + ":00 PM";
 
-        generateTimeSlots(m, i);
-    }
+    //     generateTimeSlots(m, i);
+    // }
 
     createCSS();
+    // createAvailability();
 }
 
 window.onload = init;
@@ -55,7 +58,7 @@ window.onload = init;
 function createCSS() {
     var element = document.getElementById("style");
     for (var d = 1; d <= 7; d++) {
-        for (var t = 8; t < 19; t++) {
+        for (var t = 9; t < 18; t++) {
             if (d == 7 && t == 18)
                 element.innerHTML += '#cell' + d + '' + t + ":hover ";
             else
@@ -64,7 +67,6 @@ function createCSS() {
     }
     element.innerHTML += '{background-color: #C9D1F8; cursor: pointer;}';
 }
-
 
 function hoverIn(day, time) {
     cellID = "cell" + day + "" + time;

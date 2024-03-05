@@ -37,19 +37,44 @@
         }
         .dayWeekTable .day {
             width: 70px;
+            font-size: 20px;
+            border: none;
+        }
+        .dayWeekTable .date {
+            width: 70px;
+            font-size: 15px;
             border: none;
         }
         tr .timeTitle {
             width: 80px;
             font-size: 15px;
+            font-weight: bold;
             height: 36px;
         }
         table, .timeTitle {
             border:none;
         }
         tr .emptyBlock {
-            height: 27px;
+            height: 10px;
             border: none;
+        }
+        .timeBlock {
+            cursor: pointer;
+        }
+        .green {
+            background-color: #90EE90;
+        }
+        .red {
+            background-color: #ee9090;
+            background-image: url(https://static.vecteezy.com/system/resources/previews/033/303/637/original/red-color-diagonal-stripe-lines-crosswise-pattern-background-free-png.png);
+            background-size: 200%;
+        }
+        .grey {
+            background-color: #BFBFBF;
+            /* background-image: url(https://i.pinimg.com/736x/fa/45/96/fa4596264799e1ea85516d00055cddee.jpg); */
+            background-image: url("diagonal.png");
+            background-size: 220%;
+            cursor:not-allowed;
         }
         .dayTimeTable {
             /* width: 95%; */
@@ -78,7 +103,7 @@
             border-radius: 0 0 10px 10px;
             /* width: 46vw; */
             /* min-height: 350px; */
-            min-height: 450px;
+            min-height: 420px;
             max-height: 450px;
             text-align: center;
             margin-left: 2.5vw;
@@ -93,10 +118,10 @@
             overflow-y: auto;
         }
         .column1  {
-            width: 54vw;
+            width: 50vw;
         }
         .column2  {
-            width: 38vw;
+            width: 34vw;
         }
 
         .apps {
@@ -193,23 +218,46 @@
         <div>
             <div class="columnTitle column1">
                 <h3>
-                    <table class="dayWeekTable" id="scheduleTable">
-                        <tr>
-                            <td class="emptyBlock"></td>
-                            <td class="day">Mon</td>
-                            <td class="day">Tue</td>
-                            <td class="day">Wed</td>
-                            <td class="day">Thu</td>
-                            <td class="day">Fri</td>
-                            <td class="day">Sat</td>
-                            <td class="day">Sun</td>
-                        </tr>
-                    </table>
+                    Select a Time
+                </h3>
                     
             </div>
                 <div class="background-div" style="border: 1px solid white;"> </div>
                 <div class="upcomingApp column1">
-            </div>
+                    <table class="dayWeekTable" id="scheduleTable">
+                        <tr>
+                            <th class="emptyBlock"></th>
+                            <th class="day">Mon</th>
+                            <th class="day">Tue</th>
+                            <th class="day">Wed</th>
+                            <th class="day">Thu</th>
+                            <th class="day">Fri</th>
+                            <th class="day">Sat</th>
+                            <th class="day">Sun</th>
+                        </tr>
+                        <tr>
+                            <td class="emptyBlock"></td>
+                            <td class="date">Mar 4</td>
+                            <td class="date">Mar 5</td>
+                            <td class="date">Mar 6</td>
+                            <td class="date">Mar 7</td>
+                            <td class="date">Mar 8</td>
+                            <td class="date">Mar 9</td>
+                            <td class="date">Mar 10</td>
+                        </tr>
+                        <!--TABLE CODE, i=1-7, j=8-17-->
+                        <tr><td class="emptyBlock"></td><td class="emptyBlock" id="cell1undefined"></td><td class="emptyBlock" id="cell2undefined"></td><td class="emptyBlock" id="cell3undefined"></td><td class="emptyBlock" id="cell4undefined"></td><td class="emptyBlock" id="cell5undefined"></td><td class="emptyBlock" id="cell6undefined"></td><td class="emptyBlock" id="cell7undefined"></td></tr>
+                        <tr><td class="timeTitle">9:00 AM</td><td class="timeBlock green" id="cell19"></td><td class="timeBlock green" id="cell29"></td><td class="timeBlock green" id="cell39"></td><td class="timeBlock red" id="cell49"></td><td class="timeBlock green" id="cell59"></td><td class="timeBlock green" id="cell69"></td><td class="timeBlock grey" id="cell79"></td></tr>
+                        <tr><td class="timeTitle">10:00 AM</td><td class="timeBlock green" id="cell110"></td><td class="timeBlock green" id="cell210"></td><td class="timeBlock green" id="cell310"></td><td class="timeBlock green" id="cell410"></td><td class="timeBlock green" id="cell510"></td><td class="timeBlock red" id="cell610"></td><td class="timeBlock grey" id="cell710"></td></tr>
+                        <tr><td class="timeTitle">11:00 AM</td><td class="timeBlock red" id="cell111"></td><td class="timeBlock green" id="cell211"></td><td class="timeBlock red" id="cell311"></td><td class="timeBlock green" id="cell411"></td><td class="timeBlock green" id="cell511"></td><td class="timeBlock green" id="cell611"></td><td class="timeBlock grey" id="cell711"></td></tr>
+                        <tr><td class="timeTitle">12:00 PM</td><td class="timeBlock green" id="cell112"></td><td class="timeBlock red" id="cell212"></td><td class="timeBlock green" id="cell312"></td><td class="timeBlock green" id="cell412"></td><td class="timeBlock red" id="cell512"></td><td class="timeBlock green" id="cell612"></td><td class="timeBlock grey" id="cell712"></td></tr>
+                        <tr><td class="timeTitle">1:00 PM</td><td class="timeBlock green" id="cell113"></td><td class="timeBlock green" id="cell213"></td><td class="timeBlock green" id="cell313"></td><td class="timeBlock green" id="cell413"></td><td class="timeBlock green" id="cell513"></td><td class="timeBlock red" id="cell613"></td><td class="timeBlock grey" id="cell713"></td></tr>
+                        <tr><td class="timeTitle">2:00 PM</td><td class="timeBlock green" id="cell114"></td><td class="timeBlock red" id="cell214"></td><td class="timeBlock green" id="cell314"></td><td class="timeBlock red" id="cell414"></td><td class="timeBlock green" id="cell514"></td><td class="timeBlock green" id="cell614"></td><td class="timeBlock grey" id="cell714"></td></tr>
+                        <tr><td class="timeTitle">3:00 PM</td><td class="timeBlock red" id="cell115"></td><td class="timeBlock green" id="cell215"></td><td class="timeBlock green" id="cell315"></td><td class="timeBlock red" id="cell415"></td><td class="timeBlock green" id="cell515"></td><td class="timeBlock green" id="cell615"></td><td class="timeBlock grey" id="cell715"></td></tr>
+                        <tr><td class="timeTitle">4:00 PM</td><td class="timeBlock green" id="cell116"></td><td class="timeBlock green" id="cell216"></td><td class="timeBlock red" id="cell316"></td><td class="timeBlock green" id="cell416"></td><td class="timeBlock green" id="cell516"></td><td class="timeBlock red" id="cell616"></td><td class="timeBlock grey" id="cell716"></td></tr>
+                        <tr><td class="timeTitle">5:00 PM</td><td class="timeBlock green" id="cell117"></td><td class="timeBlock green" id="cell217"></td><td class="timeBlock green" id="cell317"></td><td class="timeBlock green" id="cell417"></td><td class="timeBlock red" id="cell517"></td><td class="timeBlock green" id="cell617"></td><td class="timeBlock grey" id="cell717"></td></tr>
+                    </table>
+                </div>
         </div>
 
         <div>
@@ -243,30 +291,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div>
-            <div class="columnTitle">
-                <h3>Doctors on Duty</h3>
-                <div style="width:100%; border: 1px solid white;"></div>
-            </div>
-
-            <div class="upcomingApp">
-                <div class="docs">
-                    Dr. Andrew Apple <br> <b>Neurologist</b>
-                </div>
-                <div class="docs">
-                    Dr. Warren Waters <br> <b>Dermatologist</b>
-                </div>
-                <div class="docs">
-                    Dr. Penny Pepper <br> <b>Psychiatrist</b>
-                </div>
-                <div class="docs">
-                    Dr. Carter Cart <br> <b>Cardiologist</b>
-                </div>
-                <div class="docs">
-                    Dr. Reese Rogers <br> <b>Pediatrician</b>
-                </div>
-            </div>
-        </div> -->
 
     </div>  <!-- End of container class -->
     
