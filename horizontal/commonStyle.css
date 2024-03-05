@@ -53,6 +53,42 @@ body {
     background-color: #444;
 }
 
+/* common style for display boxes used in all pages */
+.columnTitle {
+    background-color: #C9D1F8;
+    /*#BDD7FF; /*#C9D1F8;*/
+    text-align: center;
+    margin-left: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 94.5px;
+    /* width: 46vw; */
+    border-radius: 10px 10px 0 0;
+}
+
+.columnBody {
+    background-color: #E9ECFC;
+    /*#DBE0FA;/*#E9ECFC;*/
+    border-radius: 0 0 10px 10px;
+    /* width: 46vw; */
+    /* min-height: 350px; */
+    min-height: 420px;
+    max-height: 450px;
+    text-align: center;
+    margin-left: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    /* To give space before the first appointment*/
+    padding-bottom: 20px;
+    /* To give space after the last appointment*/
+    overflow-y: auto;
+}
+
+
 .footer {
     background-color: #10217d;
     color: #fff;

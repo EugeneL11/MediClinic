@@ -39,35 +39,19 @@
             width: max-content;
         }
 
-        .columnTitle {
-            background-color: #C9D1F8;
-            /*#BDD7FF; /*#C9D1F8;*/
-            text-align: center;
-            margin-left: 2.2vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .ct {
+            margin-left: 5vw;
             width: 30vw;
-            border-radius: 10px 10px 0 0;
         }
 
-        .upcomingApp {
-            background-color: #E9ECFC;
-            /*#DBE0FA;/*#E9ECFC;*/
-            border-radius: 0 0 10px 10px;
+        .cb {
             width: 30vw;
-            max-height: 450px;
-            text-align: center;
-            margin-left: 2.2vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding-top: 20px;
-            /* To give space before the first appointment*/
-            padding-bottom: 20px;
-            /* To give space after the last appointment*/
-            overflow-y: auto;
+            margin-left: 5vw;
+        }
+
+        .ct2 {
+            width: 20vw;
+            margin-left: 5vw;
         }
 
         .apps {
@@ -150,7 +134,7 @@
         <div class="topnav">
             <a class="active" href="homepage.html">Home</a>
             <a href="patientRecords.html">Patient Records</a>
-            <a href="checkInScreen.html">Check-in</a>
+            <a href="checkIn.html">Check-in</a>
             <a href="appointments.html">Appointments</a>
             <a href="payments.html">Payment</a>
 
@@ -173,12 +157,12 @@
 
     <div class="container">
         <div>
-            <div class="columnTitle">
+            <div class="columnTitle ct">
                 <h3>Today's Appointments</h3>
                 <div style="width:100%; border: 1px solid white;"></div>
             </div>
 
-            <div class="upcomingApp">
+            <div class="columnBody cb">
                 <div class="apps">
                     <a class="patientName">Donald Duck</a> <a class="patientTime">2:00PM</a>
                     <a class="doctorName">Dr. Warren Waters</a>
@@ -202,12 +186,12 @@
             </div>
         </div>
         <div>
-            <div class="columnTitle">
+            <div class="columnTitle ct">
                 <h3>Doctors on Duty</h3>
                 <div style="width:100%; border: 1px solid white;"></div>
             </div>
 
-            <div class="upcomingApp">
+            <div class="columnBody cb">
                 <div class="docs">
                     Dr. Andrew Apple <br> <b>Neurologist</b>
                 </div>
@@ -227,13 +211,13 @@
         </div>
 
         <div class="infoColumn"> <!-- Column -->
-            <div class="columnTitle" style="border-radius: 10px;">
+            <div class="columnTitle ct2" style="border-radius: 10px;">
 
                 <p>Number of visits: </br> <b>4</b> </p>
                 <!-- <div style="width:100%; border: 1px solid white;"></div> -->
             </div>
 
-            <div class="columnTitle" style="border-radius: 10px;">
+            <div class="columnTitle ct2" style="border-radius: 10px;">
                 <p>Hours to closing: </br> <b>3 hours 15 min</b> </p>
                 <!-- <div style="width:100%; border: 1px solid white;"></div> -->
             </div>

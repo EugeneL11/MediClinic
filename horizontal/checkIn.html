@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="commonStyle.css" />
+    <title>MediClinic</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap");
+
+      body {
+        /* font-family: 'Gabarito', sans-serif; */
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      .navbar {
+        width: 100%;
+        height: 90px;
+        background-color: burlywood;
+      }
+      #title {
+        margin: 40px auto;
+        font-size: 50px;
+      }
+      .container {
+        display: flex;
+        padding-bottom: 60px;
+      }
+
+      .column1 {
+        width: 30vw;
+        margin-left: 4.6vw;
+      }
+
+      .column2 {
+        width: 55vw;
+        margin-left: 4.6vw;
+      }
+
+      .apps {
+        background-color: white;
+        border-radius: 10px;
+        width: 25vw;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        /* min-height: 100px; */
+        transition: transform 0.3s;
+      }
+
+      .apps:hover {
+        size: 105%;
+        background-color: rgb(243, 243, 243);
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+
+      .apps .patientName {
+        float: left;
+        margin-left: 50px;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .apps .patientTime {
+        float: right;
+        margin-right: 50px;
+        margin-bottom: 10px;
+      }
+
+      .apps .doctorName {
+        float: left;
+        margin-left: 50px;
+      }
+
+      .patientInfo {
+        background-color: bisque;
+        border-radius: 10px;
+        width: 50vw;
+        height: 550px;
+        text-align: center;
+        margin-left: 10vw;
+        margin-right: 5vw;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .patientInfo h3 {
+        margin-top: 60px;
+      }
+
+      .box {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 45px;
+        gap: 30px;
+        width: 90%;
+      }
+      .infoBox {
+        text-align: left;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+      }
+      .field h5 {
+        margin: 0;
+      }
+      .field p {
+        margin: 0;
+      }
+      .fieldT {
+        font-weight: bold;
+      }
+      /* Style the search bar */
+      .textbox input[type="text"] {
+        width: 250px;
+        margin-top: 5px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+      /* Style the search bar on focus */
+      .textbox input[type="text"]:focus {
+        outline: none;
+      }
+      .verifyB {
+        margin-top: 28px;
+        width: fit-content;
+        padding: 10px;
+      }
+      .check {
+        width: fit-content;
+        margin: 40px auto;
+        font-size: 17px;
+        padding: 10px;
+      }
+      h3 {
+        font-size: 30px;
+      }
+      button {
+        /* font-family: 'Gabarito', sans-serif; */
+        background-color: white;
+        border-radius: 5px;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <div class="topnav">
+        <a href="homepage.html">Home</a>
+        <a href="patientRecords.html">Patient Records</a>
+        <a class="active" href="checkIn.html">Check-in</a>
+        <a href="appointments.html">Appointments</a>
+        <a href="payments.html">Payment</a>
+
+        <button class="logout" type="button" onclick="alert('Hello world!')">
+          Logout
+        </button>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: center">
+      <h1 id="title">Patient Check-in</h1>
+    </div>
+
+    <div class="container">
+      <div>
+        <div class="columnTitle column1">
+          <h3>Upcoming Appointments</h3>
+          <div style="width: 100%; border: 1px solid white"></div>
+        </div>
+
+        <div class="columnBody column1">
+          <div class="apps">
+            <a class="patientName">Donald Duck</a>
+            <a class="patientTime">2:00PM</a>
+            <a class="doctorName">Dr. Warren Waters</a>
+          </div>
+          <div class="apps">
+            <a class="patientName">Fredrick Feet</a>
+            <a class="patientTime">2:20PM</a>
+            <a class="doctorName">Dr. Carter Cart</a>
+          </div>
+          <div class="apps">
+            <a class="patientName">Jimmy Jones</a>
+            <a class="patientTime">2:45PM</a>
+            <a class="doctorName">Dr. Reese Rogers</a>
+          </div>
+          <div class="apps">
+            <a class="patientName">Karl Kones</a>
+            <a class="patientTime">3:15PM</a>
+            <a class="doctorName">Dr. Andrew Apple</a>
+          </div>
+          <div class="apps">
+            <a class="patientName">Rachel Ruthers</a>
+            <a class="patientTime">3:40PM</a>
+            <a class="doctorName">Dr. Penny Pepper</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="columnTitle column2">
+          <h3>Patient Info</h3>
+          <div style="width: 100%; border: 1px solid white"></div>
+        </div>
+        <div class="columnBody column2">
+          <!--patientInfo-->
+          <div class="box">
+            <div class="infoBox">
+              <div class="field">
+                <div class="fieldT">Name</div>
+                <p>Donald Duck</p>
+              </div>
+              <div class="field">
+                <div class="fieldT">Time & Date</div>
+                <p>2:00 PM, February 28th</p>
+              </div>
+              <div class="field">
+                <div class="fieldT">Health Care Number</div>
+                <div class="textbox">
+                  <input
+                    type="text"
+                    placeholder="Enter patient's health care number"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="infoBox">
+              <div class="field">
+                <div class="fieldT">Doctor</div>
+                <p>Warren Waters</p>
+              </div>
+              <div class="field">
+                <div class="fieldT">Reason</div>
+                <p>Skin Rash</p>
+              </div>
+              <button class="verifyB">Verify</button>
+            </div>
+          </div>
+          <button class="check">Check-In</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
