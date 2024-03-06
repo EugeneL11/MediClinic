@@ -370,8 +370,14 @@
                     
             </div>
                 <div class="background-div" style="border: 1px solid white;"> </div>
-                <div class="columnBody column1">
-                    <table class="dayWeekTable" id="scheduleTable">
+                <div class="columnBody column1" style=" display: flex; flex-direction: column;">
+                    
+                    <div style="position:absolute;">
+                        <a class="aButton" style="margin-left:5vw; left: 0; position: absolute; top: 0;">&lt;</a>
+                        <a style="margin: 0 23vw;"></a>
+                        <a class="aButton" style="right: 0; position: absolute; top: 0;">&gt;</a>
+                    </div>
+                    <table class="dayWeekTable" id="scheduleTable" style="margin-bottom: -14px;">
                         <tr>
                             <th class="emptyBlock"></th>
                             <th class="day">Mon</th>
@@ -381,6 +387,7 @@
                             <th class="day">Fri</th>
                             <th class="day">Sat</th>
                             <th class="day">Sun</th>
+                            <th class="emptyBlock"></th>
                         </tr>
                         <tr>
                             <td class="emptyBlock"></td>
@@ -405,7 +412,10 @@
                         <tr><td class="timeTitle">5:00 PM</td><td class="timeBlock green" id="cell117"></td><td class="timeBlock green" id="cell217"></td><td class="timeBlock green" id="cell317"></td><td class="timeBlock green" id="cell417"></td><td class="timeBlock red" id="cell517"></td><td class="timeBlock green" id="cell617"></td><td class="timeBlock grey" id="cell717"></td></tr>
                     </table>
 
-                    <a class="aButton">Cancel Appointment</a>
+                    <div style="justify-content: center; display: flex; gap: 2vw; margin-bottom: 0px;">
+                        <a class="aButton">Edit Appointment</a>
+                        <a class="aButton">Cancel Appointment</a>
+                    </div>
 
                 </div>
         </div>

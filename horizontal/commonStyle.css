@@ -117,12 +117,31 @@ body {
     text-decoration: none;
 }
 
+.columnBody .aButton:hover {
+    background-color: #0056b3;
+    /* color: #10217d; */
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
 .aButton:hover {
     background-color: #0056b3;
     /* color: #10217d; */
     text-decoration: underline;
     transform: scale(1.1);
 }
+
+
+#logoutPopup { width:23vw; }
+
+#createPopup, #deletePopup, #checkPopup,
+#payPopup, #emailPopup, #printPopup
+{ width:30vw; }
+
+#editPopup { width:22vw; }
+#verifyPopup { width:19vw; }
+#bookPopup { width:32vw; }
+#recordPopup { width:38vw; }
 
 .popup {
     display: none;
@@ -131,7 +150,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #f1f1f1;
-    width: 40vw;
+    width: 40vw;    /*Different popup sizes for each popup.*/
     height: 150px;
     padding: 20px;
     border: 1px solid #ccc;
