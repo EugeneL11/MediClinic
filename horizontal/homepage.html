@@ -25,12 +25,6 @@
         #date {
             margin: 40px 60px;
         }
-        
-        .container {
-            display: flex;
-            padding-bottom: 60px;
-            flex:1;
-        }
 
         table,
         th,
@@ -52,6 +46,7 @@
         .ct2 {
             width: 20vw;
             margin-left: 5vw;
+            height: 8vw;
         }
 
         .apps {
@@ -60,8 +55,15 @@
             width: 25vw;
             padding-top: 20px;
             padding-bottom: 20px;
-            /* min-height: 100px; */
+            transition: transform 0.3s;
         }
+
+        .apps:hover {
+        size: 105%;
+        background-color: rgb(247, 247, 247);
+        cursor: pointer;
+        transform: scale(1.05);
+      }
 
         .apps .patientName {
             float: left;
@@ -145,7 +147,7 @@
     <div>
         <table style="width: 100%;">
             <tr>
-                <td style="float:left;">
+                <td style="float:left; margin-left:12px">
                     <h1 id="welcome">Welcome to <span style="color: #10217d;">Medi</span>Clinic!</h1>
                 </td>
                 <td style="text-align: right;">
@@ -209,14 +211,15 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="infoColumn"> <!-- Column -->
+            <br><br><br><br>
             <div class="columnTitle ct2" style="border-radius: 10px;">
 
                 <p>Number of visits: </br> <b>4</b> </p>
                 <!-- <div style="width:100%; border: 1px solid white;"></div> -->
             </div>
-
+            <br>
             <div class="columnTitle ct2" style="border-radius: 10px;">
                 <p>Hours to closing: </br> <b>3 hours 15 min</b> </p>
                 <!-- <div style="width:100%; border: 1px solid white;"></div> -->

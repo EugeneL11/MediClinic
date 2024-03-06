@@ -53,6 +53,12 @@ body {
     background-color: #444;
 }
 
+.container {
+    display: flex;
+    padding-bottom: 60px;
+    flex:1;
+}
+
 /* common style for display boxes used in all pages */
 .columnTitle {
     background-color: #C9D1F8;
