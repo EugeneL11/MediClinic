@@ -168,9 +168,18 @@
         <a href="appointments.html">Appointments</a>
         <a class="active" href="payments.html">Payment</a>
 
-        <button class="logout" type="button" onclick="alert('Hello world!')">
-          Logout
-        </button>
+        <a href="#logoutPopup" class="logout">Logout</a>
+        <div id="logoutPopup" class="popup">
+          <div class="popup-content">
+            <p style="font-size: 20px;">Are you sure you want to logout?</p>
+            <div class="confirmRow">
+                <a href="login.html" class="yesBtn aButton">Yes</a>
+                <a href="#" class="noBtn aButton">No</a>
+            </div>
+          </div>
+        </div>
+        <div class="overlay"></div>
+        
       </div>
     </div>
 

@@ -43,11 +43,15 @@
         font-size: 16px;
         box-shadow: 2px 2px gray;
       }
+      /* Style the search bar on focus */
+      input[type="inputBox"]:focus {
+        outline: none;
+      }
 
       input[type="button"] {
         width: 25%;
         padding: 4px;
-        margin: 4px 0;
+        margin: 35px 0 0 0;
         border-radius: 5px;
         border: 1px solid #ccc;
         background-color: #fff;
@@ -74,7 +78,7 @@
     <h1 class="title"><span style="color: #10217d;">Medi</span>Clinic</span></h1>
     <div class="container">
       <div>
-        <span>Username</span>
+        <span style="font-weight: bold;">Username</span>
       </div>
       <input
         type="inputBox"
@@ -84,7 +88,7 @@
       />
       <br />
       <div style="margin-top: 16px">
-        <span>Password</span>
+        <span style="font-weight: bold;">Password</span>
       </div>
       <div style="position: relative">
         <span class="material-symbols-outlined"> visibility_off </span>
