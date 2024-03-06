@@ -48,44 +48,43 @@
         margin-left: 5vw;
         width: 35vw;
       }
-      .search {
-        display: flex;
-        align-items: center;
-        width: 100%;
+
+      .leftB {
+          width: 35vw;
       }
-      .search-bar {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-        width: 80%;
+
+      .columnTitle {
+          padding: 10px 0;
       }
-      .search-button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-left: 10px;
-      }
-      .search-button:hover {
-        background-color: #0056b3;
-      }
+
+        /* Style the search bar */
+        .textbox input[type="text"] {
+            width: 30vw;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        /* Style the search bar on focus */
+        .textbox input[type="text"]:focus {
+            outline: none;
+        }
       .info {
         list-style-type: none;
-        margin-top: 40px;
+        margin-top: 25px;
+        margin-left: 5px;
         padding: 0;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        text-align: left;
+        gap: 15px;
         font-size: 20px;
       }
       .editB {
         width: fit-content;
         padding: 10px 20px;
-        margin: 20px auto;
+        margin: 15px auto;
         cursor: pointer;
       }
       .right {
@@ -220,20 +219,23 @@
     </div>
     <div class="content">
       <div class="left">
-        <div class="search">
-          <input type="text" class="search-bar" placeholder="Search..." />
-          <button type="submit" class="search-button">Search</button>
+        <div class="columnTitle leftB">
+            <div class="textbox">
+                <input type="text" placeholder="Search..." />
+            </div>
         </div>
-        <ul class="info">
-          <li>Full name: Donald Duck</li>
-          <li>Gender: Male</li>
-          <li>Date of birth: April 1st, 1999</li>
-          <li>Phone number: 4039821486</li>
-          <li>Email address: donalduck00@gmail.com</li>
-          <li>Health care number: 45782-9912</li>
-          <li>Notable conditions: Skin rash</li>
-        </ul>
-        <button class="editB">Edit</button>
+        <div class="columnBody leftB">
+            <ul class="info">
+                <li>Full name: Donald Duck</li>
+                <li>Gender: Male</li>
+                <li>Date of birth: April 1st, 1999</li>
+                <li>Phone number: 4039821486</li>
+                <li>Email address: donalduck00@gmail.com</li>
+                <li>Health care number: 45782-9912</li>
+                <li>Notable conditions: Skin rash</li>
+              </ul>
+              <button class="editB">Edit</button>
+        </div>
       </div>
       <div class="right">
         <div class="rightB">
