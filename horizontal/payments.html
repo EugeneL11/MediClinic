@@ -56,13 +56,22 @@
         background-color: #e9ecfc;
         display: flex;
         flex-direction: column;
-        border-radius: 0 0 10px 10px;
+        /* border-radius: 0 0 10px 10px; */
         min-height: 300px;
         max-height: 300px;
         line-height: 40px;
         font-size: 18px;
         text-align: left;
         overflow-y: auto;
+      }
+      .total {
+        background-color: #e9ecfc;
+        display: flex;
+        border-radius: 0 0 10px 10px;
+        font-size: 18px;
+        padding: 10px 25px;
+        text-align: left;
+        font-weight: bold;
       }
 
       .left1 {
@@ -85,8 +94,8 @@
       }
 
       .paymentTitle {
-        font-size: 16px;
-        font-weight: bolder;
+        font-size: 20px;
+        font-weight: bold;
         margin-top: 20px;
       }
       .paymentButtons {
@@ -116,8 +125,11 @@
 
       .outstandingTitle {
         margin-top: 20px;
-        font-weight: bolder;
-        font-size: 16px;
+        font-size: 20px;
+        font-weight: bold;
+        /* margin: auto; */
+        /* font-weight: bolder; */
+        /* font-size: 16px; */
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -195,31 +207,31 @@
           <div style="width:100%; border: 1px solid white;"></div>
           <div class="scrollingDisplay left2">
             <div>
-              <span style="margin-left: 25px">$29.41, Inhaler</span>
+              <span style="margin-left: 25px">Inhaler, $29.41</span>
             </div>
             <div>
-              <span style="margin-left: 25px">$42.26, Sleeping pills</span>
+              <span style="margin-left: 25px">Sleeping pills, $42.2</span>
             </div>
             <div>
-              <span style="margin-left: 25px">$132.31, X-ray</span>
+              <span style="margin-left: 25px">X-ray, $132.31</span>
             </div>
             <div>
-              <span style="margin-left: 25px">$5.41, Bandaids</span>
+              <span style="margin-left: 25px">Bandaids, $5.41</span>
             </div>
             <div>
-              <span style="margin-left: 25px">$13.21, Face cream</span>
+              <span style="margin-left: 25px">Face cream, $13.21</span>
             </div>
             <div>
-              <span style="margin-left: 25px">$17.32, Check-up</span>
+              <span style="margin-left: 25px">Check-up, $17.32</span>
             </div>
             <div>
-              <span style="margin-left: 25px">$16.12, Melatonin</span>
+              <span style="margin-left: 25px">Melatonin, $16.12</span>
             </div>
             <div>
-              <span style="margin-left: 25px">$12.62, Tylenol</span>
+              <span style="margin-left: 25px">Tylenol, $12.62</span>
             </div>
             <div>
-              <span style="margin-left: 25px">$4.32, Sports tape </span>
+              <span style="margin-left: 25px">Sports tape, $4.32</span>
             </div>
           </div>
         </div>
@@ -235,22 +247,27 @@
         <div style="width:100%; border: 1px solid white;"></div>
         <div class="scrollingDisplay">
           <div class="outstandingRow">
-            <span style="margin-left: 25px">$4.32, Sports tape </span>
+            <span style="margin-left: 25px">Sports tape, $4.32</span>
             <input type="checkbox" class="outstandingCheck" />
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 25px">$12.62, Advil</span>
+            <span style="margin-left: 25px">Advil, $12.62</span>
             <input type="checkbox" class="outstandingCheck" />
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 25px">$16.12, Magnesium</span>
+            <span style="margin-left: 25px">Magnesium, $16.12</span>
             <input type="checkbox" class="outstandingCheck" />
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 25px">$17.32, Check-up</span>
+            <span style="margin-left: 25px">Check-up, $17.32</span>
             <input type="checkbox" class="outstandingCheck" />
           </div>
+
         </div>
+        <div style="width:99.8%; border: 1px solid white;"></div>
+            <span  class="total">
+              Total: $50.38
+            </span>
         <div class="paymentButtons">
           <a href="#payPopup" class="aButton">Make Payment</a>
           <div id="payPopup" class="popup">
