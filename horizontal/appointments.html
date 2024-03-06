@@ -26,8 +26,6 @@
             font-size: 50px;
         }
         .history {
-            font-size: 15px;
-            padding: 10px;
             margin-right: 50px;
         }
         .blankB {
@@ -95,44 +93,14 @@
             width: 100%;
             z-index: 1; /* Behind the table */
         }
-        .columnTitle {
-            background-color: #C9D1F8;
-            /*#BDD7FF; /*#C9D1F8;*/
-            text-align: center;
-            margin-left: 5vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 94.5px;
-            /* width: 46vw; */
-            border-radius: 10px 10px 0 0;
-        }
 
-        .upcomingApp {
-            background-color: #E9ECFC;
-            /*#DBE0FA;/*#E9ECFC;*/
-            border-radius: 0 0 10px 10px;
-            /* width: 46vw; */
-            /* min-height: 350px; */
-            min-height: 420px;
-            max-height: 450px;
-            text-align: center;
-            margin-left: 5vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding-top: 20px;
-            /* To give space before the first appointment*/
-            padding-bottom: 20px;
-            /* To give space after the last appointment*/
-            overflow-y: auto;
-        }
         .column1  {
             width: 50vw;
+            margin-left: 5vw;
         }
         .column2  {
             width: 35vw;
+            margin-left: 5vw;
         }
 
         .apps {
@@ -167,26 +135,17 @@
         }
         /* Style the search bar */
         .textbox input[type="text"] {
-            width: 90%;
+            width: 85%;
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
             background-color: #fff;
+            box-shadow: 2px 2px gray;
         }
         /* Style the search bar on focus */
         .textbox input[type="text"]:focus {
             outline: none;
-        }
-        .prButton {
-            padding: 10px;
-            border-radius: 10px;
-            background-color: lightblue;
-            cursor: pointer;
-            font-size: 18px;
-        }
-        .prButton:hover {
-            background-color: lightskyblue;
         }
         .appDate {
             align-self: flex-start;
@@ -194,11 +153,7 @@
         }
 
         .book {
-            width: fit-content;
             margin: 0 auto 35px auto;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
         }
 
         h3,
@@ -221,9 +176,9 @@
     </div>
 
     <div class="titleBox">
-        <button class="history blankB">History</button>
+        <a class="history blankB aButton">History</a>
         <h1 id="title">Appointments</h1>
-        <button class="history">History</button>
+        <a class="history aButton">History</a>
     </div>
 
     <div class="container">
@@ -235,7 +190,7 @@
                     
             </div>
                 <div class="background-div" style="border: 1px solid white;"> </div>
-                <div class="upcomingApp column1">
+                <div class="columnBody column1">
                     <table class="dayWeekTable" id="scheduleTable">
                         <tr>
                             <th class="emptyBlock"></th>
@@ -278,7 +233,7 @@
                 <div style="width:100%; border: 1px solid white;"></div>
             </div>
 
-            <div class="upcomingApp column2">
+            <div class="columnBody column2">
                 <div class="apps">
                     <div class="appsT">Doctor</div>
                     <div class="dropdown">
@@ -302,14 +257,14 @@
                         <input type="text" placeholder="Search...">
                     </div>                      
                 </div>
-                <button class="prButton">Patient Record</button>
+                <a class="aButton prButton">Patient Record</a>
                 <div class="apps">
                     <div class="appsT">Reason</div>
                     <div class="textbox">
                         <input type="text" placeholder="Enter reason of visit">
                     </div>                      
                 </div>
-            <button class="book">Book</button>
+            <a class="aButton book">Book</a>
         </div>
         </div>
 

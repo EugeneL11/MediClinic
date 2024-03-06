@@ -1,254 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="commonStyle.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="commonStyle.css" />
     <title>Patient Records</title>
     <style>
-        body {
-            font-family: sans-serif;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }        
-        #title {
-            margin: 40px auto;
-            font-size: 50px;
-        }
-        .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .topB {
-            margin: auto 50px;
-            padding: 10px;
-        }
-        button {
-            /* font-family: 'Gabarito', sans-serif; */
-            background-color: white;
-            border-radius: 5px;
-        }
-        button:hover {
-            cursor: pointer;
-        }
+      body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      #title {
+        margin: 40px auto;
+        font-size: 50px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .topB {
+        margin: auto 50px;
+      }
 
-        .content {
-            display: flex;
-            justify-content: space-between;
-            height: 500px;
-            margin-top: 30px;
-        }
-        .left {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-left: 5vw;
-            width: 35vw;
-        }
-        .search {
-            display: flex;
-            align-items: center;
-            width: 100%;
-        }
-        .search-bar {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            width: 80%;
-        }
-        .search-button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-left: 10px;
-        }
-        .search-button:hover {
-            background-color: #0056b3;
-        }
-        .info {
-            list-style-type: none;
-            margin-top: 40px;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            font-size: 20px;
-        }
-        .editB {
-            width: fit-content;
-            padding: 10px 20px;
-            margin: 20px auto;
-            cursor: pointer;
-        }
-        .right {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 45vw;
-            margin-right: 5vw;
-            gap: 20px;
-        }
-        .rightBox {
-            width: 95%;
-            height: 180px;
-            background-color: lightblue;
-            border: 5px solid blue;
-            border-radius: 10px;
-            padding: 5px;
-            text-align: center;
-        }
-        .rTitle {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .fields {
-            display: flex;
-            flex-direction: column;
-            font-size: 18px;
-            align-items: flex-start;
-            margin-top: 15px;
-            margin-left: 5px;
-            gap: 10px;
-        }
+      .content {
+        display: flex;
+        justify-content: space-between;
+        height: 500px;
+        margin-top: 30px;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 5vw;
+        width: 35vw;
+      }
 
-        .popup {
-            display: none;
-            position: fixed;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #F1F1F1;
-            width: 40vw;
-            height: 300px;
-            padding: 20px;
+      .leftB {
+          width: 35vw;
+      }
+
+      .columnTitle {
+          padding: 10px 0;
+      }
+
+        /* Style the search bar */
+        .textbox input[type="text"] {
+            width: 30vw;
+            padding: 10px;
+            font-size: 16px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 999;
+            border-radius: 4px;
+            background-color: #fff;
+            box-shadow: 2px 2px gray;
         }
-        .popup:target {
-            display: block;
+        /* Style the search bar on focus */
+        .textbox input[type="text"]:focus {
+            outline: none;
         }
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent gray */
-            z-index: 998; /* Ensure the overlay appears below the popup */
-        }
-        .popup:target + .overlay {
-            display: block;
-        }
-        .popup-content {
-            text-align: center;
-        }
-        .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-        }
-        .popup-btn {
-            display: inline-block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            width: fit-content;
-        }
-        .popup-btn:hover {
-            background-color: #0056b3;
-        }
+      .info {
+        list-style-type: none;
+        margin-top: 25px;
+        margin-left: 5px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 15px;
+        font-size: 20px;
+      }
+      .editB {
+        margin: 15px auto;
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 45vw;
+        margin-right: 5vw;
+        gap: 15px;
+      }
+
+      .rightB {
+        width: 100%;
+      }
+
+      .displayTitle {
+        background-color: #c9d1f8;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 45px;
+        width: 95%;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .scrollingDisplay {
+        background-color: #e9ecfc;
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        border-radius: 0 0 10px 10px;
+        min-height: 160px;
+        max-height: 160px;
+        line-height: 30px;
+        font-size: 18px;
+        text-align: left;
+        overflow-y: auto;
+      }
+
+      .rTitle {
+        font-size: 20px;
+        font-weight: bold;
+        margin: auto;
+      }
+      .fields {
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+        align-items: flex-start;
+        margin-top: 15px;
+        margin-left: 25px;
+        gap: 10px;
+      }
+
+      .popup {
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f1f1f1;
+        width: 40vw;
+        height: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+      }
+      .popup:target {
+        display: block;
+      }
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent gray */
+        z-index: 998; /* Ensure the overlay appears below the popup */
+      }
+      .popup:target + .overlay {
+        display: block;
+      }
+      .popup-content {
+        text-align: center;
+      }
+      .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+      }
+      .popup-btn {
+        display: inline-block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        width: fit-content;
+      }
+      .popup-btn:hover {
+        background-color: #0056b3;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <div class="topnav" >
-            <a href="homepage.html">Home</a>
-            <a class="active" href="patientRecords.html">Patient Records</a>
-            <a href="checkIn.html">Check-in</a>
-            <a href="appointments.html">Appointments</a>
-            <a href="payments.html">Payment</a>
+      <div class="topnav">
+        <a href="homepage.html">Home</a>
+        <a class="active" href="patientRecords.html">Patient Records</a>
+        <a href="checkIn.html">Check-in</a>
+        <a href="appointments.html">Appointments</a>
+        <a href="payments.html">Payment</a>
 
-            <button class="logout" type="button" onclick="alert('Hello world!')">Logout</button>
+        <button class="logout" type="button" onclick="alert('Hello world!')">
+          Logout
+        </button>
+      </div>
+    </div>
+    <div class="top">
+      <a class="aButton topB">Create New</a>
+      <h1 id="title">Patient Records</h1>
+      <a class="aButton topB">Delete</a>
+    </div>
+    <div class="content">
+      <div class="left">
+        <div class="columnTitle leftB">
+            <div class="textbox">
+                <input type="text" placeholder="Search..." />
+            </div>
         </div>
+        <div class="columnBody leftB">
+            <ul class="info">
+                <li>Full name: Donald Duck</li>
+                <li>Gender: Male</li>
+                <li>Date of birth: April 1st, 1999</li>
+                <li>Phone number: 4039821486</li>
+                <li>Email address: donalduck00@gmail.com</li>
+                <li>Health care number: 45782-9912</li>
+                <li>Notable conditions: Skin rash</li>
+              </ul>
+              <a class="aButton editB">Edit</a>
+        </div>
+      </div>
+      <div class="right">
+        <div class="rightB">
+            <div class="displayTitle">
+                <div class="rTitle">Visit History</div>
+              </div>
+              <div style="width:100%; border: 1px solid white;"></div>
+              <div class="scrollingDisplay history">
+                <div class="fields">
+                  <div class="field">December 10th 11:00 AM 2023, Check-up</div>
+                  <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
+                  <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
+                  <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
+                </div>
+            </div>
+        </div>
+        <div class="rightB">
+            <div class="displayTitle">
+                <div class="rTitle">Test Results</div>
+              </div>
+              <div style="width:100%; border: 1px solid white;"></div>
+              <div class="scrollingDisplay results">
+                <div class="fields">
+                  <div class="field">X-ray.pdf</div>
+                  <div class="field">Ultrasound.pdf</div>
+                  <div class="field">Medicals.pdf</div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <a href="#popup" class="popup-btn">Open Popup</a>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <a href="#" class="close-btn">&times;</a>
+        <p>This is a popup!</p>
+      </div>
     </div>
 
-        <div class="top">
-            <button class="topB">Create New</button>
-            <h1 id="title">Patient Records</h1>
-            <button class="topB">Delete</button>
-        </div>
-        <div class="content">
-            <div class="left">
-                <div class="search">
-                    <input type="text" class="search-bar" placeholder="Search...">
-                    <button type="submit" class="search-button">Search</button>
-                </div>
-                <ul class="info">
-                    <li>Full name: Donald Duck</li>
-                    <li>Gender: Male</li>
-                    <li>Date of birth: April 1st, 1999</li>
-                    <li>Phone number: 4039821486</li>
-                    <li>Email address: donalduck00@gmail.com</li>
-                    <li>Health care number: 45782-9912</li>
-                    <li>Notable conditions: Skin rash</li>                
-                </ul>
-                <button class="editB">Edit</button>
-            </div>
-            <div class="right">
-                <div class="rightBox history">
-                    <div class="rTitle">Visit History</div>
-                    <div class="fields">
-                        <div class="field">December 10th 11:00 AM 2023, Check-up</div>
-                        <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
-                        <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
-                        <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
-                    </div>
-                </div>
-                <div class="rightBox results">
-                    <div class="rTitle">Test Results</div>
-                    <div class="fields">
-                        <div class="field">X-ray.pdf</div>
-                        <div class="field">Ultrasound.pdf</div>
-                        <div class="field">Medicals.pdf</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a href="#popup" class="popup-btn">Open Popup</a>
-    
-        <div id="popup" class="popup">
-            <div class="popup-content">
-                <a href="#" class="close-btn">&times;</a>
-                <p>This is a popup!</p>
-            </div>
-        </div>
-        <div class="overlay"></div>
-    
-
-    <div class="footer">
-        <span>
-            &copy; 2024 by Eugene Lee, Steven Nguyen, & Syeda Zainab Khaleel
-            <div style="width:100%; border: 3px solid #10217d;"></div>
-            (Copyright symbol for testing purposes only)
-        </span>
-    </div>
-</body>
+    <div class="overlay"></div>
+  </body>
 </html>
