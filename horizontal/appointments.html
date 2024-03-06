@@ -103,6 +103,30 @@
             margin-left: 5vw;
         }
 
+        .historyTable table {
+            border:none;
+            overflow: auto;
+        }
+        .historyTable th{
+            padding: 18px 0;
+            border:none;
+        }
+        .historyTable td{
+            padding: 10px 0;
+            border:none;
+        }
+        .historyTable{
+            background-color: white;
+            width: 100%;
+            max-height: 410px;
+            border-radius: 10px;
+            padding-top: 5px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+
         .apps {
             background-color: white;
             border-radius: 10px;
@@ -171,49 +195,48 @@
             transform: translate(-50%, -50%);
             background-color: #f1f1f1;
             width: 70vw;
-            height: 600px;
+            height: 500px;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             z-index: 999;
+
+            /* display: flex; */
+            flex-direction: column;
+            overflow: auto;
         }
 
-        .column1 {
-            width: 50vw;
-            margin: auto;
-        }
-
-        .apps {
+        .appsH {
             background-color: white;
             border-radius: 10px;
-            width: 25vw;
+            width: 40vw;
             padding-top: 20px;
             padding-bottom: 20px;
             transition: transform 0.3s;
         }
 
-        .apps:hover {
+        .appsH:hover {
             size: 105%;
             background-color: rgb(247, 247, 247);
             cursor: pointer;
             transform: scale(1.05);
         }
 
-        .apps .patientName {
+        .appsH .patientName {
             float: left;
             margin-left: 50px;
             margin-bottom: 10px;
             font-weight: bold;
         }
 
-        .apps .patientTime {
+        .appsH .patientTime {
             float: right;
             margin-right: 50px;
             margin-bottom: 10px;
         }
 
-        .apps .doctorName {
+        .appsH .doctorName {
             float: left;
             margin-left: 50px;
         }
@@ -237,10 +260,91 @@
         <a class="history blankB aButton">History</a>
         <h1 id="title">Appointments</h1>
         <a href="#historyPopup" class="history aButton">History</a>
-        <div id="historyPopup" class="popup popup2">
+        <div id="historyPopup" class="popup popup2"> <!--Div that's being opened-->
           <div class="popup-content">
             <a href="#" class="close-btn">&times;</a>
             <p style="font-size: 20px; font-weight: bold;">Appointment History</p>
+
+          <div class="historyTable">
+            <table>
+                <tr>
+                    <th>Patient's Name</th>
+                    <th>Doctor's Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Reason</th>
+                </tr>
+                <tr>
+                    <td>Donald Duck</td>
+                    <td>Dr. Warren Waters</td>
+                    <td>March 4</td>
+                    <td>4:00PM</td>
+                    <td>Skin rash.</td>
+                <tr>
+                    <td>Jimmy Jones</td>
+                    <td>Dr. Reese Rogers</td>
+                    <td>March 4</td>
+                    <td>3:40PM</td>
+                    <td>Follow up.</td>
+                </tr>
+                <tr>
+                    <td>Owen Oakridge</td>
+                    <td>Dr. Warren Waters</td>
+                    <td>March 4</td>
+                    <td>2:40PM</td>
+                    <td>Fever and cough.</td>
+                </tr>
+                <tr>
+                    <td>Ben Burton</td>
+                    <td>Dr. Donald Duck</td>
+                    <td>March 3</td>
+                    <td>1:15PM</td>
+                    <td>Flu shot.</td>
+                </tr>
+                <tr>
+                    <td>Rachel Ruthers</td>
+                    <td>Dr. Penny Pepper</td>
+                    <td>March 3</td>
+                    <td>3:40PM</td>
+                    <td>Vaccination.</td>
+                </tr>
+                <tr>
+                    <td>Karl Kones</td>
+                    <td>Dr. Andrew Apple</td>
+                    <td>March 3</td>
+                    <td>3:15PM</td>
+                    <td>Sprained ankle.</td>
+                </tr>
+                <tr>
+                    <td>Jimmy Jones</td>
+                    <td>Dr. Reese Rogers</td>
+                    <td>March 2</td>
+                    <td>2:40PM</td>
+                    <td>Stomach flu.</td>
+                </tr>
+                <tr>
+                    <td>Fredrick Feet</td>
+                    <td>Dr. Carter Cart</td>
+                    <td>March 2</td>
+                    <td>2:20PM</td>
+                    <td>Check-up.</td>
+                </tr>
+                    <td>Donald Duck</td>
+                    <td>Dr. Warren Waters</td>
+                    <td>March 1</td>
+                    <td>2:00PM</td>
+                    <td>Skin rash.</td>
+                </tr>
+                <tr>
+                    <td>Jimmy Jones</td>
+                    <td>Dr. Warren Waters</td>
+                    <td>February 29</td>
+                    <td>1:40PM</td>
+                    <td>Stomach ache.</td>
+                </tr>
+            </table>
+        </div>
+
           </div>
         </div>
         <div class="overlay"></div>
