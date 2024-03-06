@@ -66,7 +66,11 @@
         overflow-y: auto;
       }
 
-      .left {
+      .left1 {
+        min-height: 175px;
+        max-height: 175px;
+      }
+      .left2 {
         min-height: 200px;
         max-height: 200px;
       }
@@ -128,9 +132,9 @@
       }
 
       input[type="inputBox"] {
-        width: 100%;
+        width: 35vw;
         padding: 6px;
-        margin: 6px 0;
+        margin: 15px 0;
         border-radius: 5px;
         border: 1px solid #ccc;
         box-sizing: border-box;
@@ -176,54 +180,60 @@
 
     <div class="container">
       <div class="patientProfile">
-        <div>
-          <input type="inputBox" name="Search" placeholder="Search" required />
+        <div class="displayTitle">
+          <div>
+            <input type="inputBox" name="Search" placeholder="Search" required />
+          </div>
+        </div>
+        <div style="width:100%; border: 1px solid white;"></div>
+        <div class="scrollingDisplay left1">
+          <div class="patientInfo">
+            <div>
+              <span style="margin-left: 25px">Full name: Donald Duck</span>
+            </div>
+            <div>
+              <span style="margin-left: 25px">Phone: 403-123-4567</span>
+            </div>
+            <div>
+              <span style="margin-left: 25px">Email Address: donalduck00@gmail.com</span>
+            </div>
+          </div>
         </div>
 
-        <div class="patientInfo">
-          <div>
-            <span>Full name: Donald Duck</span>
-          </div>
-          <div>
-            <span>Phone: 403-123-4567</span>
-          </div>
-          <div>
-            <span>Email Address: donalduck00@gmail.com</span>
-          </div>
-        </div>
+        
 
         <div style="margin-top: 10px">
           <div class="displayTitle">
             <div class="paymentTitle">Payment History</div>
           </div>
           <div style="width:100%; border: 1px solid white;"></div>
-          <div class="scrollingDisplay left">
+          <div class="scrollingDisplay left2">
             <div>
-              <span style="margin-left: 10px">$29.41, Inhaler</span>
+              <span style="margin-left: 25px">$29.41, Inhaler</span>
             </div>
             <div>
-              <span style="margin-left: 10px">$42.26, Sleeping pills</span>
+              <span style="margin-left: 25px">$42.26, Sleeping pills</span>
             </div>
             <div>
-              <span style="margin-left: 10px">$132.31, X-ray</span>
+              <span style="margin-left: 25px">$132.31, X-ray</span>
             </div>
             <div>
-              <span style="margin-left: 10px">$5.41, Bandaids</span>
+              <span style="margin-left: 25px">$5.41, Bandaids</span>
             </div>
             <div>
-              <span style="margin-left: 10px">$13.21, Face cream</span>
+              <span style="margin-left: 25px">$13.21, Face cream</span>
             </div>
             <div>
-              <span style="margin-left: 10px">$17.32, Check-up</span>
+              <span style="margin-left: 25px">$17.32, Check-up</span>
             </div>
             <div>
-              <span style="margin-left: 10px">$16.12, Melatonin</span>
+              <span style="margin-left: 25px">$16.12, Melatonin</span>
             </div>
             <div>
-              <span style="margin-left: 10px">$12.62, Tylenol</span>
+              <span style="margin-left: 25px">$12.62, Tylenol</span>
             </div>
             <div>
-              <span style="margin-left: 10px">$4.32, Sports tape </span>
+              <span style="margin-left: 25px">$4.32, Sports tape </span>
             </div>
           </div>
         </div>
@@ -239,19 +249,19 @@
         <div style="width:100%; border: 1px solid white;"></div>
         <div class="scrollingDisplay">
           <div class="outstandingRow">
-            <span style="margin-left: 10px">$4.32, Sports tape </span>
+            <span style="margin-left: 25px">$4.32, Sports tape </span>
             <input type="checkbox" class="outstandingCheck" />
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 10px">$12.62, Advil</span>
+            <span style="margin-left: 25px">$12.62, Advil</span>
             <input type="checkbox" class="outstandingCheck" />
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 10px">$16.12, Magnesium</span>
+            <span style="margin-left: 25px">$16.12, Magnesium</span>
             <input type="checkbox" class="outstandingCheck" />
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 10px">$17.32, Check-up</span>
+            <span style="margin-left: 25px">$17.32, Check-up</span>
             <input type="checkbox" class="outstandingCheck" />
           </div>
         </div>
