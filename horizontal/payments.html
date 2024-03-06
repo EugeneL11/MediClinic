@@ -252,9 +252,44 @@
           </div>
         </div>
         <div class="paymentButtons">
-          <a class="aButton">Make Payment</a>
-          <a class="aButton" style="margin-left: 11.2vw;">Email Receipt</a>
-          <a class="aButton">Print Receipt</a>
+          <a href="#payPopup" class="aButton">Make Payment</a>
+          <div id="payPopup" class="popup">
+            <div class="popup-content">
+              <a href="#" class="close-btn">&times;</a>
+              <p>Are you sure you want to make a payment?</p>
+              <div class="confirmRow">
+                  <a href="#" class="yesBtn aButton">Yes</a>
+                  <a href="#" class="noBtn aButton">No</a>
+              </div>
+            </div>
+          </div>
+          <div class="overlay"></div>
+
+          <a href="#emailPopup" class="aButton" style="margin-left: 11.2vw;">Email Receipt</a>
+          <div id="emailPopup" class="popup">
+            <div class="popup-content">
+              <a href="#" class="close-btn">&times;</a>
+              <p>Are you sure you want to email the receipt?</p>
+              <div class="confirmRow">
+                  <a href="#" class="yesBtn aButton">Yes</a>
+                  <a href="#" class="noBtn aButton">No</a>
+              </div>
+            </div>
+          </div>
+          <div class="overlay"></div>
+
+          <a href="#printPopup" class="aButton">Print Receipt</a>
+          <div id="printPopup" class="popup">
+            <div class="popup-content">
+              <a href="#" class="close-btn">&times;</a>
+              <p>Are you sure you want to print the receipt?</p>
+              <div class="confirmRow">
+                  <a href="#" class="yesBtn aButton">Yes</a>
+                  <a href="#" class="noBtn aButton">No</a>
+              </div>
+            </div>
+          </div>
+          <div class="overlay"></div>
         </div>
       </div>
     </div>

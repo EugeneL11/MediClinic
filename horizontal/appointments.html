@@ -160,6 +160,64 @@
         p {
             font-size: 30px;
         }
+
+        /* for history */
+
+        .popup2 {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            width: 70vw;
+            height: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        .column1 {
+            width: 50vw;
+            margin: auto;
+        }
+
+        .apps {
+            background-color: white;
+            border-radius: 10px;
+            width: 25vw;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .apps:hover {
+            size: 105%;
+            background-color: rgb(247, 247, 247);
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        .apps .patientName {
+            float: left;
+            margin-left: 50px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .apps .patientTime {
+            float: right;
+            margin-right: 50px;
+            margin-bottom: 10px;
+        }
+
+        .apps .doctorName {
+            float: left;
+            margin-left: 50px;
+        }
+
     </style>
 </head>
 <body>
@@ -178,7 +236,14 @@
     <div class="titleBox">
         <a class="history blankB aButton">History</a>
         <h1 id="title">Appointments</h1>
-        <a class="history aButton">History</a>
+        <a href="#historyPopup" class="history aButton">History</a>
+        <div id="historyPopup" class="popup popup2">
+          <div class="popup-content">
+            <a href="#" class="close-btn">&times;</a>
+            <p style="font-size: 20px; font-weight: bold;">Appointment History</p>
+          </div>
+        </div>
+        <div class="overlay"></div>
     </div>
 
     <div class="container">
@@ -257,14 +322,36 @@
                         <input type="text" placeholder="Search...">
                     </div>                      
                 </div>
-                <a class="aButton prButton">Patient Record</a>
+                <a href="#recordPopup" class="aButton prButton">Patient Record</a>
+                <div id="recordPopup" class="popup">
+                  <div class="popup-content">
+                    <a href="#" class="close-btn">&times;</a>
+                    <p style="font-size: 20px;">Are you sure you want to open patient record on a new tab?</p>
+                    <div class="confirmRow">
+                        <a href="./patientRecords.html" class="yesBtn aButton">Yes</a>
+                        <a href="#" class="noBtn aButton">No</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="overlay"></div>
                 <div class="apps">
                     <div class="appsT">Reason</div>
                     <div class="textbox">
                         <input type="text" placeholder="Enter reason of visit">
                     </div>                      
                 </div>
-            <a class="aButton book">Book</a>
+            <a href="#bookPopup" class="aButton book">Book</a>
+            <div id="bookPopup" class="popup">
+              <div class="popup-content">
+                <a href="#" class="close-btn">&times;</a>
+                <p style="font-size: 20px;">Are you sure you want to book the appointment?</p>
+                <div class="confirmRow">
+                    <a href="#" class="yesBtn aButton">Yes</a>
+                    <a href="#" class="noBtn aButton">No</a>
+                </div>
+              </div>
+            </div>
+            <div class="overlay"></div>
         </div>
         </div>
 
