@@ -234,10 +234,28 @@
                 <div class="fieldT">Reason</div>
                 <p>Skin Rash</p>
               </div>
-              <a class="aButton verifyB">Verify</a>
+              <a href="#verifyPopup" class="aButton verifyB">Verify</a>
+              <div id="verifyPopup" class="popup">
+                <div class="popup-content">
+                  <a href="#" class="close-btn">&times;</a>
+                  <p>Verification Successful!</p>
+                </div>
+              </div>
+              <div class="overlay"></div>
             </div>
           </div>
-          <a class="aButton check">Check-In</a>
+          <a href="#checkPopup" class="aButton check">Check-In</a>
+          <div id="checkPopup" class="popup">
+            <div class="popup-content">
+              <a href="#" class="close-btn">&times;</a>
+              <p>Are you sure you want to check the patient in?</p>
+              <div class="confirmRow">
+                  <a href="#" class="yesBtn aButton">Yes</a>
+                  <a href="#" class="noBtn aButton">No</a>
+              </div>
+            </div>
+          </div>
+          <div class="overlay"></div>
         </div>
       </div>
     </div>
