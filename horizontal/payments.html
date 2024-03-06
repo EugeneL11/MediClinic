@@ -94,6 +94,7 @@
         display: flex;
         justify-content: center;
         margin-top: 40px;
+        gap: 15px;
       }
 
       .outstandingRow {
@@ -141,24 +142,10 @@
         font-size: 16px;
         box-shadow: 2px 2px gray;
       }
-
-      input[type="button"] {
-        width: 25%;
-        padding: 4px;
-        margin: 8px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        background-color: #fff;
-        color: black;
-        cursor: pointer;
-        font-size: 16px;
-        align-items: center;
-        box-shadow: 1px 1px rgb(199, 199, 199);
-      }
-
-      input[type="button"]:hover {
-        background-color: #d8d8d8;
-      }
+        /* Style the search bar on focus */
+        input[type="inputBox"]:focus {
+          outline: none;
+        }
     </style>
   </head>
   <body>
@@ -266,9 +253,9 @@
           </div>
         </div>
         <div class="paymentButtons">
-          <input type="button" value="Make Payment" />
-          <input type="button" value="Email Receipt" />
-          <input type="button" value="Print Receipt" />
+          <a class="aButton">Make Payment</a>
+          <a class="aButton">Email Receipt</a>
+          <a class="aButton">Print Receipt</a>
         </div>
       </div>
     </div>

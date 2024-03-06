@@ -88,7 +88,6 @@ body {
     overflow-y: auto;
 }
 
-
 .footer {
     background-color: #10217d;
     color: #fff;
@@ -97,4 +96,15 @@ body {
     position: relative;
     bottom: 0;
     /* position: absolute; bottom: 0; width: 100%; */
+}
+
+.aButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    font-size: 15px;
+    cursor: pointer;
 }
