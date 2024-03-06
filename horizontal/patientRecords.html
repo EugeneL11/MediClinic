@@ -129,62 +129,6 @@
         margin-left: 25px;
         gap: 10px;
       }
-
-      .popup {
-        display: none;
-        position: fixed;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #f1f1f1;
-        width: 40vw;
-        height: 300px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        z-index: 999;
-      }
-      .popup:target {
-        display: block;
-      }
-      .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent gray */
-        z-index: 998; /* Ensure the overlay appears below the popup */
-      }
-      .popup:target + .overlay {
-        display: block;
-      }
-      .popup-content {
-        text-align: center;
-      }
-      .close-btn {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        text-decoration: none;
-        color: black;
-        font-size: 20px;
-      }
-      .popup-btn {
-        display: inline-block;
-        margin: 20px auto;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        width: fit-content;
-      }
-      .popup-btn:hover {
-        background-color: #0056b3;
-      }
     </style>
   </head>
   <body>
@@ -223,7 +167,18 @@
                 <li>Health care number: 45782-9912</li>
                 <li>Notable conditions: Skin rash</li>
               </ul>
-              <a class="aButton editB">Edit</a>
+              <a href="#popup" class="aButton editB">Edit</a>
+              <div id="popup" class="popup">
+                <div class="popup-content">
+                  <a href="#" class="close-btn">&times;</a>
+                  <p>Are you sure you want to edit?</p>
+                  <div class="confirmRow">
+                      <a href="#" class="yesBtn aButton">Yes</a>
+                      <a href="#" class="noBtn aButton">No</a>
+                  </div>
+                </div>
+              </div>
+              <div class="overlay"></div>
         </div>
       </div>
       <div class="right">
@@ -256,15 +211,5 @@
         </div>
       </div>
     </div>
-    <a href="#popup" class="popup-btn">Open Popup</a>
-
-    <div id="popup" class="popup">
-      <div class="popup-content">
-        <a href="#" class="close-btn">&times;</a>
-        <p>This is a popup!</p>
-      </div>
-    </div>
-
-    <div class="overlay"></div>
   </body>
 </html>
