@@ -106,11 +106,19 @@ body {
 
 .aButton {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #007bff;/*#007bff;*/
     color: white;
     border: none;
     border-radius: 5px;
     width: fit-content;
     font-size: 15px;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.aButton:hover {
+    background-color: #0056b3;
+    /* color: #10217d; */
+    text-decoration: underline;
+    transform: scale(1.1);
 }
