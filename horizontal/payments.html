@@ -258,25 +258,25 @@
 
         <div class="scrollingDisplay" style="border-radius: 0;">
           <div class="outstandingRow">
-            <span style="margin-left: 25px">Sports tape, $4.32</span>
-            <input type="checkbox" class="outstandingCheck" />
+            <span style="margin-left: 25px">Sports tape, $<span class="cost">4.32</span></span>
+            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 25px">Advil, $12.62</span>
-            <input type="checkbox" class="outstandingCheck" />
+            <span style="margin-left: 25px">Advil, $<span class="cost">12.62</span></span>
+            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 25px">Magnesium, $16.12</span>
-            <input type="checkbox" class="outstandingCheck" />
+            <span style="margin-left: 25px">Magnesium, $<span class="cost">16.12</span></span>
+            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 25px">Check-up, $17.32</span>
-            <input type="checkbox" class="outstandingCheck" />
+            <span style="margin-left: 25px">Check-up, $<span class="cost">17.32</span></span>
+            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
           </div>
         </div>
 
         <div style="width:99.8%; border: 1px solid white;"></div>
-            <span  class="total">
+            <span class="total">
               Total: $50.38
             </span>
         <div class="paymentButtons">

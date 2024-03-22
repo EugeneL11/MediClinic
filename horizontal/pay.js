@@ -104,10 +104,25 @@ function email_return() {
     `;
 }
 
-// for the checkbox
+// for the checkbox (select all / none)
 function allCB(checkbox) {
     var checkboxes = document.querySelectorAll('.outstandingCheck');
     checkboxes.forEach(function(item) {
         item.checked = checkbox.checked;
     });
+    updateTotal();
+}
+
+const totalDisplay = document.querySelector(".total");
+function updateTotal() {
+    var checkboxes = document.querySelectorAll('.outstandingCheck');
+    var total = 0;
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            var costSpan = checkbox.previousElementSibling.querySelector('.cost');
+            var cost = parseFloat(costSpan.textContent);
+            total += cost;
+        }
+    });
+    totalDisplay.textContent = "Total: $" + total.toFixed(2);
 }
