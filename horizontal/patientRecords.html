@@ -58,20 +58,20 @@
           padding: 10px 0;
       }
 
-        /* Style the search bar */
-        .textbox input[type="text"] {
-            width: 30vw;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #fff;
-            box-shadow: 2px 2px gray;
-        }
-        /* Style the search bar on focus */
-        .textbox input[type="text"]:focus {
-            outline: none;
-        }
+      /* Style the search bar */
+      .textbox input[type="text"] {
+          width: 30vw;
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #fff;
+          box-shadow: 2px 2px gray;
+      }
+      /* Style the search bar on focus */
+      .textbox input[type="text"]:focus {
+          outline: none;
+      }
       .info {
         list-style-type: none;
         margin-top: 25px;
@@ -104,7 +104,6 @@
         background-color: #c9d1f8;
         text-align: center;
         display: flex;
-        flex-direction: column;
         align-items: center;
         height: 45px;
         width: 95%;
@@ -130,6 +129,25 @@
         font-weight: bold;
         margin: auto;
       }
+
+      /* Style the dropdown */
+      .dropdown select {
+          width: 90%;
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #fff;
+      }
+      /* Style the dropdown options */
+      .dropdown select option {
+          padding: 10px;
+          font-size: 16px;
+      }
+      .dropdown.leftDD {
+        visibility: hidden;
+      }
+
       .fields {
         display: flex;
         flex-direction: column;
@@ -245,16 +263,34 @@
       <div class="right">
         <div class="rightB">
             <div class="displayTitle" style="height: 60px;">
-                <div class="rTitle">Visit History</div>
+              <div class="dropdown leftDD">
+                <select>
+                  <option disabled selected hidden>Sort by: </option>
+                  <option>Most Recent</option>
+                  <option>Oldest</option>
+                </select>
+              </div>  
+              <div class="rTitle">Visit History</div>
+              <div class="dropdown">
+                <select id="ddSelect" onchange="ddOptions()">
+                    <option disabled selected hidden>Sort by: </option>
+                    <option>Most Recent</option>
+                    <option>Oldest</option>
+                </select>
+              </div>  
+            </div>
+            <div style="width:100%; border: 1px solid white;"></div>
+            <div class="scrollingDisplay history">
+              <div class="fields" id="historyField">
+                <div class="field">December 10th 11:00 AM 2023, Check-up</div>
+                <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
+                <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
+                <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
+                <div class="field">January 21st, 1:00 PM 2022, Check-up</div>
+                <div class="field">June 19th, 2:30 PM 2021, Skin rash</div>
+                <div class="field">March 2nd, 12:00 PM 2021, Check-up</div>
+                <div class="field">May 5th, 10:00 AM 2020, Flu shot</div>
               </div>
-              <div style="width:100%; border: 1px solid white;"></div>
-              <div class="scrollingDisplay history">
-                <div class="fields">
-                  <div class="field">December 10th 11:00 AM 2023, Check-up</div>
-                  <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
-                  <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
-                  <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
-                </div>
             </div>
         </div>
         <div class="rightB">
@@ -303,6 +339,6 @@
     </div>
 
 
-    <script src="popup.js"></script>
+    <script src="pr.js"></script>
   </body>
 </html>
