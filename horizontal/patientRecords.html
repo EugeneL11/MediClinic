@@ -127,7 +127,23 @@
         align-items: flex-start;
         margin-top: 15px;
         margin-left: 25px;
-        gap: 10px;
+        margin-right: 25px;
+        gap: 2px;
+      }
+      .testRes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      .dlIcon img {
+        height: auto;
+        width: 40px;
+        margin: 0;
+        padding: 0;
+      }
+      .dlIcon:hover img {
+        opacity: 0.5;
       }
     </style>
   </head>
@@ -235,9 +251,16 @@
               <div style="width:100%; border: 1px solid white;"></div>
               <div class="scrollingDisplay results">
                 <div class="fields">
-                  <div class="field">X-ray.pdf</div>
-                  <div class="field">Ultrasound.pdf</div>
-                  <div class="field">Medicals.pdf</div>
+                  <div class="testRes">
+                    <a href="./med_records/xray.pdf" class="field">X-ray.pdf</a>
+                    <a class="dlIcon"><img src="./icons/downloadIcon.png"></a>
+                  </div>
+                  <div class="testRes">
+                    <a href="./med_records/Ultrasound.pdf" class="field">Ultrasound.pdf</a>
+                    <a class="dlIcon"><img src="./icons/downloadIcon.png"></a>                  </div>
+                  <div class="testRes">
+                    <a href="./med_records/Medicals.pdf" class="field">Medicals.pdf</a>
+                    <a class="dlIcon"><img src="./icons/downloadIcon.png"></a>                  </div>
                 </div>
               </div>
         </div>
