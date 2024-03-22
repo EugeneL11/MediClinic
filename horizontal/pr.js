@@ -1,6 +1,6 @@
 // for popup interaction
 const dl_pop = document.getElementById("dlPop");
-function dl_yesClick() {
+function dl_yes() {
     dl_pop.innerHTML = `
         <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
         <p>Thank you for downloading the file!</p>
@@ -12,9 +12,9 @@ function dl_yesClick() {
 function dl_return() {
     dl_pop.innerHTML = `
         <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
-        <p id="dlTitle">Are you sure you want to download this file?</p>
+        <p>Are you sure you want to download this file?</p>
         <div class="confirmRow">
-            <a class="yesBtn aButton" onclick="dl_yesClick()">Yes</a>
+            <a class="yesBtn aButton" onclick="dl_yes()">Yes</a>
             <a href="#" class="noBtn aButton" onclick="dl_return()">No</a>
         </div>
     `;

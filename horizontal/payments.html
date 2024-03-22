@@ -281,12 +281,12 @@
         <div class="paymentButtons">
           <a href="#payPopup" class="aButton">Make Payment</a>
           <div id="payPopup" class="popup">
-            <div class="popup-content">
-              <a href="#" class="close-btn">&times;</a>
+            <div class="popup-content" id="payPop">
+              <a href="#" class="close-btn" onclick="pay_return()">&times;</a>
               <p>Are you sure you want to make a payment?</p>
               <div class="confirmRow">
-                  <a href="#" class="yesBtn aButton">Yes</a>
-                  <a href="#" class="noBtn aButton">No</a>
+                  <a class="yesBtn aButton" onclick="pay_yes()">Yes</a>
+                  <a href="#" class="noBtn aButton" onclick="pay_return()">No</a>
               </div>
             </div>
           </div>
@@ -294,12 +294,12 @@
 
           <a href="#emailPopup" class="aButton" style="margin-left: 11.2vw;">Email Invoice</a>
           <div id="emailPopup" class="popup">
-            <div class="popup-content">
-              <a href="#" class="close-btn">&times;</a>
+            <div class="popup-content" id="emailPop">
+              <a href="#" class="close-btn" onclick="email_return()">&times;</a>
               <p>Are you sure you want to email the invoice?</p>
               <div class="confirmRow">
-                  <a href="#" class="yesBtn aButton">Yes</a>
-                  <a href="#" class="noBtn aButton">No</a>
+                  <a class="yesBtn aButton" onclick="email_yes()">Yes</a>
+                  <a href="#" class="noBtn aButton" onclick="email_return()">No</a>
               </div>
             </div>
           </div>
@@ -307,12 +307,12 @@
 
           <a href="#printPopup" class="aButton">Print Invoice</a>
           <div id="printPopup" class="popup">
-            <div class="popup-content">
-              <a href="#" class="close-btn">&times;</a>
+            <div class="popup-content" id="printPop">
+              <a href="#" class="close-btn" onclick="print_return()">&times;</a>
               <p>Are you sure you want to print the invoice?</p>
               <div class="confirmRow">
-                  <a href="#" class="yesBtn aButton">Yes</a>
-                  <a href="#" class="noBtn aButton">No</a>
+                  <a class="yesBtn aButton" onclick="print_yes()">Yes</a>
+                  <a href="#" class="noBtn aButton" onclick="print_return()">No</a>
               </div>
             </div>
           </div>
@@ -327,5 +327,8 @@
         (Copyright symbol for testing purposes only)
       </span>
     </div>
+
+
+    <script src="pay.js"></script>
   </body>
 </html>
