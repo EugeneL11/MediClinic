@@ -103,3 +103,11 @@ function email_return() {
         </div>
     `;
 }
+
+// for the checkbox
+function allCB(checkbox) {
+    var checkboxes = document.querySelectorAll('.outstandingCheck');
+    checkboxes.forEach(function(item) {
+        item.checked = checkbox.checked;
+    });
+}

@@ -251,11 +251,12 @@
         <div class="displayTitle">
           <div class="displayRow">
             <div class="outstandingTitle">Outstanding Payments</div>
-            <input type="checkbox" class="outstandingTCheck" />
+            <input type="checkbox" class="outstandingTCheck" onchange="allCB(this)"/>
           </div>
         </div>
         <div style="width:100%; border: 1px solid white;"></div>
-        <div class="scrollingDisplay">
+
+        <div class="scrollingDisplay" style="border-radius: 0;">
           <div class="outstandingRow">
             <span style="margin-left: 25px">Sports tape, $4.32</span>
             <input type="checkbox" class="outstandingCheck" />
@@ -272,8 +273,8 @@
             <span style="margin-left: 25px">Check-up, $17.32</span>
             <input type="checkbox" class="outstandingCheck" />
           </div>
-
         </div>
+
         <div style="width:99.8%; border: 1px solid white;"></div>
             <span  class="total">
               Total: $50.38
