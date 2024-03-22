@@ -26,6 +26,16 @@
         margin: auto 7.5vw;
       }
 
+      .delB {
+        margin: auto 7.5vw;
+        background-color: red;
+        color: white;
+      }
+
+      .delB:hover {
+        background-color: darkred;
+      }
+
       .content {
         display: flex;
         justify-content: space-between;
@@ -184,7 +194,7 @@
       </div>
       <div class="overlay"></div>
       <h1 id="title">Patient Records</h1>
-      <a href="#deletePopup" class="aButton topB">Delete</a>
+      <a href="#deletePopup" class="aButton delB">Delete</a>
       <div id="deletePopup" class="popup" style="width:30vw;">
         <div class="popup-content">
           <a href="#" class="close-btn">&times;</a>
