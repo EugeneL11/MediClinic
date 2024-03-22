@@ -1,13 +1,33 @@
 // for popup interaction
+function random_chance() {
+    var randomNum = Math.random();
+    if (randomNum > 0.5) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 const dl_pop = document.getElementById("dlPop");
 function dl_yes() {
-    dl_pop.innerHTML = `
-        <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
-        <p>Thank you for downloading the file!</p>
-        <div class="confirmRow">
-            <a href="#" class="aButton" onclick="dl_return()">Close</a>
-        </div>
-    `;
+    const chance = random_chance();
+    if (chance) {
+        dl_pop.innerHTML = `
+            <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
+            <p>File downloaded successfully!</p>
+            <div class="confirmRow">
+                <a href="#" class="aButton" onclick="dl_return()">Close</a>
+            </div>
+        `;
+    } else {
+        dl_pop.innerHTML = `
+            <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
+            <p>File download failed!</p>
+            <div class="confirmRow">
+                <a href="#" class="aButton" onclick="dl_return()">Close</a>
+            </div>
+        `;
+    }
 }
 function dl_return() {
     dl_pop.innerHTML = `
