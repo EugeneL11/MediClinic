@@ -146,6 +146,9 @@
         align-items: center;
         width: 100%;
       }
+      .field:hover {
+        opacity: 0.6;
+      }
       .dlIcon img {
         height: auto;
         width: 40px;
@@ -263,14 +266,28 @@
                 <div class="fields">
                   <div class="testRes">
                     <a href="./med_records/xray.pdf" class="field">X-ray.pdf</a>
-                    <a class="dlIcon"><img src="./icons/downloadIcon.png"></a>
+                    <a href="#download" class="dlIcon"><img src="./icons/downloadIcon.png"></a>
                   </div>
                   <div class="testRes">
                     <a href="./med_records/Ultrasound.pdf" class="field">Ultrasound.pdf</a>
-                    <a class="dlIcon"><img src="./icons/downloadIcon.png"></a>                  </div>
+                    <a href="#download" class="dlIcon"><img src="./icons/downloadIcon.png"></a>                  
+                  </div>
                   <div class="testRes">
                     <a href="./med_records/Medicals.pdf" class="field">Medicals.pdf</a>
-                    <a class="dlIcon"><img src="./icons/downloadIcon.png"></a>                  </div>
+                    <a href="#download" class="dlIcon"><img src="./icons/downloadIcon.png"></a>                  
+                  </div>
+
+                  <div id="download" class="popup">
+                    <div class="popup-content" id="dlPop">
+                      <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
+                      <p id="dlTitle">Are you sure you want to download this file?</p>
+                      <div class="confirmRow">
+                          <a class="yesBtn aButton" onclick="dl_yesClick()">Yes</a>
+                          <a href="#" class="noBtn aButton" onclick="dl_return()">No</a>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
         </div>
@@ -284,5 +301,8 @@
             (Copyright symbol for testing purposes only)
         </span>
     </div>
+
+
+    <script src="popup.js"></script>
   </body>
 </html>
