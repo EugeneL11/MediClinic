@@ -22,7 +22,7 @@ function pay_yes() {
     } else {
         pay_pop.innerHTML = `
             <a href="#" class="close-btn" onclick="pay_return()">&times;</a>
-            <p>Payment failed to send to the card machine!</p>
+            <p>Payment failed to send to the card machine.</p>
             <div class="confirmRow">
                 <a href="#" class="aButton" onclick="pay_return()">Close</a>
             </div>
@@ -54,7 +54,7 @@ function print_yes() {
     } else {
         print_pop.innerHTML = `
             <a href="#" class="close-btn" onclick="print_return()">&times;</a>
-            <p>Inovice failed to print!</p>
+            <p>Inovice failed to print.</p>
             <div class="confirmRow">
                 <a href="#" class="aButton" onclick="print_return()">Close</a>
             </div>
@@ -80,15 +80,15 @@ function email_yes() {
             <a href="#" class="close-btn" onclick="email_return()">&times;</a>
             <p>Email invoice sent successfully!</p>
             <div class="confirmRow">
-                <a href="#" class="aButton" onclick="email_return()">No</a>
+                <a href="#" class="aButton" onclick="email_return()">Close</a>
             </div>
         `;
     } else {
         email_pop.innerHTML = `
             <a href="#" class="close-btn" onclick="email_return()">&times;</a>
-            <p>Email invoice failed to send!</p>
+            <p>Email invoice failed to send.</p>
             <div class="confirmRow">
-                <a href="#" class="aButton" onclick="email_return()">No</a>
+                <a href="#" class="aButton" onclick="email_return()">Close</a>
             </div>
         `;  
     }

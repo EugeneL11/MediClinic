@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="commonStyle.css" />
     <title>MediClinic</title>
+    <script src="checkIn.js" defer></script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap");
-
       body {
         /* font-family: 'Gabarito', sans-serif; */
         display: flex;
@@ -217,11 +216,11 @@
             <div class="infoBox">
               <div class="field">
                 <div class="fieldT">Name</div>
-                <p>Donald Duck</p>
+                <p id="pName">Donald Duck</p>
               </div>
               <div class="field">
                 <div class="fieldT">Time & Date</div>
-                <p>2:00 PM, February 28th</p>
+                <p id="pTime">2:00 PM, February 28th</p>
               </div>
               <div class="field">
                 <div class="fieldT">Health Care Number</div>
@@ -236,7 +235,7 @@
             <div class="infoBox">
               <div class="field">
                 <div class="fieldT">Doctor</div>
-                <p>Warren Waters</p>
+                <p id="dName">Warren Waters</p>
               </div>
               <div class="field">
                 <div class="fieldT">Reason</div>
@@ -279,4 +278,7 @@
       </span>
   </div>
   </body>
+
+
+  <!-- <script src="checkIn.js"></script> -->
 </html>
