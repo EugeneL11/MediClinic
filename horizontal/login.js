@@ -3,10 +3,15 @@ let receptionistFlag = false;
 let doctorFlag = false;
 let nurseFlag = false;
 
+// 1 for receptionist, 2 for doctor, 3 for nurse
+let current;
+
 function clickReceptionist() {
     receptionistFlag = !receptionistFlag;
     doctorFlag = false;
     nurseFlag = false;
+
+    current = 1;
     update();
 
     // Toggle selected border class
@@ -20,6 +25,8 @@ function clickDoctor() {
     doctorFlag = !doctorFlag;
     receptionistFlag = false;
     nurseFlag = false;
+
+    current = 2;
     update();
 
     // Toggle selected border class
@@ -33,6 +40,8 @@ function clickNurse() {
     nurseFlag = !nurseFlag;
     receptionistFlag = false;
     doctorFlag = false;
+
+    current = 3;
     update();
 
     // Toggle selected border class
