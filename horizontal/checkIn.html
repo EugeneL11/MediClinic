@@ -227,6 +227,7 @@
                 <div class="textbox">
                   <input
                     type="text"
+                    id="healthCareNum"
                     placeholder="Enter patient's health care number"
                   />
                 </div>
@@ -241,13 +242,13 @@
                 <div class="fieldT">Reason</div>
                 <p>Skin Rash</p>
               </div>
-              <a href="#verifyPopup" class="aButton verifyB">Verify</a>
+              <a href="#verifyPopup" class="aButton verifyB" id="verifyNum">Verify</a>
               <div id="verifyPopup" class="popup">
                 <div class="popup-content">
                   <a href="#" class="close-btn">&times;</a>
-                  <p>Verification Successful!</p>
+                  <p id="verMsg">Verification successful!</p>
                   <div class="confirmRow">
-                    <a href="#" class="aButton">Okay</a>
+                    <a href="#" class="aButton">Close</a>
                 </div>
                 </div>
               </div>
@@ -256,12 +257,12 @@
           </div>
           <a href="#checkPopup" class="aButton check">Check-In</a>
           <div id="checkPopup" class="popup">
-            <div class="popup-content">
-              <a href="#" class="close-btn">&times;</a>
+            <div class="popup-content" id="checkInPop">
+              <a href="#" class="close-btn" onclick="checkIn_return()">&times;</a>
               <p>Are you sure you want to check the patient in?</p>
               <div class="confirmRow">
-                  <a href="#" class="yesBtn aButton">Yes</a>
-                  <a href="#" class="noBtn aButton">No</a>
+                  <a class="yesBtn aButton" onclick="checkIn_yes()">Yes</a>
+                  <a href="#" class="noBtn aButton" onclick="checkIn_return()">No</a>
               </div>
             </div>
           </div>
