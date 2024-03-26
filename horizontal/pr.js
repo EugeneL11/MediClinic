@@ -130,3 +130,27 @@ function edit() {
         });
     }
 }
+
+// handle deleting a patient record
+const del_pop = document.getElementById("delPop");
+function del_yes() {
+    del_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="del_return()">&times;</a>
+        <p>Patient record successfully deleted!</p>
+        <div class="confirmRow">
+            <a href="#" class="aButton" onclick="del_return()">Close</a>
+        </div>
+    `;
+
+    
+}
+function del_return() {
+    del_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="del_return()">&times;</a>
+        <p>Are you sure you want to delete the record?</p>
+        <div class="confirmRow">
+            <a class="yesBtn aButton" onclick="del_yes()">Yes</a>
+            <a href="#" class="noBtn aButton" onclick="del_return()">No</a>
+        </div>
+    `;
+}
