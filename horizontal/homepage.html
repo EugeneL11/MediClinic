@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="commonStyle.css">
     
     <title>MediClinic</title>
-    
+    <script src="checkIn.js" defer></script>
     <style>
         body {
             display: flex;
@@ -59,11 +59,15 @@
         }
 
         .apps:hover {
-        size: 105%;
-        background-color: rgb(247, 247, 247);
-        cursor: pointer;
-        transform: scale(1.05);
-      }
+            size: 105%;
+            background-color: rgb(247, 247, 247);
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        .apps:visited {
+            color: inherit;
+        }
 
         .apps .patientName {
             float: left;
@@ -96,22 +100,6 @@
         .docs b {
             display: block;
             padding-top: 7px;
-        }
-
-        .patientInfo {
-            background-color: bisque;
-            border-radius: 10px;
-            width: 50vw;
-            height: 550px;
-            text-align: center;
-            margin-left: 10vw;
-            margin-right: 5vw;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .patientInfo h3 {
-            margin-top: 60px;
         }
 
         h3,
@@ -175,26 +163,31 @@
             </div>
 
             <div class="columnBody cb">
-                <div class="apps">
-                    <a class="patientName">Donald Duck</a> <a class="patientTime">2:00PM</a>
-                    <a class="doctorName">Dr. Warren Waters</a>
-                </div>
-                <div class="apps">
-                    <a class="patientName">Fredrick Feet</a> <a class="patientTime">2:20PM</a>
-                    <a class="doctorName">Dr. Carter Cart</a>
-                </div>
-                <div class="apps">
-                    <a class="patientName">Jimmy Jones</a> <a class="patientTime">2:45PM</a>
-                    <a class="doctorName">Dr. Reese Rogers</a>
-                </div>
-                <div class="apps">
-                    <a class="patientName">Karl Kones</a> <a class="patientTime">3:15PM</a>
-                    <a class="doctorName">Dr. Andrew Apple</a>
-                </div>
-                <div class="apps">
-                    <a class="patientName">Rachel Ruthers</a> <a class="patientTime">3:40PM</a>
-                    <a class="doctorName">Dr. Penny Pepper</a>
-                </div>
+                <a href="checkIn.html" class="apps">
+                    <div class="patientName">Donald Duck</div> 
+                    <div class="patientTime">2:00PM</div>
+                    <div class="doctorName">Dr. Warren Waters</div>
+                </a>
+                <a href="checkIn.html" class="apps">
+                    <div class="patientName">Fredrick Feet</div> 
+                    <div class="patientTime">2:20PM</div>
+                    <div class="doctorName">Dr. Carter Cart</div>
+                </a>
+                <a href="checkIn.html" class="apps">
+                    <div class="patientName">Jimmy Jones</div> 
+                    <div class="patientTime">2:45PM</div>
+                    <div class="doctorName">Dr. Reese Rogers</div>
+                </a>
+                <a href="checkIn.html" class="apps">
+                    <div class="patientName">Karl Kones</div> 
+                    <div class="patientTime">3:15PM</div>
+                    <div class="doctorName">Dr. Andrew Apple</div>
+                </a>
+                <a href="checkIn.html" class="apps">
+                    <div class="patientName">Rachel Ruthers</div> 
+                    <div class="patientTime">3:40PM</div>
+                    <div class="doctorName">Dr. Penny Pepper</div>
+                </a>
             </div>
         </div>
         <div>
@@ -243,6 +236,9 @@
             (Copyright symbol for testing purposes only)
         </span>
     </div>
+
+
+    <!-- <script src="checkIn.js"></script> -->
 </body>
 
 </html>

@@ -118,6 +118,13 @@ body {
     text-decoration: none;
 }
 
+.aButton:hover {
+    background-color: #0056b3;
+    /* color: #10217d; */
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
 .columnBody .aButton:hover {
     background-color: #0056b3;
     /* color: #10217d; */
@@ -125,12 +132,7 @@ body {
     transform: scale(1.1);
 }
 
-.aButton:hover {
-    background-color: #0056b3;
-    /* color: #10217d; */
-    text-decoration: underline;
-    transform: scale(1.1);
-}
+
 
 
 #logoutPopup { width:23vw; }
@@ -208,3 +210,4 @@ body {
   .noBtn:hover {
       background-color: darkred;
   }
+  

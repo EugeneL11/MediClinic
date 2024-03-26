@@ -190,7 +190,7 @@
       <div class="patientProfile">
         <div class="displayTitle">
           <div>
-            <input type="inputBox" name="Search" placeholder="Search" required />
+            <input type="inputBox" name="Search" placeholder="Search by patient name or health care number" required />
           </div>
         </div>
         <div style="width:100%; border: 1px solid white;"></div>
@@ -251,68 +251,69 @@
         <div class="displayTitle">
           <div class="displayRow">
             <div class="outstandingTitle">Outstanding Payments</div>
-            <input type="checkbox" class="outstandingTCheck" />
+            <input type="checkbox" class="outstandingTCheck" onchange="allCB(this)"/>
           </div>
         </div>
         <div style="width:100%; border: 1px solid white;"></div>
-        <div class="scrollingDisplay" style="border-radius: 0px;">
-          <div class="outstandingRow">
-            <span style="margin-left: 25px">Sports tape, $4.32</span>
-            <input type="checkbox" class="outstandingCheck" />
-          </div>
-          <div class="outstandingRow">
-            <span style="margin-left: 25px">Advil, $12.62</span>
-            <input type="checkbox" class="outstandingCheck" />
-          </div>
-          <div class="outstandingRow">
-            <span style="margin-left: 25px">Magnesium, $16.12</span>
-            <input type="checkbox" class="outstandingCheck" />
-          </div>
-          <div class="outstandingRow">
-            <span style="margin-left: 25px">Check-up, $17.32</span>
-            <input type="checkbox" class="outstandingCheck" />
-          </div>
 
+        <div class="scrollingDisplay" style="border-radius: 0px;" style="border-radius: 0;">
+          <div class="outstandingRow">
+            <span style="margin-left: 25px">Sports tape, $<span class="cost">4.32</span></span>
+            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
+          </div>
+          <div class="outstandingRow">
+            <span style="margin-left: 25px">Advil, $<span class="cost">12.62</span></span>
+            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
+          </div>
+          <div class="outstandingRow">
+            <span style="margin-left: 25px">Magnesium, $<span class="cost">16.12</span></span>
+            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
+          </div>
+          <div class="outstandingRow">
+            <span style="margin-left: 25px">Check-up, $<span class="cost">17.32</span></span>
+            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
+          </div>
         </div>
+
         <div style="width:99.8%; border: 1px solid white;"></div>
-            <span  class="total">
+            <span class="total">
               Total: $50.38
             </span>
         <div class="paymentButtons">
           <a href="#payPopup" class="aButton">Make Payment</a>
           <div id="payPopup" class="popup">
-            <div class="popup-content">
-              <a href="#" class="close-btn">&times;</a>
+            <div class="popup-content" id="payPop">
+              <a href="#" class="close-btn" onclick="pay_return()">&times;</a>
               <p>Are you sure you want to make a payment?</p>
               <div class="confirmRow">
-                  <a href="#" class="yesBtn aButton">Yes</a>
-                  <a href="#" class="noBtn aButton">No</a>
+                  <a class="yesBtn aButton" onclick="pay_yes()">Yes</a>
+                  <a href="#" class="noBtn aButton" onclick="pay_return()">No</a>
               </div>
             </div>
           </div>
           <div class="overlay"></div>
 
-          <a href="#emailPopup" class="aButton" style="margin-left: 11.2vw;">Email Receipt</a>
+          <a href="#emailPopup" class="aButton" style="margin-left: 11.2vw;">Email Invoice</a>
           <div id="emailPopup" class="popup">
-            <div class="popup-content">
-              <a href="#" class="close-btn">&times;</a>
-              <p>Are you sure you want to email the receipt?</p>
+            <div class="popup-content" id="emailPop">
+              <a href="#" class="close-btn" onclick="email_return()">&times;</a>
+              <p>Are you sure you want to email the invoice?</p>
               <div class="confirmRow">
-                  <a href="#" class="yesBtn aButton">Yes</a>
-                  <a href="#" class="noBtn aButton">No</a>
+                  <a class="yesBtn aButton" onclick="email_yes()">Yes</a>
+                  <a href="#" class="noBtn aButton" onclick="email_return()">No</a>
               </div>
             </div>
           </div>
           <div class="overlay"></div>
 
-          <a href="#printPopup" class="aButton">Print Receipt</a>
+          <a href="#printPopup" class="aButton">Print Invoice</a>
           <div id="printPopup" class="popup">
-            <div class="popup-content">
-              <a href="#" class="close-btn">&times;</a>
-              <p>Are you sure you want to print the receipt?</p>
+            <div class="popup-content" id="printPop">
+              <a href="#" class="close-btn" onclick="print_return()">&times;</a>
+              <p>Are you sure you want to print the invoice?</p>
               <div class="confirmRow">
-                  <a href="#" class="yesBtn aButton">Yes</a>
-                  <a href="#" class="noBtn aButton">No</a>
+                  <a class="yesBtn aButton" onclick="print_yes()">Yes</a>
+                  <a href="#" class="noBtn aButton" onclick="print_return()">No</a>
               </div>
             </div>
           </div>
@@ -327,5 +328,8 @@
         (Copyright symbol for testing purposes only)
       </span>
     </div>
+
+
+    <script src="pay.js"></script>
   </body>
 </html>
