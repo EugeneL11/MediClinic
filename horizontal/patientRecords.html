@@ -205,12 +205,12 @@
     <div class="top">
       <a href="#createPopup" class="aButton topB">Create New</a>
       <div id="createPopup" class="popup">
-        <div class="popup-content">
-          <a href="#" class="close-btn">&times;</a>
+        <div class="popup-content" id="createPop">
+          <a href="#" class="close-btn" onclick="create_return()">&times;</a>
           <p>Are you sure you want to create a new record?</p>
           <div class="confirmRow">
-              <a href="#" class="yesBtn aButton">Yes</a>
-              <a href="#" class="noBtn aButton">No</a>
+              <a class="yesBtn aButton" onclick="create_yes()">Yes</a>
+              <a href="#" class="noBtn aButton" onclick="create_return()">No</a>
           </div>
         </div>
       </div>

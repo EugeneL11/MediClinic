@@ -142,7 +142,28 @@ function del_yes() {
         </div>
     `;
 
-    
+    fullName1.textContent = "";
+    gender1.textContent = "";
+    dob1.textContent = "";
+    phoneNum1.textContent = "";
+    email1.textContent = "";
+    healthNum1.textContent = "";
+    cond1.textContent = "";
+
+    const historyField = document.getElementById('historyField');
+    const fields = historyField.querySelectorAll('.field');
+    // Loop through each field element and set its content to an empty string
+    fields.forEach(field => {
+        field.textContent = '';
+    });
+
+    // Select all elements with the class testRes
+    const testResElements = document.querySelectorAll('.testRes');
+
+    // Loop through each testRes element and set its HTML content to an empty string
+    testResElements.forEach(element => {
+        element.innerHTML = '';
+    });
 }
 function del_return() {
     del_pop.innerHTML = `
@@ -151,6 +172,51 @@ function del_return() {
         <div class="confirmRow">
             <a class="yesBtn aButton" onclick="del_yes()">Yes</a>
             <a href="#" class="noBtn aButton" onclick="del_return()">No</a>
+        </div>
+    `;
+}
+
+// handle creating a new patient record
+const create_pop = document.getElementById("createPop");
+function create_yes() {
+    create_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="create_return()">&times;</a>
+        <p>New patient record successfully created!</p>
+        <div class="confirmRow">
+            <a href="#" class="aButton" onclick="create_return()">Close</a>
+        </div>
+    `;
+
+    fullName1.textContent = "";
+    gender1.textContent = "";
+    dob1.textContent = "";
+    phoneNum1.textContent = "";
+    email1.textContent = "";
+    healthNum1.textContent = "";
+    cond1.textContent = "";
+
+    const historyField = document.getElementById('historyField');
+    const fields = historyField.querySelectorAll('.field');
+    // Loop through each field element and set its content to an empty string
+    fields.forEach(field => {
+        field.textContent = '';
+    });
+
+    // Select all elements with the class testRes
+    const testResElements = document.querySelectorAll('.testRes');
+
+    // Loop through each testRes element and set its HTML content to an empty string
+    testResElements.forEach(element => {
+        element.innerHTML = '';
+    });
+}
+function create_return() {
+    create_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="create_return()">&times;</a>
+        <p>Are you sure you want to create a new record?</p>
+        <div class="confirmRow">
+            <a class="yesBtn aButton" onclick="create_yes()">Yes</a>
+            <a href="#" class="noBtn aButton" onclick="create_return()">No</a>
         </div>
     `;
 }
