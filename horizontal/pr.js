@@ -69,3 +69,154 @@ function ddOptions() {
         `;
     }
 }
+
+const editSaveB = document.getElementById("editSaveB");
+const displayInfo = document.getElementById('displayInfo');
+const editForm = document.getElementById('editForm');
+
+let fullName1 = document.getElementById("fullName1");
+let gender1 = document.getElementById("gender1");
+let dob1 = document.getElementById("dob1");
+let phoneNum1 = document.getElementById("phoneNum1");
+let email1 = document.getElementById("email1");
+let healthNum1 = document.getElementById("healthNum1");
+let cond1 = document.getElementById("cond1");
+
+let fullName2 = document.getElementById("fullName2");
+let gender2 = document.getElementById("gender2");
+let dob2 = document.getElementById("dob2");
+let phoneNum2 = document.getElementById("phoneNum2");
+let email2 = document.getElementById("email2");
+let healthNum2 = document.getElementById("healthNum2");
+let cond2 = document.getElementById("cond2");
+
+function edit() {
+    // this is switching to edit mode
+    if (editSaveB.textContent === 'Edit') {
+        editSaveB.textContent = 'Save';
+        editForm.style.display = 'block';
+        displayInfo.style.display = 'none';
+
+        // Fill input fields with the content of static lines
+        fullName2.value = fullName1.textContent.trim();
+        gender2.value = gender1.textContent.trim();
+        dob2.value = dob1.textContent.trim();
+        phoneNum2.value = phoneNum1.textContent.trim();
+        email2.value = email1.textContent.trim();
+        healthNum2.value = healthNum1.textContent.trim();
+        cond2.value = cond1.textContent.trim();
+    } 
+    // this is switching to save mode (display)
+    else {
+        editSaveB.textContent = 'Edit';
+        editForm.style.display = 'none';
+        displayInfo.style.display = 'block';
+        displayInfo.style.gap = '20px';
+
+        // Update static lines with the content of input fields
+        fullName1.textContent = fullName2.value.trim();
+        gender1.textContent = gender2.value.trim();
+        dob1.textContent = dob2.value.trim();
+        phoneNum1.textContent = phoneNum2.value.trim();
+        email1.textContent = email2.value.trim();
+        healthNum1.textContent = healthNum2.value.trim();
+        cond1.textContent = cond2.value.trim();
+
+        // Select all <li> elements within displayInfo
+        const displayItems = displayInfo.querySelectorAll('li');
+        // Loop through each <li> element and adjust the margin
+        displayItems.forEach(item => {
+            item.style.marginBottom = '15px';
+        });
+    }
+}
+
+// handle deleting a patient record
+const del_pop = document.getElementById("delPop");
+function del_yes() {
+    del_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="del_return()">&times;</a>
+        <p>Patient record successfully deleted!</p>
+        <div class="confirmRow">
+            <a href="#" class="aButton" onclick="del_return()">Close</a>
+        </div>
+    `;
+
+    fullName1.textContent = "";
+    gender1.textContent = "";
+    dob1.textContent = "";
+    phoneNum1.textContent = "";
+    email1.textContent = "";
+    healthNum1.textContent = "";
+    cond1.textContent = "";
+
+    const historyField = document.getElementById('historyField');
+    const fields = historyField.querySelectorAll('.field');
+    // Loop through each field element and set its content to an empty string
+    fields.forEach(field => {
+        field.textContent = '';
+    });
+
+    // Select all elements with the class testRes
+    const testResElements = document.querySelectorAll('.testRes');
+
+    // Loop through each testRes element and set its HTML content to an empty string
+    testResElements.forEach(element => {
+        element.innerHTML = '';
+    });
+}
+function del_return() {
+    del_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="del_return()">&times;</a>
+        <p>Are you sure you want to delete the record?</p>
+        <div class="confirmRow">
+            <a class="yesBtn aButton" onclick="del_yes()">Yes</a>
+            <a href="#" class="noBtn aButton" onclick="del_return()">No</a>
+        </div>
+    `;
+}
+
+// handle creating a new patient record
+const create_pop = document.getElementById("createPop");
+function create_yes() {
+    create_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="create_return()">&times;</a>
+        <p>New patient record successfully created!</p>
+        <div class="confirmRow">
+            <a href="#" class="aButton" onclick="create_return()">Close</a>
+        </div>
+    `;
+
+    fullName1.textContent = "";
+    gender1.textContent = "";
+    dob1.textContent = "";
+    phoneNum1.textContent = "";
+    email1.textContent = "";
+    healthNum1.textContent = "";
+    cond1.textContent = "";
+
+    const historyField = document.getElementById('historyField');
+    const fields = historyField.querySelectorAll('.field');
+    // Loop through each field element and set its content to an empty string
+    fields.forEach(field => {
+        field.textContent = '';
+    });
+
+    // Select all elements with the class testRes
+    const testResElements = document.querySelectorAll('.testRes');
+
+    // Loop through each testRes element and set its HTML content to an empty string
+    testResElements.forEach(element => {
+        element.innerHTML = '';
+    });
+}
+function create_return() {
+    create_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="create_return()">&times;</a>
+        <p>Are you sure you want to create a new record?</p>
+        <div class="confirmRow">
+            <a class="yesBtn aButton" onclick="create_yes()">Yes</a>
+            <a href="#" class="noBtn aButton" onclick="create_return()">No</a>
+        </div>
+    `;
+}

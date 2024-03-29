@@ -81,7 +81,7 @@
         .grey {
             background-color: #BFBFBF;
             /* background-image: url(https://i.pinimg.com/736x/fa/45/96/fa4596264799e1ea85516d00055cddee.jpg); */
-            background-image: url("diagonal.png");
+            background-image: url("images/diagonal.png");
             background-size: 220%;
             cursor:not-allowed;
         }
@@ -440,7 +440,7 @@
                     <div class="appsT">Doctor</div>
                     <div class="dropdown">
                         <select>
-                            <option disabled selected hidden></option>
+                            <option disabled selected hidden>Select a Doctor:</option>
                             <option>Dr.Apple</option>
                             <option>Dr.Waters</option>
                             <option>Dr.Pepper</option>
@@ -465,7 +465,7 @@
                     <a href="#" class="close-btn">&times;</a>
                     <p style="font-size: 20px;">Are you sure you want to open patient record on a new tab?</p>
                     <div class="confirmRow">
-                        <a href="./patientRecords.html" class="yesBtn aButton">Yes</a>
+                        <a href="./patientRecords.html" class="yesBtn aButton" target="_blank" onclick="returnPage()">Yes</a>
                         <a href="#" class="noBtn aButton">No</a>
                     </div>
                   </div>
@@ -503,5 +503,8 @@
             (Copyright symbol for testing purposes only)
         </span>
     </div>
+
+
+    <script src="appt.js"></script>
 </body>
 </html>

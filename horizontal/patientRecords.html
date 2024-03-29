@@ -83,6 +83,7 @@
         gap: 15px;
         font-size: 20px;
       }
+
       .editB {
         margin: 15px auto;
       }
@@ -206,12 +207,12 @@
     <div class="top">
       <a href="#createPopup" class="aButton topB">Create New</a>
       <div id="createPopup" class="popup">
-        <div class="popup-content">
-          <a href="#" class="close-btn">&times;</a>
+        <div class="popup-content" id="createPop">
+          <a href="#" class="close-btn" onclick="create_return()">&times;</a>
           <p>Are you sure you want to create a new record?</p>
           <div class="confirmRow">
-              <a href="#" class="yesBtn aButton">Yes</a>
-              <a href="#" class="noBtn aButton">No</a>
+              <a class="yesBtn aButton" onclick="create_yes()">Yes</a>
+              <a href="#" class="noBtn aButton" onclick="create_return()">No</a>
           </div>
         </div>
       </div>
@@ -219,12 +220,12 @@
       <h1 id="title">Patient Records</h1>
       <a href="#deletePopup" class="aButton delB">Delete</a>
       <div id="deletePopup" class="popup" style="width:30vw;">
-        <div class="popup-content">
-          <a href="#" class="close-btn">&times;</a>
+        <div class="popup-content" id="delPop">
+          <a href="#" class="close-btn" onclick="del_return()">&times;</a>
           <p>Are you sure you want to delete the record?</p>
           <div class="confirmRow">
-              <a href="#" class="yesBtn aButton">Yes</a>
-              <a href="#" class="noBtn aButton">No</a>
+              <a class="yesBtn aButton" onclick="del_yes()">Yes</a>
+              <a href="#" class="noBtn aButton" onclick="del_return()">No</a>
           </div>
         </div>
       </div>
@@ -239,27 +240,50 @@
         </div>
         <div class="background-div" style="border: 1px solid white;"> </div>
         <div class="columnBody leftB" style="min-height: 400px;">
-            <ul class="info">
-                <li>Full name: Donald Duck</li>
-                <li>Gender: Male</li>
-                <li>Date of birth: April 1st, 1999</li>
-                <li>Phone number: 4039821486</li>
-                <li>Email address: donalduck00@gmail.com</li>
-                <li>Health care number: 45782-9912</li>
-                <li>Notable conditions: Skin rash</li>
-              </ul>
-              <a href="#editPopup" class="aButton editB">Edit</a>
-              <div id="editPopup" class="popup">
-                <div class="popup-content">
-                  <a href="#" class="close-btn">&times;</a>
-                  <p>Are you sure you want to edit?</p>
-                  <div class="confirmRow">
-                      <a href="#" class="yesBtn aButton">Yes</a>
-                      <a href="#" class="noBtn aButton">No</a>
-                  </div>
+            <!-- <ul class="info">
+              <li>Full name: Donald Duck</li>
+              <li>Gender: Male</li>
+              <li>Date of birth: April 1st, 1999</li>
+              <li>Phone number: 4039821486</li>
+              <li>Email address: donalduck00@gmail.com</li>
+              <li>Health care number: 45782-9912</li>
+              <li>Notable conditions: Skin rash</li>
+            </ul>
+            <a href="#editPopup" class="aButton editB">Edit</a> -->
+
+            <ul class="info" id="displayInfo">
+                <li>Full name: <span id="fullName1">Donald Duck</span></li>
+                <li>Gender: <span id="gender1">Male</span></li>
+                <li>Date of birth: <span id="dob1">April 1st, 1999</span></li>
+                <li>Phone number: <span id="phoneNum1">4039821486</span></li>
+                <li>Email address: <span id="email1">donalduck00@gmail.com</span></li>
+                <li>Health care number: <span id="healthNum1">45782-9912</span></li>
+                <li>Notable conditions: <span id="cond1">Skin rash</span></li>
+            </ul>
+            <form id="editForm" style="display: none;">
+                <ul class="info">
+                    <li>Full name: <input type="text" id="fullName2"></li>
+                    <li>Gender: <input type="text" id="gender2"></li>
+                    <li>Date of birth: <input type="text" id="dob2"></li>
+                    <li>Phone number: <input type="text" id="phoneNum2"></li>
+                    <li>Email address: <input type="text" id="email2"></li>
+                    <li>Health care number: <input type="text" id="healthNum2"></li>
+                    <li>Notable conditions: <input type="text" id="cond2"></li>
+                </ul>
+            </form>
+            <a href="#" class="aButton editB" id="editSaveB" onclick="edit()">Edit</a>
+
+            <div id="editPopup" class="popup">
+              <div class="popup-content">
+                <a href="#" class="close-btn">&times;</a>
+                <p>Are you sure you want to edit?</p>
+                <div class="confirmRow">
+                    <a href="#" class="yesBtn aButton">Yes</a>
+                    <a href="#" class="noBtn aButton">No</a>
                 </div>
               </div>
-              <div class="overlay"></div>
+            </div>
+            <div class="overlay"></div>
         </div>
       </div>
       <div class="right">
@@ -304,15 +328,15 @@
                 <div class="fields">
                   <div class="testRes">
                     <a href="./med_records/xray.pdf" class="field">X-ray.pdf</a>
-                    <a href="#download" class="dlIcon"><img src="./icons/downloadIcon.png"></a>
+                    <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>
                   </div>
                   <div class="testRes">
-                    <a href="./med_records/Ultrasound.pdf" class="field">Ultrasound.pdf</a>
-                    <a href="#download" class="dlIcon"><img src="./icons/downloadIcon.png"></a>                  
+                    <a href="./med_records/Ultrasound.pdf" class="field" target="_blank">Ultrasound.pdf</a>
+                    <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>                  
                   </div>
                   <div class="testRes">
                     <a href="./med_records/Medicals.pdf" class="field">Medicals.pdf</a>
-                    <a href="#download" class="dlIcon"><img src="./icons/downloadIcon.png"></a>                  
+                    <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>                  
                   </div>
 
                   <div id="download" class="popup">
