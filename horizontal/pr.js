@@ -220,3 +220,16 @@ function create_return() {
         </div>
     `;
 }
+
+//To togggle visit history and upcoming appointments
+function viewAppointment(val) {
+    var vH = document.getElementById("vHistory");
+    var uA = document.getElementById("uAppointments");
+    if (val=='vHistory') {
+        vH.style.display = "block";
+        uA.style.display = "none";
+    } else {
+        vH.style.display = "none";
+        uA.style.display = "block";
+    }
+}

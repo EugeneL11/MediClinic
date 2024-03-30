@@ -131,6 +131,22 @@
         margin: auto;
       }
 
+      #uAppointments {
+        display: none;
+      }
+
+      .rTitle span {
+        cursor: pointer;
+      }
+
+      .rTitle .active{
+        text-decoration: underline;
+      }
+
+      .rTitle .notActive{
+        color: rgb(94, 94, 94);
+      }
+
       /* Style the dropdown */
       .dropdown select {
           width: 90%;
@@ -287,7 +303,7 @@
         </div>
       </div>
       <div class="right">
-        <div class="rightB">
+        <div class="rightB" id="vHistory">
             <div class="displayTitle" style="height: 60px;">
               <div class="dropdown leftDD">
                 <select>
@@ -296,14 +312,14 @@
                   <option>Oldest</option>
                 </select>
               </div>  
-              <div class="rTitle">Visit History</div>
+              <div class="rTitle" style="margin-left: 1vw;"> <span class="active" onclick="viewAppointment('vHistory')">Visit History</span> | <span class="notActive" onclick="viewAppointment('uAppointments')">Upcoming Appointments</span> </div>
               <div class="dropdown">
                 <select id="ddSelect" onchange="ddOptions()">
                     <option disabled selected hidden>Sort by: </option>
                     <option>Most Recent</option>
                     <option>Oldest</option>
                 </select>
-              </div>  
+              </div>
             </div>
             <div style="width:100%; border: 1px solid white;"></div>
             <div class="scrollingDisplay history">
@@ -319,6 +335,35 @@
               </div>
             </div>
         </div>
+
+
+        <div class="rightB" id="uAppointments">
+          <div class="displayTitle" style="height: 60px;">
+            <div class="dropdown leftDD">
+              <select>
+                <option disabled selected hidden>Sort by: </option>
+                <option>Most Recent</option>
+                <option>Oldest</option>
+              </select>
+            </div>  
+              <div class="rTitle" style="margin-left: 1vw;"> <span class="notActive" onclick="viewAppointment('vHistory')">Visit History</span> | <span class="active" onclick="viewAppointment('uAppointments')">Upcoming Appointments</span> </div>
+          </div>
+          <div style="width:100%; border: 1px solid white;"></div>
+          <div class="scrollingDisplay history">
+            <div class="fields" id="historyField">
+              <div class="field">April 25th 5:00 PM 2024, Sea sickness</div> 
+              <div class="field">May 2nd, 2:30 PM 2024, Tooth ache</div>
+              <div class="field">June 23rd, 10:00 AM 2024, X-Ray follow-up</div>
+              <div class="field">June 27th, 3:30 PM 2024, Ultrasound</div>
+              <div class="field">July 7th, 1:00 PM 2024, Follow-up</div>
+              <div class="field">July 19th, 2:30 PM 2024, Skin burn</div>
+              <div class="field">August 2nd, 12:00 PM 2024, Vitamin D Test</div>
+              <div class="field">August 5th, 10:00 AM 2024, Stomach ache</div>
+            </div>
+          </div>
+      </div>
+        
+
         <div class="rightB">
             <div class="displayTitle" style="height: 60px;">
                 <div class="rTitle">Test Results</div>
