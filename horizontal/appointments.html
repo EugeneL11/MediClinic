@@ -68,10 +68,10 @@
             cursor: pointer;
         }
         .green {
-            background-color: #90EE90;
+            background-color: #41ee41;
         }
         .green:hover {
-            background-color: rgb(106, 231, 106);
+            background-color: rgb(0, 226, 0);
         }
         .red {
             background-color: #ee9090;
@@ -382,9 +382,9 @@
                 <div class="columnBody column1" style=" display: flex; flex-direction: column;">
                     
                     <div style="position:absolute;">
-                        <a class="aButton" style="margin-left:5vw; left: 0; position: absolute; top: 0;">&lt;</a>
+                        <a class="aButton" style="margin-left:5vw; left: 0; position: absolute; top: 0;" onclick="changeWeek('back')">&lt;</a>
                         <a style="margin: 0 23vw;"></a>
-                        <a class="aButton" style="right: 0; position: absolute; top: 0;">&gt;</a>
+                        <a class="aButton" style="right: 0; position: absolute; top: 0;" onclick="changeWeek('next')">&gt;</a>
                     </div>
                     <table class="dayWeekTable" id="scheduleTable" style="margin-bottom: -14px;">
                         <tr>
@@ -398,7 +398,7 @@
                             <th class="day">Sun</th>
                             <th class="emptyBlock"></th>
                         </tr>
-                        <tr>
+                        <tr id="dateTable">
                             <td class="emptyBlock"></td>
                             <td class="date">Mar 4</td>
                             <td class="date">Mar 5</td>
@@ -408,7 +408,7 @@
                             <td class="date">Mar 9</td>
                             <td class="date">Mar 10</td>
                         </tr>
-                        <!--TABLE CODE, i=1-7, j=8-17-->
+                        <!--TABLE CODE, i=1-7, j=9-17-->
                         <tr><td class="emptyBlock"></td><td class="emptyBlock" id="cell1undefined"></td><td class="emptyBlock" id="cell2undefined"></td><td class="emptyBlock" id="cell3undefined"></td><td class="emptyBlock" id="cell4undefined"></td><td class="emptyBlock" id="cell5undefined"></td><td class="emptyBlock" id="cell6undefined"></td><td class="emptyBlock" id="cell7undefined"></td></tr>
                         <tr><td class="timeTitle">9:00 AM</td><td class="timeBlock green" id="cell19"></td><td class="timeBlock green" id="cell29"></td><td class="timeBlock green" id="cell39"></td><td class="timeBlock red" id="cell49"></td><td class="timeBlock green" id="cell59"></td><td class="timeBlock green" id="cell69"></td><td class="timeBlock grey" id="cell79"></td></tr>
                         <tr><td class="timeTitle">10:00 AM</td><td class="timeBlock green" id="cell110"></td><td class="timeBlock green" id="cell210"></td><td class="timeBlock green" id="cell310"></td><td class="timeBlock green" id="cell410"></td><td class="timeBlock green" id="cell510"></td><td class="timeBlock red" id="cell610"></td><td class="timeBlock grey" id="cell710"></td></tr>
@@ -419,6 +419,7 @@
                         <tr><td class="timeTitle">3:00 PM</td><td class="timeBlock red" id="cell115"></td><td class="timeBlock green" id="cell215"></td><td class="timeBlock green" id="cell315"></td><td class="timeBlock red" id="cell415"></td><td class="timeBlock green" id="cell515"></td><td class="timeBlock green" id="cell615"></td><td class="timeBlock grey" id="cell715"></td></tr>
                         <tr><td class="timeTitle">4:00 PM</td><td class="timeBlock green" id="cell116"></td><td class="timeBlock green" id="cell216"></td><td class="timeBlock red" id="cell316"></td><td class="timeBlock green" id="cell416"></td><td class="timeBlock green" id="cell516"></td><td class="timeBlock red" id="cell616"></td><td class="timeBlock grey" id="cell716"></td></tr>
                         <tr><td class="timeTitle">5:00 PM</td><td class="timeBlock green" id="cell117"></td><td class="timeBlock green" id="cell217"></td><td class="timeBlock green" id="cell317"></td><td class="timeBlock green" id="cell417"></td><td class="timeBlock red" id="cell517"></td><td class="timeBlock green" id="cell617"></td><td class="timeBlock grey" id="cell717"></td></tr>
+
                     </table>
 
                     <div style="justify-content: center; display: flex; gap: 2vw; margin-bottom: 0px;">
