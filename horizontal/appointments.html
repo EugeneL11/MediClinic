@@ -66,12 +66,13 @@
         }
         .timeBlock {
             cursor: pointer;
+            transition: transform 0.3s;
         }
         .green {
-            background-color: #41ee41;
+            background-color: #27ca1e;
         }
         .green:hover {
-            background-color: rgb(0, 226, 0);
+            background-color: #15b926;
         }
         .red {
             background-color: #ee9090;
@@ -84,6 +85,10 @@
             background-image: url("images/diagonal.png");
             background-size: 220%;
             cursor:not-allowed;
+        }
+        .activeDate {
+            background-color: yellow;
+            transform: scale(1.1);
         }
         .dayTimeTable {
             /* width: 95%; */
@@ -440,19 +445,20 @@
                 <div class="apps">
                     <div class="appsT">Doctor</div>
                     <div class="dropdown">
-                        <select>
-                            <option disabled selected hidden>Select a Doctor:</option>
-                            <option>Dr.Apple</option>
-                            <option>Dr.Waters</option>
-                            <option>Dr.Pepper</option>
-                            <option>Dr.Cart</option>
-                            <option>Dr.Rogers</option>
+                        <select id="doctorSelect">
+                            <option value="" disabled hidden>Select a Doctor:</option>
+                            <option value="Dr.Apple" selected>Dr. Apple</option>
+                            <option value="Dr.Waters">Dr. Waters</option>
+                            <option value="Dr.Pepper">Dr. Pepper</option>
+                            <option value="Dr.Cart">Dr. Cart</option>
+                            <option value="Dr.Rogers">Dr. Rogers</option>
                         </select>
+                        
                     </div>                      
                 </div>
                 <div class="apps">
                     <div class="appsT">Date & Time</div>
-                    <div class="appDate">March 7th 2:00 PM</div>
+                    <div class="appDate" id="appDate">Select a time on the calendar!</div>
                 </div>
                 <div class="apps">
                     <div class="appsT">Patient Name</div>
