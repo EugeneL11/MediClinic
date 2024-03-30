@@ -196,12 +196,29 @@ body {
       justify-content: center;
       gap: 50px;
   }
+
+  .yesBtn, .noBtn {
+    padding: 10px 20px;
+    /* background-color: #007bff;#007bff; */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-decoration: none;
+    line-height: 17px;
+}
+
   .yesBtn {
       background-color: green;
       text-decoration: none;
   }
   .yesBtn:hover {
       background-color: darkgreen;
+      text-decoration: underline;
+      transform: scale(1.1);
   }
   .noBtn {
       background-color: red;
@@ -209,5 +226,7 @@ body {
   }
   .noBtn:hover {
       background-color: darkred;
+      text-decoration: underline;
+      transform: scale(1.1);
   }
   

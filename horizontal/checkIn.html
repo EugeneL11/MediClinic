@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="commonStyle.css" />
-    <title>MediClinic</title>
+    <title>Check-In</title>
     <script src="checkIn.js" defer></script>
     <style>
       body {
@@ -157,8 +157,8 @@
           <div class="popup-content">
             <p style="font-size: 20px;">Are you sure you want to logout?</p>
             <div class="confirmRow">
-                <a href="#" class="noBtn aButton">No</a>
-                <a href="login.html" class="yesBtn aButton">Yes</a>
+                <a href="#" class="noBtn">No</a>
+                <a href="login.html" class="yesBtn">Yes</a>
             </div>
           </div>
       </div>
@@ -179,27 +179,27 @@
         <div class="columnBody column1">
           <div class="apps">
             <a class="patientName">Donald Duck</a>
-            <a class="patientTime">2:00PM</a>
+            <a class="patientTime">2:00PM</a><br>
             <a class="doctorName">Dr. Warren Waters</a>
           </div>
           <div class="apps">
             <a class="patientName">Fredrick Feet</a>
-            <a class="patientTime">2:20PM</a>
+            <a class="patientTime">2:20PM</a><br>
             <a class="doctorName">Dr. Carter Cart</a>
           </div>
           <div class="apps">
             <a class="patientName">Jimmy Jones</a>
-            <a class="patientTime">2:45PM</a>
+            <a class="patientTime">2:45PM</a><br>
             <a class="doctorName">Dr. Reese Rogers</a>
           </div>
           <div class="apps">
             <a class="patientName">Karl Kones</a>
-            <a class="patientTime">3:15PM</a>
+            <a class="patientTime">3:15PM</a><br>
             <a class="doctorName">Dr. Andrew Apple</a>
           </div>
           <div class="apps">
             <a class="patientName">Rachel Ruthers</a>
-            <a class="patientTime">3:40PM</a>
+            <a class="patientTime">3:40PM</a><br>
             <a class="doctorName">Dr. Penny Pepper</a>
           </div>
         </div>
@@ -261,8 +261,8 @@
               <a href="#" class="close-btn" onclick="checkIn_return()">&times;</a>
               <p>Are you sure you want to check the patient in?</p>
               <div class="confirmRow">
-                  <a class="yesBtn aButton" onclick="checkIn_yes()">Yes</a>
-                  <a href="#" class="noBtn aButton" onclick="checkIn_return()">No</a>
+                <a href="#" class="noBtn" onclick="checkIn_return()">No</a>
+                <a class="yesBtn" onclick="checkIn_yes()">Yes</a>
               </div>
             </div>
           </div>

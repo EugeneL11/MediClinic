@@ -34,8 +34,8 @@ function pay_return() {
         <a href="#" class="close-btn" onclick="pay_return()">&times;</a>
         <p>Are you sure you want to make a payment?</p>
         <div class="confirmRow">
-            <a class="yesBtn aButton" onclick="pay_yes()">Yes</a>
-            <a href="#" class="noBtn aButton" onclick="pay_return()">No</a>
+            <a href="#" class="noBtn" onclick="pay_return()">No</a>
+            <a class="yesBtn" onclick="pay_yes()">Yes</a>
         </div>
     `;
 }
@@ -66,8 +66,8 @@ function print_return() {
         <a href="#" class="close-btn" onclick="print_return()">&times;</a>
         <p>Are you sure you want to print the invoice?</p>
         <div class="confirmRow">
-            <a class="yesBtn aButton" onclick="print_yes()">Yes</a>
-            <a href="#" class="noBtn aButton" onclick="print_return()">No</a>
+            <a href="#" class="noBtn" onclick="print_return()">No</a>
+            <a class="yesBtn" onclick="print_yes()">Yes</a>
         </div>
     `;
 }
@@ -98,9 +98,9 @@ function email_return() {
         <a href="#" class="close-btn" onclick="email_return()">&times;</a>
         <p>Are you sure you want to email the invoice?</p>
         <div class="confirmRow">
-            <a class="yesBtn aButton" onclick="email_yes()">Yes</a>
-            <a href="#" class="noBtn aButton" onclick="email_return()">No</a>
-        </div>
+            <a href="#" class="noBtn" onclick="email_return()">No</a>
+            <a class="yesBtn" onclick="email_yes()">Yes</a>
+            </div>
     `;
 }
 

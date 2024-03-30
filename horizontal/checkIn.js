@@ -90,8 +90,8 @@ function checkIn_return() {
         <a href="#" class="close-btn" onclick="checkIn_return()">&times;</a>
         <p>Are you sure you want to check the patient in?</p>
         <div class="confirmRow">
-            <a class="yesBtn aButton" onclick="checkIn_yes()">Yes</a>
-            <a href="#" class="noBtn aButton" onclick="checkIn_return()">No</a>
+            <a href="#" class="noBtn" onclick="checkIn_return()">No</a>
+            <a class="yesBtn" onclick="checkIn_yes()">Yes</a>
         </div>
     `;
 }

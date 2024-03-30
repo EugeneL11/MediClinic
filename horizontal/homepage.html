@@ -94,12 +94,41 @@
             /* max-height: 100px; */
             padding-top: 20px;
             padding-bottom: 20px;
-            font-size: 22px;
+            font-size: 18px;
         }
 
-        .docs b {
-            display: block;
-            padding-top: 7px;
+        .docs .tDoc, .docs .tField {
+            float: left;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 10px;
+        }
+
+        .docs .tField {
+            font-weight: bold;
+        }
+
+        .docs .tTime {
+            float: left;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .docs .tStatus {
+            float:right;
+            padding: 5px 7px;
+            color: white;
+            border-radius: 15px;
+            font-size: 15px;
+            margin-right: 50px;
+        }
+
+        .avail {
+            background-color: green;
+        }
+
+        .unavail {
+            background-color: red;
         }
 
         h3,
@@ -135,8 +164,8 @@
             <div class="popup-content">
               <p style="font-size: 20px;">Are you sure you want to logout?</p>
               <div class="confirmRow">
-                  <a href="#" class="noBtn aButton">No</a>
-                  <a href="login.html" class="yesBtn aButton">Yes</a>
+                  <a href="#" class="noBtn">No</a>
+                  <a href="login.html" class="yesBtn">Yes</a>
               </div>
             </div>
         </div>
@@ -166,27 +195,27 @@
             <div class="columnBody cb">
                 <a href="checkIn.html" class="apps">
                     <div class="patientName">Donald Duck</div> 
-                    <div class="patientTime">2:00PM</div>
+                    <div class="patientTime">2:00PM</div><br>
                     <div class="doctorName">Dr. Warren Waters</div>
                 </a>
                 <a href="checkIn.html" class="apps">
                     <div class="patientName">Fredrick Feet</div> 
-                    <div class="patientTime">2:20PM</div>
+                    <div class="patientTime">2:20PM</div><br>
                     <div class="doctorName">Dr. Carter Cart</div>
                 </a>
                 <a href="checkIn.html" class="apps">
                     <div class="patientName">Jimmy Jones</div> 
-                    <div class="patientTime">2:45PM</div>
+                    <div class="patientTime">2:45PM</div><br>
                     <div class="doctorName">Dr. Reese Rogers</div>
                 </a>
                 <a href="checkIn.html" class="apps">
                     <div class="patientName">Karl Kones</div> 
-                    <div class="patientTime">3:15PM</div>
+                    <div class="patientTime">3:15PM</div><br>
                     <div class="doctorName">Dr. Andrew Apple</div>
                 </a>
                 <a href="checkIn.html" class="apps">
                     <div class="patientName">Rachel Ruthers</div> 
-                    <div class="patientTime">3:40PM</div>
+                    <div class="patientTime">3:40PM</div><br>
                     <div class="doctorName">Dr. Penny Pepper</div>
                 </a>
             </div>
@@ -199,19 +228,34 @@
 
             <div class="columnBody cb">
                 <div class="docs">
-                        Dr. Andrew Apple <br> <b>Neurologist</b>
+                    <div class="tStatus avail">In Clinic</div>
+                    <div class="tDoc">Dr. Andrew Apple</div>
+                    <div class="tField">Neurologist</div>
+                    <div class="tTime">2:00 PM to 5:00 PM</div>
                 </div>
                 <div class="docs">
-                    Dr. Warren Waters <br> <b>Dermatologist</b>
+                    <div class="tStatus avail">In Clinic</div>
+                    <div class="tDoc">Dr. Warren Waters</div>
+                    <div class="tField">Dermatologist</div>
+                    <div class="tTime">12:00 PM to 4:00 PM</div>
                 </div>
                 <div class="docs">
-                    Dr. Penny Pepper <br> <b>Psychiatrist</b>
+                    <div class="tStatus unavail">Away</div>
+                    <div class="tDoc">Dr. Penny Pepper</div>
+                    <div class="tField">Psychiatrist</div>
+                    <div class="tTime">9:00 AM to 1:00 PM</div>
                 </div>
                 <div class="docs">
-                    Dr. Carter Cart <br> <b>Cardiologist</b>
+                    <div class="tStatus unavail">Away</div>
+                    <div class="tDoc">Dr. Carter Cart</div>
+                    <div class="tField">Cardiologist</div>
+                    <div class="tTime">10:00 AM to 12:00 PM</div>
                 </div>
                 <div class="docs">
-                    Dr. Reese Rogers <br> <b>Pediatrician</b>
+                    <div class="tStatus unavail">Away</div>
+                    <div class="tDoc">Dr. Reese Rogers</div>
+                    <div class="tField">Pediatrician</div>
+                    <div class="tTime">9:30 AM to 12:00 PM</div>
                 </div>
             </div>
         </div>

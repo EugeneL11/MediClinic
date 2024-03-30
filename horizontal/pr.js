@@ -34,9 +34,9 @@ function dl_return() {
         <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
         <p>Are you sure you want to download this file?</p>
         <div class="confirmRow">
-            <a class="yesBtn aButton" onclick="dl_yes()">Yes</a>
-            <a href="#" class="noBtn aButton" onclick="dl_return()">No</a>
-        </div>
+            <a href="#" class="noBtn" onclick="dl_return()" style="line-height: 17px;">No</a>
+            <a class="yesBtn" onclick="dl_yes()" style="line-height: 17px;">Yes</a>
+            </div>
     `;
 }
 
@@ -47,7 +47,7 @@ function ddOptions() {
     const selected_option = dd_select.value;
     if (selected_option === "Most Recent") {
         history_field.innerHTML = `
-            <div class="field">December 10th 11:00 AM 2023, Check-up</div>
+            <div class="field">December 10th 11:00 AM 2023, Check-up</div> 
             <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
             <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
             <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
@@ -170,8 +170,8 @@ function del_return() {
         <a href="#" class="close-btn" onclick="del_return()">&times;</a>
         <p>Are you sure you want to delete the record?</p>
         <div class="confirmRow">
-            <a class="yesBtn aButton" onclick="del_yes()">Yes</a>
-            <a href="#" class="noBtn aButton" onclick="del_return()">No</a>
+            <a href="#" class="noBtn" onclick="del_return()">No</a>
+            <a class="yesBtn" onclick="del_yes()">Yes</a>
         </div>
     `;
 }
@@ -215,8 +215,8 @@ function create_return() {
         <a href="#" class="close-btn" onclick="create_return()">&times;</a>
         <p>Are you sure you want to create a new record?</p>
         <div class="confirmRow">
-            <a class="yesBtn aButton" onclick="create_yes()">Yes</a>
-            <a href="#" class="noBtn aButton" onclick="create_return()">No</a>
+            <a href="#" class="noBtn" onclick="create_return()">No</a>
+            <a class="yesBtn" onclick="create_yes()">Yes</a>
         </div>
     `;
 }

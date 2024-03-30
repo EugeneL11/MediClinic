@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="commonStyle.css" />
 
-    <title>MediClinic</title>
+    <title>Payments</title>
     <style>
       body {
         font-family: "Gabarito", sans-serif;
@@ -176,8 +176,8 @@
           <div class="popup-content">
             <p style="font-size: 20px;">Are you sure you want to logout?</p>
             <div class="confirmRow">
-                <a href="#" class="noBtn aButton">No</a>
-                <a href="login.html" class="yesBtn aButton">Yes</a>
+                <a href="#" class="noBtn">No</a>
+                <a href="login.html" class="yesBtn">Yes</a>
             </div>
           </div>
       </div>
@@ -286,8 +286,8 @@
               <a href="#" class="close-btn" onclick="pay_return()">&times;</a>
               <p>Are you sure you want to make a payment?</p>
               <div class="confirmRow">
-                  <a class="yesBtn aButton" onclick="pay_yes()">Yes</a>
-                  <a href="#" class="noBtn aButton" onclick="pay_return()">No</a>
+                  <a href="#" class="noBtn" onclick="pay_return()">No</a>
+                  <a class="yesBtn" onclick="pay_yes()">Yes</a>
               </div>
             </div>
           </div>
@@ -299,9 +299,9 @@
               <a href="#" class="close-btn" onclick="email_return()">&times;</a>
               <p>Are you sure you want to email the invoice?</p>
               <div class="confirmRow">
-                  <a class="yesBtn aButton" onclick="email_yes()">Yes</a>
-                  <a href="#" class="noBtn aButton" onclick="email_return()">No</a>
-              </div>
+                  <a href="#" class="noBtn" onclick="email_return()">No</a>
+                  <a class="yesBtn" onclick="email_yes()">Yes</a>
+                </div>
             </div>
           </div>
           <div class="overlay"></div>
@@ -312,8 +312,8 @@
               <a href="#" class="close-btn" onclick="print_return()">&times;</a>
               <p>Are you sure you want to print the invoice?</p>
               <div class="confirmRow">
-                  <a class="yesBtn aButton" onclick="print_yes()">Yes</a>
-                  <a href="#" class="noBtn aButton" onclick="print_return()">No</a>
+                  <a href="#" class="noBtn" onclick="print_return()">No</a>
+                  <a class="yesBtn" onclick="print_yes()">Yes</a>
               </div>
             </div>
           </div>
