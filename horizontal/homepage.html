@@ -8,6 +8,30 @@
     
     <title>MediClinic</title>
     <script src="checkIn.js" defer></script>
+    <script>
+        window.onload = function() {
+            var formattedDate = formatDate(new Date());
+            document.getElementById("date").innerHTML = formattedDate;
+        };
+
+        function formatDate(date) {
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12; // Convert hours to 12-hour format
+            hours = hours ? hours : 12; // Handle the case when hours is 0
+
+            // console.log(hours + ", " + ampm);
+
+            var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var monthName = months[date.getMonth()];
+            var dayOfMonth = date.getDate();
+            var formattedDate = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm + ', ' + monthName + ' ' + dayOfMonth;
+
+            return formattedDate;
+        }
+    </script>
     <style>
         body {
             display: flex;

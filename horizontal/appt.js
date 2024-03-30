@@ -62,6 +62,12 @@ function changeSchedule()
         cell.classList.add('green');
     });
 
+    var activeBusys = document.querySelectorAll('.timeBlock.activeBusy');
+    activeBusys.forEach(function (cell) {
+        cell.classList.remove('activeBusy');
+        cell.classList.add('red');
+    });
+
     //Values to avoid, so red at all times.
     var array = [111, 115, 212, 214, 311, 316, 49, 414, 415, 512, 517, 610, 613, 616];
 
@@ -87,7 +93,12 @@ function changeSchedule()
             }
         }
     
+    document.getElementById('patientInput').value = '';
+    document.getElementById('reasonInput').value = '';
     document.getElementById("appDate").innerHTML = "Select a time on the calendar!";
+    document.getElementById('editAppointment').style.display = "none";
+    document.getElementById('cancelAppointment').style.display = "none";
+    document.getElementById('book').style.display = "block";
 }
 
 //Changing schedule everytime a different doctor is selected
@@ -104,10 +115,12 @@ greenCells.forEach(function(cell) {
         // console.log(cellPrefix + ", "  + dayNumber + ", " + timeNumber);
         if(document.getElementById(cell.id).classList.contains('green'))
             updateDate(dayNumber, timeNumber);
+        if(document.getElementById(cell.id).classList.contains('red'))
+            randomInfo(dayNumber, timeNumber);
     });
 });
 
-
+//Selecting a green block.
 function updateDate(dayNumber, timeNumber) {
 
     //Removing active date class from selected timeblocks, and adding a green class there.
@@ -117,7 +130,12 @@ function updateDate(dayNumber, timeNumber) {
         cell.classList.add('green');
     });
 
-    var element = document.getElementById("appDate");
+    var activeBusys = document.querySelectorAll('.timeBlock.activeBusy');
+    activeBusys.forEach(function (cell) {
+        cell.classList.remove('activeBusy');
+        cell.classList.add('red');
+    });
+
     var time = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM" ]
     var day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     var date = document.getElementById(day[dayNumber-1]).textContent;
@@ -126,6 +144,78 @@ function updateDate(dayNumber, timeNumber) {
     
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.remove('green');
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.add('activeDate');
+    
+    redBlockCSS();
+    document.getElementById("appDate").innerHTML = string;
+}
 
-    element.innerHTML = string;
+function redBlockCSS() {
+    //Hiding the red relevant blocks.
+    document.getElementById('patientTextbox').style.display = "block";
+    document.getElementById('patientDisplay').style.display = "none";
+    document.getElementById('reasonTextbox').style.display = "block";
+    document.getElementById('reasonDisplay').style.display = "none";
+    //Hiding red relevant buttons
+    document.getElementById('editAppointment').style.display = "none";
+    document.getElementById('cancelAppointment').style.display = "none";
+    document.getElementById('book').style.display = "block";
+
+    document.getElementById('patientInput').value = '';
+    document.getElementById('reasonInput').value = '';
+    document.getElementById("appDate").innerHTML = "Select a time on the calendar!";
+}
+
+//Selecting a red block.
+function randomInfo(dayNumber, timeNumber) {
+
+    //Removing active date class from selected timeblocks, and adding a green class there.
+    var activeBusys = document.querySelectorAll('.timeBlock.activeBusy');
+    activeBusys.forEach(function (cell) {
+        cell.classList.remove('activeBusy');
+        cell.classList.add('red');
+    });
+
+    var activeDates = document.querySelectorAll('.timeBlock.activeDate');
+    activeDates.forEach(function (cell) {
+        cell.classList.remove('activeDate');
+        cell.classList.add('green');
+    });
+
+    var time = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM" ]
+    var day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    var date = document.getElementById(day[dayNumber-1]).textContent;
+
+    var string = time[timeNumber-9] +" on "+ day[dayNumber-1] + ", " + date;
+    
+    document.getElementById("cell"+dayNumber+""+timeNumber).classList.remove('red');
+    document.getElementById("cell"+dayNumber+""+timeNumber).classList.add('activeBusy');
+    
+    var patientNames = ["Donald Duck", "Frederick Feet", "Jimmy Jones", "Karl Kones", "Rachel Ruthers"];
+    var reasons = ["Stomach flu", "Follow up", "Cold & Flue", "Vaccination", "Skin rash", "Check-up", "Stomach ache", "X-Ray", "Blood test", "Fever and cough"];
+    
+    //Hiding the green relevant blocks.
+    document.getElementById('patientTextbox').style.display = "none";
+    document.getElementById('patientDisplay').style.display = "block";
+    document.getElementById('reasonTextbox').style.display = "none";
+    document.getElementById('reasonDisplay').style.display = "block";
+    //Hiding green relevant buttons
+    document.getElementById('editAppointment').style.display = "block";
+    document.getElementById('cancelAppointment').style.display = "block";
+    document.getElementById('book').style.display = "none";
+
+    document.getElementById('patientDisplay').innerHTML = patientNames[Math.floor(Math.random() * patientNames.length)];
+    document.getElementById('reasonDisplay').innerHTML = reasons[Math.floor(Math.random() * reasons.length)];
+    document.getElementById("appDate").innerHTML = string;
+}
+
+//Cancel appointment but need a popup
+function cancelAppointment() {
+    redBlockCSS();
+    
+    var activeDates = document.querySelectorAll('.timeBlock.activeBusy');
+    activeDates.forEach(function (cell) {
+        cell.classList.remove('activeBusy');
+        cell.classList.remove('red');
+        cell.classList.add('green');
+    });
 }

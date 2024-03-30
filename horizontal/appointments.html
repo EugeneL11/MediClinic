@@ -88,6 +88,12 @@
         }
         .activeDate {
             background-color: yellow;
+            /* transform: scale(0.9); */
+            transform: scale(1.1);
+        }
+        .activeBusy {
+            background-color: red;
+            /* transform: scale(0.9); */
             transform: scale(1.1);
         }
         .dayTimeTable {
@@ -147,6 +153,11 @@
             margin-left: 27px;
             margin-bottom: 10px;
             font-weight: bold;
+        }
+        #patientDisplay, #reasonDisplay {
+            align-self: flex-start;
+            margin-left: 27px;
+            /* margin-bottom: 10px; */
         }
         /* Style the dropdown */
         .dropdown select {
@@ -384,7 +395,7 @@
                     
             </div>
                 <div class="background-div" style="border: 1px solid white;"> </div>
-                <div class="columnBody column1" style=" display: flex; flex-direction: column;">
+                <div class="columnBody column1" style=" display: flex; flex-direction: column; min-height: 451px;">
                     
                     <div style="position:absolute;">
                         <a class="aButton" style="margin-left:5vw; left: 0; position: absolute; top: 0;" onclick="changeWeek('back')">&lt;</a>
@@ -427,9 +438,9 @@
 
                     </table>
 
-                    <div style="justify-content: center; display: flex; gap: 2vw; margin-bottom: 0px;">
-                        <a class="aButton">Edit Appointment</a>
-                        <a class="aButton cancelB">Cancel Appointment</a>
+                    <div style="justify-content: center; display: flex; gap: 2vw; margin-bottom: 0px; margin-top: 8px;">
+                        <a class="aButton" id="editAppointment" style="display: none;">Edit Appointment</a>
+                        <a class="aButton cancelB" id="cancelAppointment" style="display: none;" onclick="cancelAppointment()">Cancel Appointment</a>
                     </div>
 
                 </div>
@@ -462,9 +473,10 @@
                 </div>
                 <div class="apps">
                     <div class="appsT">Patient Name</div>
-                    <div class="textbox">
-                        <input type="text" placeholder="Search...">
+                    <div class="textbox" id="patientTextbox">
+                        <input type="text" id="patientInput" placeholder="Search...">
                     </div>                      
+                    <div id="patientDisplay" style="font-weight: none; display: none; text-align: left;"></div>
                 </div>
                 <a href="#recordPopup" class="aButton prButton">Patient Record</a>
                 <div id="recordPopup" class="popup">
@@ -480,11 +492,12 @@
                 <div class="overlay"></div>
                 <div class="apps">
                     <div class="appsT">Reason</div>
-                    <div class="textbox">
-                        <input type="text" placeholder="Enter reason of visit">
+                    <div class="textbox" id="reasonTextbox">
+                        <input type="text" id="reasonInput" placeholder="Enter reason of visit">
                     </div>                      
-                </div>
-            <a href="#bookPopup" class="aButton book">Book</a>
+                    <div id="reasonDisplay" style="font-weight: none; display: none; text-align: left;"></div>
+            </div>
+            <a href="#bookPopup" class="aButton book" id="book">Book</a>
             <div id="bookPopup" class="popup">
               <div class="popup-content">
                 <a href="#" class="close-btn">&times;</a>
