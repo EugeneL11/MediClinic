@@ -135,6 +135,10 @@ body {
 
 
 
+#cancelPopup p {
+    font-size: 20px;
+}
+
 #logoutPopup { width:23vw; }
 
 #createPopup, #deletePopup, #checkPopup,
@@ -143,7 +147,7 @@ body {
 
 #editPopup { width:22vw; }
 #verifyPopup { width:19vw; }
-#bookPopup { width:32vw; }
+#bookPopup, #cancelPopup { width:32vw; }
 #recordPopup { width:38vw; }
 
 .popup {
