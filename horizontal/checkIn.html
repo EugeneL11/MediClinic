@@ -34,6 +34,30 @@
         margin-left: 4.6vw;
       }
 
+      .columnBody {
+        position: relative;
+      }
+
+      .whiteBox {
+        /*To place the box behind the other div*/
+        position: absolute;
+        width: 80%;
+        height: 86%;
+        background-color: white;
+        z-index: 0; /* Set a higher z-index than the items inside the second div */
+        /*To have a similar effect as infoBox*/
+        text-align: left;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        margin-top: 14px;
+        border-radius: 10px;
+        border: 1px solid rgb(224, 224, 224);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
       .apps {
         background-color: white;
         border-radius: 10px;
@@ -125,7 +149,7 @@
         margin-top: 31px;
       }
       .check {
-        margin: 40px auto;
+        margin: -20px auto;
       }
       h3 {
         font-size: 30px;
@@ -210,63 +234,66 @@
           <h3>Patient Info</h3>
           <div style="width: 100%; border: 1px solid white"></div>
         </div>
-        <div class="columnBody column2">
+        
+        <div class="columnBody column2" style="min-height: 450px;">
           <!--patientInfo-->
-          <div class="box">
-            <div class="infoBox">
-              <div class="field">
-                <div class="fieldT">Name</div>
-                <p id="pName">Donald Duck</p>
+          <nav class="whiteBox">
+            <div class="box">
+              <div class="infoBox">
+                <div class="field">
+                  <div class="fieldT">Name</div>
+                  <p id="pName">Donald Duck</p>
+                </div>
+                <div class="field">
+                  <div class="fieldT">Time & Date</div>
+                  <p id="pTime">2:00 PM, February 28th</p>
+                </div>
+                <div class="field">
+                  <div class="fieldT">Health Care Number</div>
+                  <div class="textbox">
+                    <input
+                      type="text"
+                      id="healthCareNum"
+                      placeholder="Enter patient's health care number"
+                    />
+                  </div>
+                </div>
               </div>
-              <div class="field">
-                <div class="fieldT">Time & Date</div>
-                <p id="pTime">2:00 PM, February 28th</p>
+              <div class="infoBox" style="margin-right:-40px">
+                <div class="field">
+                  <div class="fieldT">Doctor</div>
+                  <p id="dName">Warren Waters</p>
+                </div>
+                <div class="field">
+                  <div class="fieldT">Reason</div>
+                  <p id="rReason">Skin Rash</p>
+                </div>
+                <a href="#verifyPopup" class="aButton verifyB" id="verifyNum">Verify</a>
+                <div id="verifyPopup" class="popup">
+                  <div class="popup-content">
+                    <a href="#" class="close-btn">&times;</a>
+                    <p id="verMsg">Verification successful!</p>
+                    <div class="confirmRow">
+                      <a href="#" class="aButton">Close</a>
+                  </div>
+                  </div>
+                </div>
+                <div class="overlay"></div>
               </div>
-              <div class="field">
-                <div class="fieldT">Health Care Number</div>
-                <div class="textbox">
-                  <input
-                    type="text"
-                    id="healthCareNum"
-                    placeholder="Enter patient's health care number"
-                  />
+            </div>
+            <a href="#checkPopup" class="aButton check">Check-In</a>
+            <div id="checkPopup" class="popup">
+              <div class="popup-content" id="checkInPop">
+                <a href="#" class="close-btn" onclick="checkIn_return()">&times;</a>
+                <p>Are you sure you want to check the patient in?</p>
+                <div class="confirmRow">
+                  <a href="#" class="noBtn" onclick="checkIn_return()">No</a>
+                  <a class="yesBtn" onclick="checkIn_yes()">Yes</a>
                 </div>
               </div>
             </div>
-            <div class="infoBox">
-              <div class="field">
-                <div class="fieldT">Doctor</div>
-                <p id="dName">Warren Waters</p>
-              </div>
-              <div class="field">
-                <div class="fieldT">Reason</div>
-                <p id="rReason">Skin Rash</p>
-              </div>
-              <a href="#verifyPopup" class="aButton verifyB" id="verifyNum">Verify</a>
-              <div id="verifyPopup" class="popup">
-                <div class="popup-content">
-                  <a href="#" class="close-btn">&times;</a>
-                  <p id="verMsg">Verification successful!</p>
-                  <div class="confirmRow">
-                    <a href="#" class="aButton">Close</a>
-                </div>
-                </div>
-              </div>
-              <div class="overlay"></div>
-            </div>
-          </div>
-          <a href="#checkPopup" class="aButton check">Check-In</a>
-          <div id="checkPopup" class="popup">
-            <div class="popup-content" id="checkInPop">
-              <a href="#" class="close-btn" onclick="checkIn_return()">&times;</a>
-              <p>Are you sure you want to check the patient in?</p>
-              <div class="confirmRow">
-                <a href="#" class="noBtn" onclick="checkIn_return()">No</a>
-                <a class="yesBtn" onclick="checkIn_yes()">Yes</a>
-              </div>
-            </div>
-          </div>
-          <div class="overlay"></div>
+            <div class="overlay"></div>
+          </nav> 
         </div>
       </div>
     </div>

@@ -47,25 +47,37 @@ function ddOptions() {
     const selected_option = dd_select.value;
     if (selected_option === "Most Recent") {
         history_field.innerHTML = `
-            <div class="field">December 10th 11:00 AM 2023, Check-up</div> 
-            <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
-            <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
-            <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
-            <div class="field">January 21st, 1:00 PM 2022, Check-up</div>
-            <div class="field">June 19th, 2:30 PM 2021, Skin rash</div>
-            <div class="field">March 2nd, 12:00 PM 2021, Check-up</div>
-            <div class="field">May 5th, 10:00 AM 2020, Flu shot</div>
+        <table style="width: 100%;">
+        <tr>
+          <th>Date & Time</th><th>Doctor Name</th><th>Reason</th>
+        </tr>
+        <tr> <td>December 10th, 11:00 AM 2023</td><td>Dr. Reese Rogers</td><td>Check-up</td> </tr>
+        <tr> <td>July 2nd, 1:15 PM 2023</td><td>Dr. Andrew Apple</td><td>Stomach flu</td> </tr>
+        <tr> <td>May 23rd, 3:50 PM 2023</td><td>Dr. Penny Pepper</td><td>Flu shot</td> </tr>
+        <tr> <td>November 27th, 2:00 PM 2022</td><td>Dr. Reese Rogers</td><td>X-ray</td> </tr>
+        <tr> <td>January 21st, 1:00 PM 2022</td><td>Dr. Donald Duck</td><td>Check-up</td> </tr>
+        <tr> <td>June 19th, 2:30 PM 2021</td><td>Dr. Donald Duck</td><td>Skin rash</td> </tr>
+        <tr> <td>March 2nd, 12:00 PM 2021</td><td>Dr. Penny Pepper</td><td>Check-up</td> </tr>
+        <tr> <td>May 5th, 10:00 AM 2020</td><td>Dr. Penny Pepper</td><td>Flu shot</td> </tr>
+        
+      </table>
         `;
     } else if (selected_option === "Oldest") {
         history_field.innerHTML = `
-            <div class="field">May 5th, 10:00 AM 2020, Flu shot</div>
-            <div class="field">March 2nd, 12:00 PM 2021, Check-up</div>
-            <div class="field">June 19th, 2:30 PM 2021, Skin rash</div>
-            <div class="field">January 21st, 1:00 PM 2022, Check-up</div>
-            <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
-            <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
-            <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
-            <div class="field">December 10th 11:00 AM 2023, Check-up</div> 
+        <table style="width: 100%;">
+        <tr>
+          <th>Date & Time</th><th>Doctor Name</th><th>Reason</th>
+        </tr>
+        <tr> <td>May 5th, 10:00 AM 2020</td><td>Dr. Penny Pepper</td><td>Flu shot</td> </tr>
+        <tr> <td>March 2nd, 12:00 PM 2021</td><td>Dr. Penny Pepper</td><td>Check-up</td> </tr>
+        <tr> <td>June 19th, 2:30 PM 2021</td><td>Dr. Donald Duck</td><td>Skin rash</td> </tr>
+        <tr> <td>January 21st, 1:00 PM 2022</td><td>Dr. Donald Duck</td><td>Check-up</td> </tr>
+        <tr> <td>November 27th, 2:00 PM 2022</td><td>Dr. Reese Rogers</td><td>X-ray</td> </tr>
+        <tr> <td>May 23rd, 3:50 PM 2023</td><td>Dr. Penny Pepper</td><td>Flu shot</td> </tr>
+        <tr> <td>July 2nd, 1:15 PM 2023</td><td>Dr. Andrew Apple</td><td>Stomach flu</td> </tr>
+        <tr> <td>December 10th, 11:00 AM 2023</td><td>Dr. Reese Rogers</td><td>Check-up</td> </tr>
+        
+      </table>
         `;
     }
 }

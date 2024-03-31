@@ -79,6 +79,9 @@
             background-image: url(https://static.vecteezy.com/system/resources/previews/033/303/637/original/red-color-diagonal-stripe-lines-crosswise-pattern-background-free-png.png);
             background-size: 200%;
         }
+        .red:hover{
+            background-color: red;
+        }
         .grey {
             background-color: #BFBFBF;
             /* background-image: url(https://i.pinimg.com/736x/fa/45/96/fa4596264799e1ea85516d00055cddee.jpg); */
@@ -87,14 +90,14 @@
             cursor:not-allowed;
         }
         .activeDate {
-            background-color: yellow;
-            /* transform: scale(0.9); */
-            transform: scale(1.1);
+            background-color: #15b926;
+            /* transform: scale(1.1); */
+            border: 3px solid #007bff;
         }
         .activeBusy {
             background-color: red;
-            /* transform: scale(0.9); */
-            transform: scale(1.1);
+            /* transform: scale(1.1); */
+            border: 3px solid #007bff;
         }
         .dayTimeTable {
             /* width: 95%; */
@@ -435,14 +438,27 @@
                         <tr><td class="timeTitle">3:00 PM</td><td class="timeBlock red" id="cell115"></td><td class="timeBlock green" id="cell215"></td><td class="timeBlock green" id="cell315"></td><td class="timeBlock red" id="cell415"></td><td class="timeBlock green" id="cell515"></td><td class="timeBlock green" id="cell615"></td><td class="timeBlock grey" id="cell715"></td></tr>
                         <tr><td class="timeTitle">4:00 PM</td><td class="timeBlock green" id="cell116"></td><td class="timeBlock green" id="cell216"></td><td class="timeBlock red" id="cell316"></td><td class="timeBlock green" id="cell416"></td><td class="timeBlock green" id="cell516"></td><td class="timeBlock red" id="cell616"></td><td class="timeBlock grey" id="cell716"></td></tr>
                         <tr><td class="timeTitle">5:00 PM</td><td class="timeBlock green" id="cell117"></td><td class="timeBlock green" id="cell217"></td><td class="timeBlock green" id="cell317"></td><td class="timeBlock green" id="cell417"></td><td class="timeBlock red" id="cell517"></td><td class="timeBlock green" id="cell617"></td><td class="timeBlock grey" id="cell717"></td></tr>
-
                     </table>
 
                     <div style="justify-content: center; display: flex; gap: 2vw; margin-bottom: 0px; margin-top: 8px;">
+                        <a href="#greyPopup" class="aButton" id="greyAppointment" style="display: none;"></a>
+                        <div id="greyPopup" class="popup">
+                            <div class="popup-content" id="greyPop">
+                                <a href="#" class="close-btn">&times;</a>
+                                <p>The clinic is closed at the time you are trying to select!</p>
+                                <p style="margin-top: -10px;">Please select a different time.</p>
+                                
+                                <div class="confirmRow" style="margin-top: 0px;">
+                                    <a href="#" class="aButton">Close</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+
+                    <div style="justify-content: center; display: flex; gap: 2vw; margin-bottom: 0px; margin-top: 8px;">
                         <a class="aButton" id="editAppointment" style="display: none;">Edit Appointment</a>
-                        <!-- <a href="#cancelPopup" class="aButton cancelB" id="cancelAppointment" style="display: none;" onclick="cancelAppointment()">Cancel Appointment</a> -->
                         <a href="#cancelPopup" class="aButton cancelB" id="cancelAppointment" style="display: none;">Cancel Appointment</a>
-                        <!-- <a href="#deletePopup" class="aButton delB">Delete</a> -->
                         <div id="cancelPopup" class="popup">
                             <div class="popup-content" id="canPop">
                                 <a href="#" class="close-btn" onclick="cancel_return()">&times;</a>

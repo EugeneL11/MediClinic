@@ -56,18 +56,8 @@ function changeWeek(val) {
 
 function changeSchedule()
 {
-    var activeDates = document.querySelectorAll('.timeBlock.activeDate');
-    activeDates.forEach(function (cell) {
-        cell.classList.remove('activeDate');
-        cell.classList.add('green');
-    });
-
-    var activeBusys = document.querySelectorAll('.timeBlock.activeBusy');
-    activeBusys.forEach(function (cell) {
-        cell.classList.remove('activeBusy');
-        cell.classList.add('red');
-    });
-
+    reset();
+    redBlockCSS();
     //Values to avoid, so red at all times.
     var array = [111, 115, 212, 214, 311, 316, 49, 414, 415, 512, 517, 610, 613, 616];
 
@@ -93,6 +83,22 @@ function changeSchedule()
             }
         }
     
+    
+}
+
+function reset() {
+    var activeDates = document.querySelectorAll('.timeBlock.activeDate');
+    activeDates.forEach(function (cell) {
+        cell.classList.remove('activeDate');
+        cell.classList.add('green');
+    });
+
+    var activeBusys = document.querySelectorAll('.timeBlock.activeBusy');
+    activeBusys.forEach(function (cell) {
+        cell.classList.remove('activeBusy');
+        cell.classList.add('red');
+    });
+
     document.getElementById('patientInput').value = '';
     document.getElementById('reasonInput').value = '';
     document.getElementById("appDate").innerHTML = "Select a time on the calendar!";
@@ -193,6 +199,14 @@ function randomInfo(dayNumber, timeNumber) {
     var patientNames = ["Donald Duck", "Frederick Feet", "Jimmy Jones", "Karl Kones", "Rachel Ruthers"];
     var reasons = ["Stomach flu", "Follow up", "Cold & Flue", "Vaccination", "Skin rash", "Check-up", "Stomach ache", "X-Ray", "Blood test", "Fever and cough"];
     
+    greenBlockCSS();
+
+    document.getElementById('patientDisplay').innerHTML = patientNames[Math.floor(Math.random() * patientNames.length)];
+    document.getElementById('reasonDisplay').innerHTML = reasons[Math.floor(Math.random() * reasons.length)];
+    document.getElementById("appDate").innerHTML = string;
+}
+
+function greenBlockCSS() {
     //Hiding the green relevant blocks.
     document.getElementById('patientTextbox').style.display = "none";
     document.getElementById('patientDisplay').style.display = "block";
@@ -202,10 +216,6 @@ function randomInfo(dayNumber, timeNumber) {
     document.getElementById('editAppointment').style.display = "block";
     document.getElementById('cancelAppointment').style.display = "block";
     document.getElementById('book').style.display = "none";
-
-    document.getElementById('patientDisplay').innerHTML = patientNames[Math.floor(Math.random() * patientNames.length)];
-    document.getElementById('reasonDisplay').innerHTML = reasons[Math.floor(Math.random() * reasons.length)];
-    document.getElementById("appDate").innerHTML = string;
 }
 
 //Cancel appointment but need a popup
@@ -246,3 +256,30 @@ function cancel_return(){
         </div>
     `;
 }
+
+//Grey appointment pop-up.
+// const grey_pop = document.getElementById("greyPop");
+// function grey_return() {
+//     grey_pop.innerHTML = `
+//     <a href="#" class="close-btn" onclick="grey_return()">&times;</a>
+//     <p>The clinic is closed at the time you are trying to select!</p>
+//     <p style="margin-top: -10px;">Please select a different time.</p>
+//     <div class="confirmRow" style="margin-top: 0px;">
+//         <a href="#" class="aButton" onclick="grey_return()">Close</a>
+//     </div>
+//     `;
+// }
+
+//Adding this function to all greyCells.
+var greyCells = document.querySelectorAll('.grey');
+greyCells.forEach(function(cell) {
+    cell.addEventListener('click', function() {
+        reset();
+        redBlockCSS();
+
+        var anchor = document.querySelector('a[href="#greyPopup"]');
+        if (anchor) {
+            anchor.click();
+        }
+    });
+});

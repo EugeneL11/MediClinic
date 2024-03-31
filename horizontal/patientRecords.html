@@ -182,7 +182,7 @@
         width: 100%;
       }
       .field:hover {
-        opacity: 0.6;
+        opacity: 0.6; /*What is this for?*/
       }
       .dlIcon img {
         height: auto;
@@ -324,14 +324,29 @@
             <div style="width:100%; border: 1px solid white;"></div>
             <div class="scrollingDisplay history">
               <div class="fields" id="historyField">
-                <div class="field">December 10th 11:00 AM 2023, Check-up</div> 
+                <table style="width: 100%;">
+                  <tr>
+                    <th>Date & Time</th><th>Doctor Name</th><th>Reason</th>
+                  </tr>
+                  <tr> <td>December 10th, 11:00 AM 2023</td><td>Dr. Reese Rogers</td><td>Check-up</td> </tr>
+                  <tr> <td>July 2nd, 1:15 PM 2023</td><td>Dr. Andrew Apple</td><td>Stomach flu</td> </tr>
+                  <tr> <td>May 23rd, 3:50 PM 2023</td><td>Dr. Penny Pepper</td><td>Flu shot</td> </tr>
+                  <tr> <td>November 27th, 2:00 PM 2022</td><td>Dr. Reese Rogers</td><td>X-ray</td> </tr>
+                  <tr> <td>January 21st, 1:00 PM 2022</td><td>Dr. Donald Duck</td><td>Check-up</td> </tr>
+                  <tr> <td>June 19th, 2:30 PM 2021</td><td>Dr. Donald Duck</td><td>Skin rash</td> </tr>
+                  <tr> <td>March 2nd, 12:00 PM 2021</td><td>Dr. Penny Pepper</td><td>Check-up</td> </tr>
+                  <tr> <td>May 5th, 10:00 AM 2020</td><td>Dr. Penny Pepper</td><td>Flu shot</td> </tr>
+                  
+                </table>
+                <!-- Discontinued code style:
+                <div class="field">December 10th, 11:00 AM 2023, Check-up</div> 
                 <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
                 <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
                 <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
                 <div class="field">January 21st, 1:00 PM 2022, Check-up</div>
                 <div class="field">June 19th, 2:30 PM 2021, Skin rash</div>
                 <div class="field">March 2nd, 12:00 PM 2021, Check-up</div>
-                <div class="field">May 5th, 10:00 AM 2020, Flu shot</div>
+                <div class="field">May 5th, 10:00 AM 2020, Flu shot</div> -->
               </div>
             </div>
         </div>
@@ -351,6 +366,22 @@
           <div style="width:100%; border: 1px solid white;"></div>
           <div class="scrollingDisplay history">
             <div class="fields" id="historyField2">
+
+              <table style="width: 100%;">
+                <tr>
+                  <th>Date & Time</th><th>Doctor Name</th><th>Reason</th>
+                </tr>
+                <tr> <td>April 25th 5:00 PM 2024</td><td>Dr. Donald Duck</td><td>Sea sickness</td> </tr>
+                <tr> <td>May 2nd, 2:30 PM 2024</td><td>Dr. Andrew Apple</td><td>Tooth ache</td> </tr>
+                <tr> <td>June 23rd, 10:00 AM 2024</td><td>Dr. Donald Duck</td><td>X-Ray follow-up</td> </tr>
+                <tr> <td>June 27th, 3:30 PM 2024</td><td>Dr. Warren Waters</td><td>Ultrasound</td> </tr>
+                <tr> <td>July 7th, 1:00 PM 2024</td><td>Dr. Reese Rogers</td><td>Follow-up</td> </tr>
+                <tr> <td>July 19th, 2:30 PM 2024</td><td>Dr. Penny Pepper</td><td>Skin burn</td> </tr>
+                <tr> <td>August 2nd, 12:00 PM 2024</td><td>Dr. Andrew Apple</td><td>Vitamin D Test</td> </tr>
+                <tr> <td>August 5th, 10:00 AM 2024</td><td>Dr. Andrew Apple</td><td>Stomach ache</td> </tr>
+                
+              </table>
+              <!-- Discontinued code style:
               <div class="field">April 25th 5:00 PM 2024, Sea sickness</div> 
               <div class="field">May 2nd, 2:30 PM 2024, Tooth ache</div>
               <div class="field">June 23rd, 10:00 AM 2024, X-Ray follow-up</div>
@@ -358,7 +389,7 @@
               <div class="field">July 7th, 1:00 PM 2024, Follow-up</div>
               <div class="field">July 19th, 2:30 PM 2024, Skin burn</div>
               <div class="field">August 2nd, 12:00 PM 2024, Vitamin D Test</div>
-              <div class="field">August 5th, 10:00 AM 2024, Stomach ache</div>
+              <div class="field">August 5th, 10:00 AM 2024, Stomach ache</div> -->
             </div>
           </div>
       </div>
