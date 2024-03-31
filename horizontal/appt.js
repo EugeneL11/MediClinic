@@ -219,3 +219,30 @@ function cancelAppointment() {
         cell.classList.add('green');
     });
 }
+
+//Cancel appointment pop-up.
+const cancel_pop = document.getElementById("canPop");
+function cancel_yes() {
+    cancelAppointment();
+    document.getElementById("cancelPopup").style.width = "25vw";
+    cancel_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="cancel_return()">&times;</a>
+        <p>Appointment successfully cancelled!</p>
+        <div class="confirmRow">
+            <a href="#" class="aButton" onclick="cancel_return()">Close</a>
+        </div>
+    `;
+}
+
+function cancel_return(){
+    //Value found in CSS.
+    document.getElementById("cancelPopup").style.width = "32vw";
+    cancel_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="cancel_return()">&times;</a>
+        <p>Are you sure you want to cancel the appointment?</p>
+        <div class="confirmRow">
+            <a href="#" class="noBtn" onclick="cancel_return()">No</a>
+            <a class="yesBtn" onclick="cancel_yes()">Yes</a>
+        </div>
+    `;
+}

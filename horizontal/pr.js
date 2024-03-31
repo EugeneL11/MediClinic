@@ -134,6 +134,7 @@ function edit() {
 // handle deleting a patient record
 const del_pop = document.getElementById("delPop");
 function del_yes() {
+    document.getElementById("deletePopup").style.width = "25vw";
     del_pop.innerHTML = `
         <a href="#" class="close-btn" onclick="del_return()">&times;</a>
         <p>Patient record successfully deleted!</p>
@@ -166,6 +167,7 @@ function del_yes() {
     });
 }
 function del_return() {
+    document.getElementById("deletePopup").style.width = "30vw";
     del_pop.innerHTML = `
         <a href="#" class="close-btn" onclick="del_return()">&times;</a>
         <p>Are you sure you want to delete the record?</p>
@@ -179,6 +181,7 @@ function del_return() {
 // handle creating a new patient record
 const create_pop = document.getElementById("createPop");
 function create_yes() {
+    document.getElementById("createPopup").style.width = "26vw";
     create_pop.innerHTML = `
         <a href="#" class="close-btn" onclick="create_return()">&times;</a>
         <p>New patient record successfully created!</p>
@@ -211,6 +214,8 @@ function create_yes() {
     });
 }
 function create_return() {
+    //Value found in CSS.
+    document.getElementById("createPopup").style.width = "30vw";
     create_pop.innerHTML = `
         <a href="#" class="close-btn" onclick="create_return()">&times;</a>
         <p>Are you sure you want to create a new record?</p>

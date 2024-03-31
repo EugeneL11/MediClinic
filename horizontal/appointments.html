@@ -440,7 +440,20 @@
 
                     <div style="justify-content: center; display: flex; gap: 2vw; margin-bottom: 0px; margin-top: 8px;">
                         <a class="aButton" id="editAppointment" style="display: none;">Edit Appointment</a>
-                        <a class="aButton cancelB" id="cancelAppointment" style="display: none;" onclick="cancelAppointment()">Cancel Appointment</a>
+                        <!-- <a href="#cancelPopup" class="aButton cancelB" id="cancelAppointment" style="display: none;" onclick="cancelAppointment()">Cancel Appointment</a> -->
+                        <a href="#cancelPopup" class="aButton cancelB" id="cancelAppointment" style="display: none;">Cancel Appointment</a>
+                        <!-- <a href="#deletePopup" class="aButton delB">Delete</a> -->
+                        <div id="cancelPopup" class="popup">
+                            <div class="popup-content" id="canPop">
+                                <a href="#" class="close-btn" onclick="cancel_return()">&times;</a>
+                                <p>Are you sure you want to cancel the appointment?</p>
+                                <div class="confirmRow">
+                                    <a href="#" class="noBtn" onclick="cancel_return()">No</a>
+                                    <a class="yesBtn" onclick="cancel_yes()">Yes</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
                     </div>
 
                 </div>
