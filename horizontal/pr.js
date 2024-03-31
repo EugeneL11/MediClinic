@@ -157,6 +157,13 @@ function del_yes() {
     fields.forEach(field => {
         field.textContent = '';
     });
+    const historyField2 = document.getElementById('historyField2');
+    const fields2 = historyField2.querySelectorAll('.field');
+    // Loop through each field element and set its content to an empty string
+    fields2.forEach(field2 => {
+        field2.textContent = '';
+    });
+
 
     // Select all elements with the class testRes
     const testResElements = document.querySelectorAll('.testRes');
@@ -204,6 +211,12 @@ function create_yes() {
     fields.forEach(field => {
         field.textContent = '';
     });
+    const historyField2 = document.getElementById('historyField2');
+    const fields2 = historyField2.querySelectorAll('.field');
+    // Loop through each field element and set its content to an empty string
+    fields2.forEach(field2 => {
+        field2.textContent = '';
+    });
 
     // Select all elements with the class testRes
     const testResElements = document.querySelectorAll('.testRes');
@@ -212,6 +225,10 @@ function create_yes() {
     testResElements.forEach(element => {
         element.innerHTML = '';
     });
+
+    // start on edit mode
+    editSaveB.textContent = 'Edit';
+    edit();
 }
 function create_return() {
     //Value found in CSS.
