@@ -25,12 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
             patientName = this.querySelector('.patientName').textContent;
             patientTime = this.querySelector('.patientTime').textContent;
             doctorName = this.querySelector('.doctorName').textContent;
+            //Randomly generating a reason for the check-in.
+            var reasons = ["Stomach flu", "Follow up", "Cold & Flue", "Vaccination", "Skin rash", "Check-up", "Stomach ache", "X-Ray", "Blood test", "Fever and cough"];
+            var rReason = reasons[Math.floor(Math.random() * reasons.length)];
 
             // Store appointment details in localStorage
             localStorage.setItem('selectedAppointment', JSON.stringify({
                 p_Name: patientName,
                 p_Time: patientTime,
-                d_Name: doctorName
+                d_Name: doctorName,
+                r_Reason: rReason
             }));
 
             // Redirect to the check-in screen
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('pName').textContent = selectedAppointment.p_Name;
         document.getElementById('pTime').textContent = selectedAppointment.p_Time;
         document.getElementById('dName').textContent = selectedAppointment.d_Name;
+        document.getElementById('rReason').textContent = selectedAppointment.r_Reason;
     }
 });
 
