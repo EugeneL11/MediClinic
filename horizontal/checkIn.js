@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             patientTime = this.querySelector('.patientTime').textContent;
             doctorName = this.querySelector('.doctorName').textContent;
             //Randomly generating a reason for the check-in.
-            var reasons = ["Stomach flu", "Follow up", "Cold & Flue", "Vaccination", "Skin rash", "Check-up", "Stomach ache", "X-Ray", "Blood test", "Fever and cough"];
+            var reasons = ["Stomach flu", "Follow up", "Cold & Flu", "Vaccination", "Skin rash", "Check-up", "Stomach ache", "X-Ray", "Blood test", "Fever and cough"];
             var rReason = reasons[Math.floor(Math.random() * reasons.length)];
 
             // Store appointment details in localStorage

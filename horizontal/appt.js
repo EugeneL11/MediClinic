@@ -197,7 +197,7 @@ function randomInfo(dayNumber, timeNumber) {
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.add('activeBusy');
     
     var patientNames = ["Donald Duck", "Frederick Feet", "Jimmy Jones", "Karl Kones", "Rachel Ruthers"];
-    var reasons = ["Stomach flu", "Follow up", "Cold & Flue", "Vaccination", "Skin rash", "Check-up", "Stomach ache", "X-Ray", "Blood test", "Fever and cough"];
+    var reasons = ["Stomach flu", "Follow up", "Cold & Flu", "Vaccination", "Skin rash", "Check-up", "Stomach ache", "X-Ray", "Blood test", "Fever and cough"];
     
     greenBlockCSS();
 
@@ -287,7 +287,7 @@ function book_return(){
 
 function book_check() {
     var patientInput = document.getElementById("patientInput");
-    var reasonInput = document.getElementById("patientInput");
+    var reasonInput = document.getElementById("reasonInput");
     var appDate = document.getElementById("appDate");
 
     if(patientInput.value === "" || reasonInput.value === ""
