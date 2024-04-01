@@ -139,6 +139,7 @@ body {
     font-size: 20px;
 }
 
+#download { width:29vw; }
 #logoutPopup { width:23vw; }
 
 #createPopup, #deletePopup, #checkPopup,

@@ -10,13 +10,14 @@ function random_chance() {
 
 const dl_pop = document.getElementById("dlPop");
 function dl_yes() {
+    document.getElementById("download").style.width = "19vw";
     const chance = random_chance();
     if (chance) {
         dl_pop.innerHTML = `
             <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
             <p>File downloaded successfully!</p>
             <div class="confirmRow">
-                <a href="#" class="aButton" onclick="dl_return()">Close</a>
+            <a href="#" class="aButton" onclick="dl_return()" style="padding: 5px 20px;">Close</a>
             </div>
         `;
     } else {
@@ -24,12 +25,13 @@ function dl_yes() {
             <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
             <p>File download failed!</p>
             <div class="confirmRow">
-                <a href="#" class="aButton" onclick="dl_return()">Close</a>
+                <a href="#" class="aButton" onclick="dl_return()" style="padding: 5px 20px;">Close</a>
             </div>
         `;
     }
 }
 function dl_return() {
+    document.getElementById("download").style.width = "29vw";
     dl_pop.innerHTML = `
         <a href="#" class="close-btn" onclick="dl_return()">&times;</a>
         <p>Are you sure you want to download this file?</p>
@@ -178,6 +180,9 @@ function del_yes() {
 
     const testResults1 = document.getElementById('testResults1');
     testResults1.style.display = "none";
+    
+    historyField.innerHTML = "";
+    historyField2.innerHTML = "";
 
     // Select all elements with the class testRes
     const testResElements = document.querySelectorAll('.testRes');
@@ -234,6 +239,9 @@ function create_yes() {
 
     const testResults1 = document.getElementById('testResults1');
     testResults1.style.display = "none";
+
+    historyField.innerHTML = "";
+    historyField2.innerHTML = "";
 
     // Select all elements with the class testRes
     const testResElements = document.querySelectorAll('.testRes');
