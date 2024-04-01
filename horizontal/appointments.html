@@ -457,7 +457,7 @@
                     </div>
 
                     <div style="justify-content: center; display: flex; gap: 2vw; margin-bottom: 0px; margin-top: 8px;">
-                        <a class="aButton" id="editAppointment" style="display: none;">Edit Appointment</a>
+                        <a class="aButton" id="editAppointment" style="display: none;" onclick="editAppointment()">Edit Appointment</a>
                         <a href="#cancelPopup" class="aButton cancelB" id="cancelAppointment" style="display: none;">Cancel Appointment</a>
                         <div id="cancelPopup" class="popup">
                             <div class="popup-content" id="canPop">
@@ -528,16 +528,18 @@
             </div>
             <a href="#bookPopup" class="aButton book" id="book">Book</a>
             <div id="bookPopup" class="popup">
-              <div class="popup-content">
-                <a href="#" class="close-btn">&times;</a>
+              <div class="popup-content" id="bookPop">
+                <a href="#" class="close-btn" onclick="book_return()">&times;</a>
                 <p style="font-size: 20px;">Are you sure you want to book the appointment?</p>
                 <div class="confirmRow">
-                    <a href="#" class="noBtn">No</a>
-                    <a href="#" class="yesBtn">Yes</a>
+                    <a href="#" class="noBtn" onclick="book_return()">No</a>
+                    <a class="yesBtn" onclick="book_check()">Yes</a>
                 </div>
               </div>
             </div>
             <div class="overlay"></div>
+
+            <!-- If values are empty when booking -->
         </div>
         </div>
 
