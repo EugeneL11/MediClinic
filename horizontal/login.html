@@ -4,6 +4,7 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
   />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -67,20 +68,23 @@
         align-items: center;
       }
 
-      input[type="inputBox"] {
+      input[type="password"], input[type="text"] {
         width: 100%;
         padding: 6px;
         margin: 6px 0px 6px 0px;
         border-radius: 5px;
-        /* border: 2px solid red; */
         border: 1px solid #ccc;
         box-sizing: border-box;
         font-size: 16px;
         box-shadow: 2px 2px gray;
       }
+
+      input[type="password"].error, input[type="text"].error {
+        border: 2px solid red;
+      }
       
       /* Style the search bar on focus */
-      input[type="inputBox"]:focus {
+      input[type="password"]:focus, input[type="text"]:focus {
         outline: none;
       }
 
@@ -109,7 +113,11 @@
         position: absolute;
         right: 8px;
         top: 11px;
+        cursor: pointer;
+        background: transparent;
+        border: transparent;
       }
+
     </style>
   </head>
   <body>
@@ -147,9 +155,9 @@
         <span style="font-weight: bold;">Password</span>
       </div>
       <div style="position: relative">
-        <span class="material-symbols-outlined"> visibility_off </span>
+        <button class="material-symbols-outlined" onclick="toggleVisibility();"> visibility_off </button>
         <input
-          type="inputBox"
+          type="password"
           id="pwBox"
           name="password"
           placeholder="Enter Password"

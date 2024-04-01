@@ -16,8 +16,7 @@ function clickReceptionist() {
   } else {
     current = 0;
   }
-  
-  
+
   update();
 
   // Toggle selected border class
@@ -37,7 +36,7 @@ function clickDoctor() {
   } else {
     current = 0;
   }
-  
+
   update();
 
   // Toggle selected border class
@@ -57,7 +56,7 @@ function clickNurse() {
   } else {
     current = 0;
   }
-  
+
   update();
 
   // Toggle selected border class
@@ -91,6 +90,19 @@ function update() {
   }
 }
 
+function toggleVisibility() {
+  let pwBox = document.getElementById("pwBox");
+  let visibilityIcon = document.querySelector(".material-symbols-outlined");
+  console.log(pwBox.type);
+  if (pwBox.type == "password") {
+    pwBox.type = "text";
+    visibilityIcon.textContent = "visibility";
+  } else {
+    pwBox.type = "password";
+    visibilityIcon.textContent = "visibility_off";
+  }
+}
+
 function clickLogin() {
   recepPW = 123456;
   docPW = 123321;
@@ -98,7 +110,7 @@ function clickLogin() {
 
   let pwBox = document.getElementById("pwBox");
   let pwVal = pwBox.value;
-  
+
   let chosenPW;
 
   if (current == 1) {
@@ -115,8 +127,7 @@ function clickLogin() {
     window.location.href = "./homepage.html";
   } else {
     mismatchMsg.style.display = "block";
+    pwBox.classList.add("error");
     pwBox.value = "";
   }
 }
-
-
