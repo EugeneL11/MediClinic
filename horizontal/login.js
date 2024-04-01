@@ -109,10 +109,12 @@ function clickLogin() {
     chosenPW = nursePW;
   }
 
+  let mismatchMsg = document.getElementById("mismatchMsg");
+
   if (parseInt(pwVal) == chosenPW) {
     window.location.href = "./homepage.html";
   } else {
-    console.log("password dont match");
+    mismatchMsg.style.display = "block";
     pwBox.value = "";
   }
 }
