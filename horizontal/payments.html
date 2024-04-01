@@ -154,35 +154,59 @@
         font-size: 16px;
         box-shadow: 2px 2px gray;
       }
-        /* Style the search bar on focus */
-        input[type="inputBox"]:focus {
-          outline: none;
-        }
+      
+      input[type="inputBox"]:focus {
+        outline: none;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border-radius: 5px;
+        min-width: 35vw;
+        overflow: auto;
+        border: 1px solid #ccc;
+        z-index: 1;
+        text-align: left;
+      }
+
+      .dropdown-content span {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+      }
+
+      .dropdown-content span:hover {
+        background-color: #e6e2e6;
+      }
+
     </style>
   </head>
   <body>
     <div>
       <div class="topnav">
-          <a href="homepage.html">Home</a>
-          <a href="patientRecords.html">Patient Records</a>
-          <a href="checkIn.html">Check-in</a>
-          <a href="appointments.html">Appointments</a>
-          <a class="active" href="payments.html">Payment</a>
+        <a href="homepage.html">Home</a>
+        <a href="patientRecords.html">Patient Records</a>
+        <a href="checkIn.html">Check-in</a>
+        <a href="appointments.html">Appointments</a>
+        <a class="active" href="payments.html">Payment</a>
 
-          <a href="#logoutPopup" class="logout aButton">Logout</a>
+        <a href="#logoutPopup" class="logout aButton">Logout</a>
       </div>
 
       <div id="logoutPopup" class="popup">
-          <div class="popup-content">
-            <p style="font-size: 20px;">Are you sure you want to logout?</p>
-            <div class="confirmRow">
-                <a href="#" class="noBtn">No</a>
-                <a href="login.html" class="yesBtn">Yes</a>
-            </div>
+        <div class="popup-content">
+          <p style="font-size: 20px">Are you sure you want to logout?</p>
+          <div class="confirmRow">
+            <a href="#" class="noBtn">No</a>
+            <a href="login.html" class="yesBtn">Yes</a>
           </div>
+        </div>
       </div>
       <div class="overlay"></div>
-  </div>
+    </div>
 
     <h1 id="title">Payments</h1>
 
@@ -190,10 +214,17 @@
       <div class="patientProfile">
         <div class="displayTitle">
           <div>
-            <input type="inputBox" name="Search" placeholder="Search by Name or Health Care Number..." required />
+            <input
+              type="inputBox"
+              id="searchInput"
+              name="Search"
+              placeholder="Search by Name or Health Care Number..."
+              required
+            />
+            <div class="dropdown-content" id="dropdown" style="position: relative; bottom: 15px;"></div>
           </div>
         </div>
-        <div style="width:100%; border: 1px solid white;"></div>
+        <div style="width: 100%; border: 1px solid white"></div>
         <div class="scrollingDisplay left1">
           <div class="patientInfo">
             <div>
@@ -203,18 +234,18 @@
               <span style="margin-left: 25px">Phone: 403-982-1486</span>
             </div>
             <div>
-              <span style="margin-left: 25px">Email Address: donalduck00@gmail.com</span>
+              <span style="margin-left: 25px"
+                >Email Address: donalduck00@gmail.com</span
+              >
             </div>
           </div>
         </div>
-
-        
 
         <div style="margin-top: 10px">
           <div class="displayTitle">
             <div class="paymentTitle">Payment History</div>
           </div>
-          <div style="width:100%; border: 1px solid white;"></div>
+          <div style="width: 100%; border: 1px solid white"></div>
           <div class="scrollingDisplay left2">
             <div>
               <span style="margin-left: 25px">Inhaler, $29.41</span>
@@ -251,34 +282,64 @@
         <div class="displayTitle">
           <div class="displayRow">
             <div class="outstandingTitle">Outstanding Payments</div>
-            <input type="checkbox" class="outstandingTCheck" onchange="allCB(this)"/>
+            <input
+              type="checkbox"
+              class="outstandingTCheck"
+              onchange="allCB(this)"
+            />
           </div>
         </div>
-        <div style="width:100%; border: 1px solid white;"></div>
+        <div style="width: 100%; border: 1px solid white"></div>
 
-        <div class="scrollingDisplay" style="border-radius: 0px;" style="border-radius: 0;">
+        <div
+          class="scrollingDisplay"
+          style="border-radius: 0px"
+          style="border-radius: 0"
+        >
           <div class="outstandingRow">
-            <span style="margin-left: 25px">Sports tape, $<span class="cost">4.32</span></span>
-            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
+            <span style="margin-left: 25px"
+              >Sports tape, $<span class="cost">4.32</span></span
+            >
+            <input
+              type="checkbox"
+              class="outstandingCheck"
+              onchange="updateTotal()"
+            />
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 25px">Advil, $<span class="cost">12.62</span></span>
-            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
+            <span style="margin-left: 25px"
+              >Advil, $<span class="cost">12.62</span></span
+            >
+            <input
+              type="checkbox"
+              class="outstandingCheck"
+              onchange="updateTotal()"
+            />
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 25px">Magnesium, $<span class="cost">16.12</span></span>
-            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
+            <span style="margin-left: 25px"
+              >Magnesium, $<span class="cost">16.12</span></span
+            >
+            <input
+              type="checkbox"
+              class="outstandingCheck"
+              onchange="updateTotal()"
+            />
           </div>
           <div class="outstandingRow">
-            <span style="margin-left: 25px">Check-up, $<span class="cost">17.32</span></span>
-            <input type="checkbox" class="outstandingCheck" onchange="updateTotal()"/>
+            <span style="margin-left: 25px"
+              >Check-up, $<span class="cost">17.32</span></span
+            >
+            <input
+              type="checkbox"
+              class="outstandingCheck"
+              onchange="updateTotal()"
+            />
           </div>
         </div>
 
-        <div style="width:99.8%; border: 1px solid white;"></div>
-            <span class="total">
-              Total: $50.38
-            </span>
+        <div style="width: 99.8%; border: 1px solid white"></div>
+        <span class="total"> Total: $50.38 </span>
         <div class="paymentButtons">
           <a href="#payPopup" class="aButton">Make Payment</a>
           <div id="payPopup" class="popup">
@@ -286,22 +347,24 @@
               <a href="#" class="close-btn" onclick="pay_return()">&times;</a>
               <p>Are you sure you want to make a payment?</p>
               <div class="confirmRow">
-                  <a href="#" class="noBtn" onclick="pay_return()">No</a>
-                  <a class="yesBtn" onclick="pay_yes()">Yes</a>
+                <a href="#" class="noBtn" onclick="pay_return()">No</a>
+                <a class="yesBtn" onclick="pay_yes()">Yes</a>
               </div>
             </div>
           </div>
           <div class="overlay"></div>
 
-          <a href="#emailPopup" class="aButton" style="margin-left: 11.2vw;">Email Invoice</a>
+          <a href="#emailPopup" class="aButton" style="margin-left: 11.2vw"
+            >Email Invoice</a
+          >
           <div id="emailPopup" class="popup">
             <div class="popup-content" id="emailPop">
               <a href="#" class="close-btn" onclick="email_return()">&times;</a>
               <p>Are you sure you want to email the invoice?</p>
               <div class="confirmRow">
-                  <a href="#" class="noBtn" onclick="email_return()">No</a>
-                  <a class="yesBtn" onclick="email_yes()">Yes</a>
-                </div>
+                <a href="#" class="noBtn" onclick="email_return()">No</a>
+                <a class="yesBtn" onclick="email_yes()">Yes</a>
+              </div>
             </div>
           </div>
           <div class="overlay"></div>
@@ -312,8 +375,8 @@
               <a href="#" class="close-btn" onclick="print_return()">&times;</a>
               <p>Are you sure you want to print the invoice?</p>
               <div class="confirmRow">
-                  <a href="#" class="noBtn" onclick="print_return()">No</a>
-                  <a class="yesBtn" onclick="print_yes()">Yes</a>
+                <a href="#" class="noBtn" onclick="print_return()">No</a>
+                <a class="yesBtn" onclick="print_yes()">Yes</a>
               </div>
             </div>
           </div>
@@ -328,7 +391,6 @@
         (Copyright symbol for testing purposes only)
       </span>
     </div>
-
 
     <script src="pay.js"></script>
   </body>
