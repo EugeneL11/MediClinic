@@ -181,6 +181,9 @@
         align-items: center;
         width: 100%;
       }
+      .testDate {
+        padding-left: 30px;
+      }
       .field:hover {
         opacity: 0.6; /*What is this for?*/
       }
@@ -402,19 +405,44 @@
               <div style="width:100%; border: 1px solid white;"></div>
               <div class="scrollingDisplay results">
                 <div class="fields">
-                  <div class="testRes">
-                    <a href="./med_records/xray.pdf" class="field">X-ray.pdf</a>
-                    <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>
-                  </div>
-                  <div class="testRes">
-                    <a href="./med_records/Ultrasound.pdf" class="field" target="_blank">Ultrasound.pdf</a>
-                    <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>                  
-                  </div>
-                  <div class="testRes">
-                    <a href="./med_records/Medicals.pdf" class="field">Medicals.pdf</a>
-                    <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>                  
-                  </div>
-
+                  <table style="width: 100%;">
+                    <tr>
+                      <td>
+                        <div class="testRes">
+                          <a href="./med_records/xray.pdf" class="field">X-ray.pdf</a>
+                          <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>
+                        </div>
+                      </td>
+                      <td class="testDate">November 27th, 2:00 PM 2022</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="testRes">
+                          <a href="./med_records/Ultrasound.pdf" class="field" target="_blank">Ultrasound.pdf</a>
+                          <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>
+                        </div>
+                      </td>
+                      <td class="testDate">January 21st, 1:00 PM 2022</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="testRes">
+                          <a href="./med_records/Ultrasound.pdf" class="field" target="_blank">Blood Test.pdf</a>
+                          <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>
+                        </div>
+                      </td>
+                      <td class="testDate">August 4th, 10:00 AM 2021</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="testRes">
+                          <a href="./med_records/Medicals.pdf" class="field">Medicals.pdf</a>
+                          <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>
+                        </div>
+                      </td>
+                      <td class="testDate">May 5th, 10:00 AM 2020</td>
+                    </tr>
+                  </table>
                   <div id="download" class="popup">
                     <div class="popup-content" id="dlPop">
                       <a href="#" class="close-btn" onclick="dl_return()">&times;</a>

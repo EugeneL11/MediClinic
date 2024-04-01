@@ -59,7 +59,7 @@ function changeSchedule()
     reset();
     redBlockCSS();
     //Values to avoid, so red at all times.
-    var array = [111, 115, 212, 214, 311, 316, 49, 414, 415, 512, 517, 610, 613, 616];
+    // var array = [111, 115, 212, 214, 311, 316, 49, 414, 415, 512, 517, 610, 613, 616];
 
     for (var i = 1; i <= 6; i++)
         for (var j = 9; j <= 17; j++)
@@ -72,15 +72,15 @@ function changeSchedule()
             cell.classList.remove('red');
             var concat = i+""+j;
 
-            if (array.includes(parseInt(concat)))
-                cell.classList.add('red');
-            else
-            {
-                if (randomNumber < 0.6)
+            // if (array.includes(parseInt(concat)))
+            //     cell.classList.add('red');
+            // else
+            // {
+                if (randomNumber < 0.5)
                     cell.classList.add('green');
                 else
                     cell.classList.add('red');
-            }
+            // }
         }
     
     
@@ -110,9 +110,9 @@ function reset() {
 //Changing schedule everytime a different doctor is selected
 document.getElementById("doctorSelect").addEventListener("change", changeSchedule);
 
-
-var greenCells = document.querySelectorAll('.green');
-greenCells.forEach(function(cell) {
+//Calling functions according to which type of cell was selected.
+var timeCells = document.querySelectorAll('.timeBlock');
+timeCells.forEach(function(cell) {
     cell.addEventListener('click', function() {
         var cellPrefix = cell.id.substring(0, 4); //cell
         var dayNumber = cell.id.substring(4, 5); //7, column
@@ -257,19 +257,6 @@ function cancel_return(){
     `;
 }
 
-//Grey appointment pop-up.
-// const grey_pop = document.getElementById("greyPop");
-// function grey_return() {
-//     grey_pop.innerHTML = `
-//     <a href="#" class="close-btn" onclick="grey_return()">&times;</a>
-//     <p>The clinic is closed at the time you are trying to select!</p>
-//     <p style="margin-top: -10px;">Please select a different time.</p>
-//     <div class="confirmRow" style="margin-top: 0px;">
-//         <a href="#" class="aButton" onclick="grey_return()">Close</a>
-//     </div>
-//     `;
-// }
-
 //Adding this function to all greyCells.
 var greyCells = document.querySelectorAll('.grey');
 greyCells.forEach(function(cell) {
@@ -283,3 +270,89 @@ greyCells.forEach(function(cell) {
         }
     });
 });
+
+const book_pop = document.getElementById("bookPopup");
+function book_return(){
+    //Value found in CSS
+    document.getElementById("bookPopup").style.width = "32vw";
+    book_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="book_return()">&times;</a>
+        <p style="font-size: 20px;">Are you sure you want to book the appointment?</p>
+        <div class="confirmRow">
+            <a href="#" class="noBtn" onclick="book_return()">No</a>
+            <a class="yesBtn" onclick="book_check()">Yes</a>
+        </div>
+    `;
+}
+
+function book_check() {
+    var patientInput = document.getElementById("patientInput");
+    var reasonInput = document.getElementById("patientInput");
+    var appDate = document.getElementById("appDate");
+
+    if(patientInput.value === "" || reasonInput.value === ""
+        || appDate.innerHTML === "Select a time on the calendar!")
+        book_empty();
+    else
+        book_yes();
+}
+
+function book_empty() {
+    document.getElementById("bookPopup").style.width = "25vw";
+    book_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="book_return()">&times;</a>
+        <p>Error! Make sure Date, Patient Name,</p>
+        <p style="margin-top: -10px;">and Reason are filled out</p>
+        <div class="confirmRow" style="margin-top: 0px;">
+            <a href="#" class="aButton" onclick="book_return()">Close</a>
+        </div>
+    `;
+}
+
+function book_yes() {
+    bookAppointment();
+
+    document.getElementById("bookPopup").style.width = "24vw";
+    book_pop.innerHTML = `
+        <a href="#" class="close-btn" onclick="book_return()">&times;</a>
+        <p>Appointment successfully booked!</p>
+        <div class="confirmRow">
+            <a href="#" class="aButton" onclick="book_return()">Close</a>
+        </div>
+    `;
+}
+
+function bookAppointment() {
+    //Need to check if these values are not null.
+    var patientInput = document.getElementById("patientInput");
+    var reasonInput = document.getElementById("patientInput");
+
+    //Converting the selected green cell to a red cell.
+    var activeDates = document.querySelectorAll('.timeBlock.activeDate');
+    activeDates.forEach(function (cell) {
+        cell.classList.remove('activeDate');
+        cell.classList.add('red');
+        cell.classList.add('activeBusy');
+    });
+
+    greenBlockCSS();
+
+    // document.getElementById("patientTextbox").style.display = "none";
+    // document.getElementById("reasonTextbox").style.display = "none";
+
+    var patientDisplay = document.getElementById("patientDisplay");
+    // patientDisplay.style.display = "block";
+    patientDisplay.innerHTML = patientInput.value;
+
+    var reasonDisplay = document.getElementById("reasonDisplay");
+    // reasonDisplay.style.display = "block";
+    reasonDisplay.innerHTML = reasonInput.value;
+
+    return true;
+}
+
+
+function editAppointment(){
+
+}
+

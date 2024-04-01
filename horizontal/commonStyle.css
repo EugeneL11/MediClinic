@@ -135,7 +135,7 @@ body {
 
 
 
-#cancelPopup p, #greyPopup p {
+#cancelPopup p, #greyPopup p, #bookPopup p {
     font-size: 20px;
 }
 
