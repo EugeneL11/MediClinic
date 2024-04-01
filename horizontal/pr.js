@@ -176,6 +176,8 @@ function del_yes() {
         field2.textContent = '';
     });
 
+    const testResults1 = document.getElementById('testResults1');
+    testResults1.style.display = "none";
 
     // Select all elements with the class testRes
     const testResElements = document.querySelectorAll('.testRes');
@@ -229,6 +231,9 @@ function create_yes() {
     fields2.forEach(field2 => {
         field2.textContent = '';
     });
+
+    const testResults1 = document.getElementById('testResults1');
+    testResults1.style.display = "none";
 
     // Select all elements with the class testRes
     const testResElements = document.querySelectorAll('.testRes');
