@@ -11,7 +11,13 @@ function clickReceptionist() {
   doctorFlag = false;
   nurseFlag = false;
 
-  current = 1;
+  if (receptionistFlag) {
+    current = 1;
+  } else {
+    current = 0;
+  }
+  
+  
   update();
 
   // Toggle selected border class
@@ -26,7 +32,12 @@ function clickDoctor() {
   receptionistFlag = false;
   nurseFlag = false;
 
-  current = 2;
+  if (doctorFlag) {
+    current = 2;
+  } else {
+    current = 0;
+  }
+  
   update();
 
   // Toggle selected border class
@@ -41,7 +52,12 @@ function clickNurse() {
   receptionistFlag = false;
   doctorFlag = false;
 
-  current = 3;
+  if (nurseFlag) {
+    current = 3;
+  } else {
+    current = 0;
+  }
+  
   update();
 
   // Toggle selected border class
@@ -72,6 +88,32 @@ function update() {
     nurseImg.src = "images/nurse.png";
   } else {
     nurseImg.src = "images/nurseGray.png";
+  }
+}
+
+function clickLogin() {
+  recepPW = 123456;
+  docPW = 123321;
+  nursePW = 654321;
+
+  let pwBox = document.getElementById("pwBox");
+  let pwVal = pwBox.value;
+  
+  let chosenPW;
+
+  if (current == 1) {
+    chosenPW = recepPW;
+  } else if (current == 2) {
+    chosenPW = docPW;
+  } else if (current == 3) {
+    chosenPW = nursePW;
+  }
+
+  if (parseInt(pwVal) == chosenPW) {
+    window.location.href = "./homepage.html";
+  } else {
+    console.log("password dont match");
+    pwBox.value = "";
   }
 }
 
