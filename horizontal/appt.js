@@ -334,7 +334,7 @@ function book_yes() {
 function bookAppointment() {
     //Need to check if these values are not null.
     var patientInput = document.getElementById("patientInput");
-    var reasonInput = document.getElementById("patientInput");
+    var reasonInput = document.getElementById("reasonInput");
 
     //Converting the selected green cell to a red cell.
     var activeDates = document.querySelectorAll('.timeBlock.activeDate');

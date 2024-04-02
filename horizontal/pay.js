@@ -145,7 +145,7 @@ const dropdown = document.getElementById("dropdown");
 // filter patients based on search input
 function filterPatients(input) {
   return patients.filter((patient) =>
-    patient.name.toLowerCase().includes(input.toLowerCase()) || patient.phone.includes(input)
+    patient.name.toLowerCase().includes(input.toLowerCase()) || patient.phone.split('-').join().includes(input)
   );
 }
 
