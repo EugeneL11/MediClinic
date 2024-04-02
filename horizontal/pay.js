@@ -129,14 +129,14 @@ function updateTotal() {
 
 // dynamic search
 const patients = [
-    { name: "Donald Duck", id: "403-982-1486"},
-    { name: "Fredrick Feet", id: "123-456-7891"},
-    { name: "Jimmy Jones", id: "123-456-7892"},
-    { name: "Karl Kones", id: "123-456-7893"},
-    { name: "Rachel Ruthers", id: "123-456-7894"},
-    { name: "Steven Seal", ide: "123-456-7895"},
-    { name: "Eugene Eel", id: "123-456-7896"},
-    { name: "Zainab Zeal", id: "123-456-7897"},
+    { name: "Donald Duck", phone: "403-982-1486", email: "donalduck00@gmail.com"},
+    { name: "Fredrick Feet", phone: "587-156-7891", email: "freddyfeet@gmail.com"},
+    { name: "Jimmy Jones", phone: "587-256-7892", email: "jimmyjones@gmail.com"},
+    { name: "Karl Kones", phone: "403-356-7893", email: "karkones@gmail.com"},
+    { name: "Rachel Ruthers", phone: "403-456-7894", email: "ruthersrachel@gmail.com"},
+    { name: "Steven Seal", phone: "587-556-7895", email: "stevenseal@gmail.com"},
+    { name: "Eugene Eel", phone: "403-656-7896", email: "eugeneel@gmail.com"},
+    { name: "Zainab Zeal", phone: "587-756-7897", email: "zainabzeal@gmail.com"},
   ];
 
 const searchInput = document.getElementById("searchInput");
@@ -145,7 +145,7 @@ const dropdown = document.getElementById("dropdown");
 // filter patients based on search input
 function filterPatients(input) {
   return patients.filter((patient) =>
-    patient.name.toLowerCase().includes(input.toLowerCase())
+    patient.name.toLowerCase().includes(input.toLowerCase()) || patient.phone.includes(input)
   );
 }
 
@@ -155,7 +155,7 @@ function updateDropdown(input) {
   const filteredPatients = filterPatients(input);
   filteredPatients.forEach((patient) => {
     const option = document.createElement("span");
-    option.textContent = patient.name;
+    option.textContent = `${patient.name} (${patient.phone})`;
     option.addEventListener("click", () => {
       searchInput.value = patient.name;
       dropdown.style.display = "none";
@@ -170,9 +170,95 @@ searchInput.addEventListener("input", (event) => {
   updateDropdown(event.target.value);
 });
 
+// Event listener for dropdown item selection
+dropdown.addEventListener('click', (event) => {
+  const selectedText = event.target.textContent;
+  const selectedPatient = patients.find(patient => {
+    const [name, phone] = selectedText.split(' ('); // Extract name from the selected text
+    return patient.name == name.trim(); // Compare with the name in the patient data
+  });
+
+  if (selectedPatient) {
+    // Update the displayed information with the selected patient's details
+    document.getElementById('fullName').textContent = `Full name: ${selectedPatient.name}`;
+    document.getElementById('phoneNum').textContent = `Phone: ${selectedPatient.phone}`;
+    document.getElementById('emailAddress').textContent = `Email: ${selectedPatient.email}`;
+  }
+
+  // Jimmy hard coded values
+  if (selectedPatient.name == "Jimmy Jones") {
+    // payment history hard recode
+    const paymentHistory = document.querySelector('.scrollingDisplay.left2'); 
+    
+    paymentHistory.innerHTML = '';
+
+    const paymentHistoryData = [
+      { item: "Hand sanitizer", cost: 3.05 },
+      { item: "Face masks", cost: 6.99 },
+      { item: "Flu medicine", cost: 6.72 },
+      { item: "Cough drops", cost: 5.11 },
+      { item: "Sports tape", cost: 4.32 },
+      { item: "Advil", cost: 5.41 },
+      { item: "Melatonin", cost: 16.12 }
+    ];
+
+    paymentHistoryData.forEach(payment => {
+      const span = document.createElement('span');
+      span.textContent = `${payment.item}, $${payment.cost.toFixed(2)}`;
+      span.style.marginLeft = '25px';
+      paymentHistory.appendChild(span);
+    });
+
+    // outstanding payments hard recode
+    const outstandingPayments = document.getElementById('outstandingPaymentsDisplay');
+
+    outstandingPayments.querySelector('.outstandingRow:nth-child(1) span').innerHTML = 'Medical gloves, $<span class="cost">14.39</span>';
+    outstandingPayments.querySelector('.outstandingRow:nth-child(2) span').innerHTML = 'First aid kit, $<span class="cost">49.99</span>';
+    outstandingPayments.querySelector('.outstandingRow:nth-child(3) span').innerHTML = 'Allergy medication, $<span class="cost">5.99</span>';
+    outstandingPayments.querySelector('.outstandingRow:nth-child(4) span').innerHTML = 'Ibuprofen, $<span class="cost">10.99</span>';
+    updateTotal();
+  }
+
+  // fred feet hard coded values
+  // Jimmy hard coded values
+  if (selectedPatient.name == "Fredrick Feet") {
+    // payment history hard recode
+    const paymentHistory = document.querySelector('.scrollingDisplay.left2'); 
+    
+    paymentHistory.innerHTML = '';
+
+    const paymentHistoryData = [
+      { item: "Antiseptic ointment", cost: 6.25 },
+      { item: "Cough syrup", cost: 5.99 },
+      { item: "Elastic bandage roll", cost: 6.99 },
+      { item: "Wheelchair", cost: 129.99 },
+      { item: "Ankle brace", cost: 39.99 },
+    ];
+
+    paymentHistoryData.forEach(payment => {
+      const span = document.createElement('span');
+      span.textContent = `${payment.item}, $${payment.cost.toFixed(2)}`;
+      span.style.marginLeft = '25px';
+      paymentHistory.appendChild(span);
+    });
+
+    // outstanding payments hard recode
+    const outstandingPayments = document.getElementById('outstandingPaymentsDisplay');
+
+    outstandingPayments.querySelector('.outstandingRow:nth-child(1) span').innerHTML = 'Crutches, $<span class="cost">44.39</span>';
+    outstandingPayments.querySelector('.outstandingRow:nth-child(2) span').innerHTML = 'Foot cream, $<span class="cost">9.99</span>';
+    outstandingPayments.querySelector('.outstandingRow:nth-child(3) span').innerHTML = 'Callus remover, $<span class="cost">8.99</span>';
+    outstandingPayments.querySelector('.outstandingRow:nth-child(4) span').innerHTML = 'Foot odor spray, $<span class="cost">15.99</span>';
+    updateTotal();
+  }
+
+});
+
 // Hide dropdown when clicked outside
 document.addEventListener("click", (event) => {
   if (!dropdown.contains(event.target) && event.target !== searchInput) {
     dropdown.style.display = "none";
   }
 });
+
+

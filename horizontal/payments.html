@@ -40,6 +40,10 @@
         line-height: 35px;
       }
 
+      .patientInfo span {
+        margin-left: 25px;
+      }
+
       .displayTitle {
         background-color: #c9d1f8;
         text-align: center;
@@ -82,6 +86,10 @@
       .left2 {
         min-height: 200px;
         max-height: 200px;
+      }
+
+      .scrollingDisplay.left2 div {
+        margin-left: 25px;
       }
 
       .payment {
@@ -218,7 +226,7 @@
               type="inputBox"
               id="searchInput"
               name="Search"
-              placeholder="Search by Name or Health Care Number..."
+              placeholder="Search by Name or Phone Number..."
               required
             />
             <div class="dropdown-content" id="dropdown" style="position: relative; bottom: 15px;"></div>
@@ -228,15 +236,13 @@
         <div class="scrollingDisplay left1">
           <div class="patientInfo">
             <div>
-              <span style="margin-left: 25px">Full name: Donald Duck</span>
+              <span id="fullName">Full name: Donald Duck</span>
             </div>
             <div>
-              <span style="margin-left: 25px">Phone: 403-982-1486</span>
+              <span id="phoneNum">Phone: 403-982-1486</span>
             </div>
             <div>
-              <span style="margin-left: 25px"
-                >Email Address: donalduck00@gmail.com</span
-              >
+              <span id="emailAddress">Email Address: donalduck00@gmail.com</span>
             </div>
           </div>
         </div>
@@ -248,31 +254,31 @@
           <div style="width: 100%; border: 1px solid white"></div>
           <div class="scrollingDisplay left2">
             <div>
-              <span style="margin-left: 25px">Inhaler, $29.41</span>
+              <span>Inhaler, $29.41</span>
             </div>
             <div>
-              <span style="margin-left: 25px">Sleeping pills, $42.2</span>
+              <span>Sleeping pills, $42.2</span>
             </div>
             <div>
-              <span style="margin-left: 25px">X-ray, $132.31</span>
+              <span>X-ray, $132.31</span>
             </div>
             <div>
-              <span style="margin-left: 25px">Bandaids, $5.41</span>
+              <span>Bandaids, $5.41</span>
             </div>
             <div>
-              <span style="margin-left: 25px">Face cream, $13.21</span>
+              <span>Face cream, $13.21</span>
             </div>
             <div>
-              <span style="margin-left: 25px">Check-up, $17.32</span>
+              <span>Check-up, $17.32</span>
             </div>
             <div>
-              <span style="margin-left: 25px">Melatonin, $16.12</span>
+              <span>Melatonin, $16.12</span>
             </div>
             <div>
-              <span style="margin-left: 25px">Tylenol, $12.62</span>
+              <span>Tylenol, $12.62</span>
             </div>
             <div>
-              <span style="margin-left: 25px">Sports tape, $4.32</span>
+              <span>Sports tape, $4.32</span>
             </div>
           </div>
         </div>
@@ -295,6 +301,7 @@
           class="scrollingDisplay"
           style="border-radius: 0px"
           style="border-radius: 0"
+          id="outstandingPaymentsDisplay"
         >
           <div class="outstandingRow">
             <span style="margin-left: 25px"
@@ -339,7 +346,7 @@
         </div>
 
         <div style="width: 99.8%; border: 1px solid white"></div>
-        <span class="total"> Total: $50.38 </span>
+        <span class="total"> Total: $0.00 </span>
         <div class="paymentButtons">
           <a href="#payPopup" class="aButton">Make Payment</a>
           <div id="payPopup" class="popup">
