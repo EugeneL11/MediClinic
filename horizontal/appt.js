@@ -137,9 +137,11 @@ function updateDate(dayNumber, timeNumber) {
     });
 
     var activeBusys = document.querySelectorAll('.timeBlock.activeBusy');
+    var redFlag = false;
     activeBusys.forEach(function (cell) {
         cell.classList.remove('activeBusy');
         cell.classList.add('red');
+        redFlag = true;
     });
 
     var time = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM" ]
@@ -151,14 +153,15 @@ function updateDate(dayNumber, timeNumber) {
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.remove('green');
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.add('activeDate');
 
-    // if(document.getElementById("cell"+dayNumber+""+timeNumber).classList.contains('red'))
+    if(redFlag)
         redBlockCSS();
+
     document.getElementById("appDate").innerHTML = string;
 
     // //Won't reset if patient and reason inputs have information.
-    // if (length(document.getElementById('patientInput').value) == 0
-    //     || length(document.getElementById('reasonInput').value) == 0)
-    //     redBlockCSS();
+    if (length(document.getElementById('patientInput').value) == 0
+        || length(document.getElementById('reasonInput').value) == 0)
+        redBlockCSS();
 }
 
 function redBlockCSS() {
