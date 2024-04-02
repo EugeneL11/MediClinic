@@ -10,19 +10,32 @@
     <script src="checkIn.js" defer></script>
     <script>
         window.onload = function() {
+            updateTime();
+            setInterval(updateTime, 30000); //Called every 30 seconds.
+        };
+
+        function updateTime() {
             var formattedDate = formatDate(new Date());
             document.getElementById("date").innerHTML = formattedDate;
-        };
+        }
 
         function formatDate(date) {
             var hours = date.getHours();
             var minutes = date.getMinutes();
             var ampm = hours >= 12 ? 'PM' : 'AM';
 
+            var hoursDiff, minutesDiff;
+            hoursDiff = minutes > 0 ? -1: 0 ;   //After 12 pm issue
+            hoursDiff += 17 - hours;
+            hoursDiff = hours >= 17 ? 0 : hoursDiff ; //24 issue
+            minutesDiff = 60 - minutes;
+            minutesDiff = (minutesDiff == 60 || hours >= 17) ? 0 : minutesDiff;
+            //60 issue, doesn't calculate for 5 PM to 12 AM.
+
+            document.getElementById("timeRemaining").innerHTML = "" + hoursDiff + " hours " + minutesDiff + " min";
+
             hours = hours % 12; // Convert hours to 12-hour format
             hours = hours ? hours : 12; // Handle the case when hours is 0
-
-            // console.log(hours + ", " + ampm);
 
             var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
             var monthName = months[date.getMonth()];
@@ -31,6 +44,7 @@
 
             return formattedDate;
         }
+
     </script>
     <style>
         body {
@@ -203,7 +217,7 @@
                     <h1 id="welcome">Welcome to <span style="color: #10217d;">Medi</span>Clinic!</h1>
                 </td>
                 <td style="text-align: right;">
-                    <h1 id="date">1:45 PM, March 21</h1>
+                    <h1 id="date"></h1>
                 </td>
             </tr>
         </table>
@@ -264,7 +278,7 @@
                     <div class="tTime">12:00 PM to 4:00 PM</div>
                 </div>
                 <div class="docs">
-                    <div class="tStatus unavail">Away</div>
+                    <div class="tStatus avail">In Clinic</div>
                     <div class="tDoc">Dr. Penny Pepper</div>
                     <div class="tField">Psychiatrist</div>
                     <div class="tTime">9:00 AM to 1:00 PM</div>
@@ -293,7 +307,7 @@
             </div>
             <br>
             <div class="columnTitle ct2" style="border-radius: 10px;">
-                <p>Hours to closing: </br> <b>3 hours 15 min</b> </p>
+                <p>Hours to closing: </br> <b id="timeRemaining"></b> </p>
                 <!-- <div style="width:100%; border: 1px solid white;"></div> -->
             </div>
         </div>

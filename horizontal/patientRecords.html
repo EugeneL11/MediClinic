@@ -182,7 +182,7 @@
         width: 100%;
       }
       .testDate {
-        padding-left: 30px;
+        text-align: right;
       }
       .field:hover {
         opacity: 0.6; /*What is this for?*/
@@ -259,16 +259,6 @@
         </div>
         <div class="background-div" style="border: 1px solid white;"> </div>
         <div class="columnBody leftB" style="min-height: 400px;">
-            <!-- <ul class="info">
-              <li>Full name: Donald Duck</li>
-              <li>Gender: Male</li>
-              <li>Date of birth: April 1st, 1999</li>
-              <li>Phone number: 4039821486</li>
-              <li>Email address: donalduck00@gmail.com</li>
-              <li>Health care number: 45782-9912</li>
-              <li>Notable conditions: Skin rash</li>
-            </ul>
-            <a href="#editPopup" class="aButton editB">Edit</a> -->
 
             <ul class="info" id="displayInfo">
                 <li>Full name: <span id="fullName1">Donald Duck</span></li>
@@ -339,17 +329,7 @@
                   <tr> <td>June 19th, 2:30 PM 2021</td><td>Dr. Donald Duck</td><td>Skin rash</td> </tr>
                   <tr> <td>March 2nd, 12:00 PM 2021</td><td>Dr. Penny Pepper</td><td>Check-up</td> </tr>
                   <tr> <td>May 5th, 10:00 AM 2020</td><td>Dr. Penny Pepper</td><td>Flu shot</td> </tr>
-                  
                 </table>
-                <!-- Discontinued code style:
-                <div class="field">December 10th, 11:00 AM 2023, Check-up</div> 
-                <div class="field">July 2nd, 1:15 PM 2023, Stomach flu</div>
-                <div class="field">May 23rd, 3:50 PM 2023, Flu shot</div>
-                <div class="field">November 27th, 2:00 PM 2022, X-ray</div>
-                <div class="field">January 21st, 1:00 PM 2022, Check-up</div>
-                <div class="field">June 19th, 2:30 PM 2021, Skin rash</div>
-                <div class="field">March 2nd, 12:00 PM 2021, Check-up</div>
-                <div class="field">May 5th, 10:00 AM 2020, Flu shot</div> -->
               </div>
             </div>
         </div>
@@ -369,8 +349,7 @@
           <div style="width:100%; border: 1px solid white;"></div>
           <div class="scrollingDisplay history">
             <div class="fields" id="historyField2">
-
-              <table style="width: 100%;">
+              <table style="width: 100%;" id="tableVH">
                 <tr>
                   <th>Date & Time</th><th>Doctor Name</th><th>Reason</th>
                 </tr>
@@ -384,15 +363,6 @@
                 <tr> <td>August 5th, 10:00 AM 2024</td><td>Dr. Andrew Apple</td><td>Stomach ache</td> </tr>
                 
               </table>
-              <!-- Discontinued code style:
-              <div class="field">April 25th 5:00 PM 2024, Sea sickness</div> 
-              <div class="field">May 2nd, 2:30 PM 2024, Tooth ache</div>
-              <div class="field">June 23rd, 10:00 AM 2024, X-Ray follow-up</div>
-              <div class="field">June 27th, 3:30 PM 2024, Ultrasound</div>
-              <div class="field">July 7th, 1:00 PM 2024, Follow-up</div>
-              <div class="field">July 19th, 2:30 PM 2024, Skin burn</div>
-              <div class="field">August 2nd, 12:00 PM 2024, Vitamin D Test</div>
-              <div class="field">August 5th, 10:00 AM 2024, Stomach ache</div> -->
             </div>
           </div>
       </div>
@@ -404,7 +374,7 @@
               </div>
               <div style="width:100%; border: 1px solid white;"></div>
               <div class="scrollingDisplay results">
-                <div class="fields" id="testResults1">
+                <div class="fields" id="testResults1" style="margin-top:0px">
                   <table style="width: 100%;">
                     <tr>
                       <td>
