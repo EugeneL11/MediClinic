@@ -150,9 +150,13 @@ function updateDate(dayNumber, timeNumber) {
     
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.remove('green');
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.add('activeDate');
-    
-    redBlockCSS();
+
     document.getElementById("appDate").innerHTML = string;
+
+    //Won't reset if patient and reason inputs have information.
+    if(length(document.getElementById('patientInput').value) == 0
+        || length(document.getElementById('reasonInput').value) == 0)
+        redBlockCSS();
 }
 
 function redBlockCSS() {
@@ -261,8 +265,8 @@ function cancel_return(){
 var greyCells = document.querySelectorAll('.grey');
 greyCells.forEach(function(cell) {
     cell.addEventListener('click', function() {
-        reset();
-        redBlockCSS();
+        // reset();
+        // redBlockCSS();
 
         var anchor = document.querySelector('a[href="#greyPopup"]');
         if (anchor) {
