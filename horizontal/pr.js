@@ -288,6 +288,8 @@ const patients = [
     { name: "Jimmy Jones", phone: "587-256-7892"},
     { name: "Karl Kones", phone: "403-356-7893"},
     { name: "Rachel Ruthers", phone: "403-456-7894"},
+    { name: "Derek Deer", phone: "587-777-9999"},
+    { name: "Yichen Year", phone: "403-101-0101"},
     { name: "Steven Seal", phone: "587-556-7895"},
     { name: "Eugene Eel", phone: "403-656-7896"},
     { name: "Zainab Zeal", phone: "587-756-7897"},
@@ -299,7 +301,7 @@ const dropdown = document.getElementById("dropdown");
 // filter patients based on search input
 function filterPatients(input) {
   return patients.filter((patient) =>
-    patient.name.toLowerCase().includes(input.toLowerCase()) || patient.phone.includes(input)
+    patient.name.toLowerCase().includes(input.toLowerCase()) || patient.phone.split('-').join('').includes(input)
   );
 }
 

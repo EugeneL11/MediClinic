@@ -134,6 +134,8 @@ const patients = [
     { name: "Jimmy Jones", phone: "587-256-7892", email: "jimmyjones@gmail.com"},
     { name: "Karl Kones", phone: "403-356-7893", email: "karkones@gmail.com"},
     { name: "Rachel Ruthers", phone: "403-456-7894", email: "ruthersrachel@gmail.com"},
+    { name: "Derek Deer", phone: "587-777-9999", email: "derek.lian@ucalgary.ca"},
+    { name: "Yichen Year", phone: "403-101-0101", email: "yichenlian63@gmail.com"},
     { name: "Steven Seal", phone: "587-556-7895", email: "stevenseal@gmail.com"},
     { name: "Eugene Eel", phone: "403-656-7896", email: "eugeneel@gmail.com"},
     { name: "Zainab Zeal", phone: "587-756-7897", email: "zainabzeal@gmail.com"},
@@ -141,11 +143,11 @@ const patients = [
 
 const searchInput = document.getElementById("searchInput");
 const dropdown = document.getElementById("dropdown");
-
 // filter patients based on search input
 function filterPatients(input) {
+  
   return patients.filter((patient) =>
-    patient.name.toLowerCase().includes(input.toLowerCase()) || patient.phone.split('-').join().includes(input)
+    patient.name.toLowerCase().includes(input.toLowerCase()) || patient.phone.split('-').join('').includes(input)
   );
 }
 
