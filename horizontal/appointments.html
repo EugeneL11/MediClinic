@@ -72,7 +72,7 @@
             background-color: springgreen;
         }
         .green:hover {
-            background-color: #15b926;
+            background-color: #009200;
         }
         .red {
             background-color: #ee9090;
@@ -90,7 +90,7 @@
             cursor:not-allowed;
         }
         .activeDate {
-            background-color: #15b926;
+            background-color: #009200;
             /* transform: scale(1.1); */
             border: 3px solid #007bff;
         }
@@ -192,6 +192,30 @@
         .textbox input[type="text"]:focus {
             outline: none;
         }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border-radius: 5px;
+        max-width: 24.65vw;
+        overflow: auto;
+        border: 1px solid #ccc;
+        z-index: 1;
+        text-align: left;
+        }
+
+        .dropdown-content span {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .dropdown-content span:hover {
+            background-color: #e6e2e6;
+        }
+
         .appDate {
             align-self: flex-start;
             margin-left: 27px;
@@ -505,7 +529,8 @@
                 <div class="apps">
                     <div class="appsT">Patient Name</div>
                     <div class="textbox" id="patientTextbox">
-                        <input type="text" id="patientInput" placeholder="Search by Name...">
+                        <input type="text" id="patientInput" placeholder="Search by Name or Phone Number...">
+                        <div class="dropdown-content" id="dropdown" style="position: relative; left: 20px;"></div>
                     </div>                      
                     <div id="patientDisplay" style="font-weight: none; display: none; text-align: left;"></div>
                 </div>

@@ -360,3 +360,54 @@ function editAppointment(){
 
 }
 
+// dynamic search
+const patients = [
+    { name: "Donald Duck", phone: "403-982-1486"},
+    { name: "Fredrick Feet", phone: "587-156-7891"},
+    { name: "Jimmy Jones", phone: "587-256-7892"},
+    { name: "Karl Kones", phone: "403-356-7893"},
+    { name: "Rachel Ruthers", phone: "403-456-7894"},
+    { name: "Steven Seal", phone: "587-556-7895"},
+    { name: "Eugene Eel", phone: "403-656-7896"},
+    { name: "Zainab Zeal", phone: "587-756-7897"},
+  ];
+
+const searchInput = document.getElementById("patientInput");
+const dropdown = document.getElementById("dropdown");
+
+// filter patients based on search input
+function filterPatients(input) {
+  return patients.filter((patient) =>
+    patient.name.toLowerCase().includes(input.toLowerCase()) || patient.phone.includes(input)
+  );
+}
+
+// update dropdown list with filtered patients
+function updateDropdown(input) {
+  dropdown.innerHTML = "";
+  const filteredPatients = filterPatients(input);
+  filteredPatients.forEach((patient) => {
+    const option = document.createElement("span");
+    option.textContent = `${patient.name} (${patient.phone})`;
+    option.addEventListener("click", () => {
+      searchInput.value = patient.name;
+      dropdown.style.display = "none";
+    });
+    dropdown.appendChild(option);
+  });
+  dropdown.style.display = filteredPatients.length ? "block" : "none";
+}
+
+// Event listener for input changes
+searchInput.addEventListener("input", (event) => {
+  updateDropdown(event.target.value);
+});
+
+// Hide dropdown when clicked outside
+document.addEventListener("click", (event) => {
+  if (!dropdown.contains(event.target) && event.target !== searchInput) {
+    dropdown.style.display = "none";
+  }
+});
+
+
