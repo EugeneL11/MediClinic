@@ -136,8 +136,8 @@ function updateDate(dayNumber, timeNumber) {
         cell.classList.add('green');
     });
 
-    var activeBusys = document.querySelectorAll('.timeBlock.activeBusy');
     var redFlag = false;
+    var activeBusys = document.querySelectorAll('.timeBlock.activeBusy');
     activeBusys.forEach(function (cell) {
         cell.classList.remove('activeBusy');
         cell.classList.add('red');
@@ -153,15 +153,15 @@ function updateDate(dayNumber, timeNumber) {
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.remove('green');
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.add('activeDate');
 
-    if(redFlag)
+    if(redFlag) //Won't reset if patient and reason inputs have information.
         redBlockCSS();
 
     document.getElementById("appDate").innerHTML = string;
 
-    // //Won't reset if patient and reason inputs have information.
-    if (length(document.getElementById('patientInput').value) == 0
-        || length(document.getElementById('reasonInput').value) == 0)
-        redBlockCSS();
+    
+    // if (length(document.getElementById('patientInput').value) == 0
+    //     || length(document.getElementById('reasonInput').value) == 0)
+    //     redBlockCSS();
 }
 
 function redBlockCSS() {
@@ -340,21 +340,15 @@ function bookAppointment() {
     var activeDates = document.querySelectorAll('.timeBlock.activeDate');
     activeDates.forEach(function (cell) {
         cell.classList.remove('activeDate');
-        cell.classList.add('red');
+        // cell.classList.add('red');
         cell.classList.add('activeBusy');
     });
 
     greenBlockCSS();
-
-    // document.getElementById("patientTextbox").style.display = "none";
-    // document.getElementById("reasonTextbox").style.display = "none";
-
     var patientDisplay = document.getElementById("patientDisplay");
-    // patientDisplay.style.display = "block";
     patientDisplay.innerHTML = patientInput.value;
 
     var reasonDisplay = document.getElementById("reasonDisplay");
-    // reasonDisplay.style.display = "block";
     reasonDisplay.innerHTML = reasonInput.value;
 
     return true;
@@ -363,6 +357,19 @@ function bookAppointment() {
 
 function editAppointment(){
 
+    var date = document.getElementById('appDate').innerHTML;
+    redBlockCSS();
+    
+    var activeDates = document.querySelectorAll('.activeBusy');
+    activeDates.forEach(function (cell) {
+        cell.classList.remove('activeBusy');
+        cell.classList.remove('red');
+        cell.classList.add('activeDate');
+    });
+    
+    document.getElementById('appDate').innerHTML = date;
+    document.getElementById('patientInput').value = document.getElementById('patientDisplay').innerHTML;
+    document.getElementById('reasonInput').value = document.getElementById('reasonDisplay').innerHTML;
 }
 
 // dynamic search
