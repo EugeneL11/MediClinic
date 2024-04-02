@@ -151,12 +151,14 @@ function updateDate(dayNumber, timeNumber) {
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.remove('green');
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.add('activeDate');
 
+    // if(document.getElementById("cell"+dayNumber+""+timeNumber).classList.contains('red'))
+        redBlockCSS();
     document.getElementById("appDate").innerHTML = string;
 
-    //Won't reset if patient and reason inputs have information.
-    if(length(document.getElementById('patientInput').value) == 0
-        || length(document.getElementById('reasonInput').value) == 0)
-        redBlockCSS();
+    // //Won't reset if patient and reason inputs have information.
+    // if (length(document.getElementById('patientInput').value) == 0
+    //     || length(document.getElementById('reasonInput').value) == 0)
+    //     redBlockCSS();
 }
 
 function redBlockCSS() {
