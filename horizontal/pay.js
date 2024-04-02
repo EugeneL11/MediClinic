@@ -113,6 +113,16 @@ function allCB(checkbox) {
   updateTotal();
 }
 
+function clearCB() {
+  var topCB = document.getElementById("topCB");
+  topCB.checked = false;
+  var checkboxes = document.querySelectorAll(".outstandingCheck");
+  checkboxes.forEach(function (item) {
+    item.checked = false;
+  });
+  updateTotal();
+}
+
 const totalDisplay = document.querySelector(".total");
 function updateTotal() {
   var checkboxes = document.querySelectorAll(".outstandingCheck");

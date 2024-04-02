@@ -229,7 +229,7 @@
               placeholder="Search by Name or Phone Number..."
               required
             />
-            <div class="dropdown-content" id="dropdown" style="position: relative; bottom: 15px;"></div>
+            <div class="dropdown-content" id="dropdown" style="position: relative; bottom: 15px;" onclick="clearCB();"></div>
           </div>
         </div>
         <div style="width: 100%; border: 1px solid white"></div>
@@ -290,6 +290,7 @@
             <div class="outstandingTitle">Outstanding Payments</div>
             <input
               type="checkbox"
+              id="topCB"
               class="outstandingTCheck"
               onchange="allCB(this)"
             />
