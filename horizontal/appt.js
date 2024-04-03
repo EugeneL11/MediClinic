@@ -206,7 +206,7 @@ function randomInfo(dayNumber, timeNumber) {
     document.getElementById("cell"+dayNumber+""+timeNumber).classList.add('activeBusy');
     
     var patientNames = ["Donald Duck", "Frederick Feet", "Jimmy Jones", "Karl Kones", "Rachel Ruthers"];
-    var reasons = ["Stomach flu", "Follow up", "Cold & Flu", "Vaccination", "Skin rash", "Check-up", "Stomach ache", "X-Ray", "Blood test", "Fever and cough"];
+    var reasons = ["Stomach flu", "Follow up", "Cold and Flu", "Vaccination", "Skin rash", "Check-up", "Stomach ache", "X-Ray", "Blood test", "Fever and cough"];
     
     greenBlockCSS();
 
