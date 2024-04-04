@@ -137,9 +137,6 @@ body {
     transform: scale(1.1);
 }
 
-
-
-
 #cancelPopup p, #greyPopup p, #bookPopup p {
     font-size: 20px;
 }
@@ -238,4 +235,9 @@ body {
       background-color: darkred;
       text-decoration: underline;
       transform: scale(1.1);
+  }
+
+  .hiddenElement {
+    visibility: hidden;
+    display: none;
   }

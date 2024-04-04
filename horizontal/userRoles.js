@@ -1,41 +1,55 @@
 let currentUserNum = localStorage.getItem("role");
 
-// Call modifyNavbar() to dynamically modify the navbar
+//Nav bar
 window.addEventListener('DOMContentLoaded', () => {
-    currentUserNum = localStorage.getItem("role");
-    modifyNavbar();
-    bookApptRoles();
-    patientRecordsRoles();
-});
-
-function modifyNavbar() {
     const paymentLink = document.getElementById('payID');
     console.log(currentUserNum); 
     if (currentUserNum == 2 || currentUserNum == 3) {
         paymentLink.style.display = 'none'; // Hide payment link
     }
-}
+});
 
-function bookApptRoles() {
+//Appointments
+window.addEventListener('DOMContentLoaded', () => {
     const bookBtn = document.getElementById('book');
     const editAppt = document.getElementById('editAppointment');
     const cancelAppt = document.getElementById('cancelAppointment');
     if (currentUserNum == 2 || currentUserNum == 3) {
-        bookBtn.style.visibility = 'hidden';
-        editAppt.style.visibility = 'hidden';
-        cancelAppt.style.visibility = 'hidden';
+        bookBtn.classList.add("hiddenElement");
+        editAppt.classList.add("hiddenElement");
+        cancelAppt.classList.add("hiddenElement");
     }
-}
+});
 
-function patientRecordsRoles() {
+//Patient Records
+window.addEventListener('DOMContentLoaded', () => {
+    let currentUserNum = localStorage.getItem("role");
     const createPrBtn = document.getElementById('createPrBtn');
     const deletePrBtn = document.getElementById('deletePrBtn');
     const editBtn = document.getElementById('editSaveB');
+
     if (currentUserNum == 2 || currentUserNum == 3) {
-        createPrBtn.style.visibility = 'hidden';
-        deletePrBtn.style.visibility = 'hidden';
+        createPrBtn.classList.add("hiddenElement");
+        deletePrBtn.classList.add("hiddenElement");
     }
     if (currentUserNum == 3) {
-        editBtn.style.visibility = 'hidden';
+        editBtn.style.display = 'none';
+        editBtn.classList.add("hiddenElement");
     }
-}
+});
+
+//Check-in
+window.addEventListener('DOMContentLoaded', () => {
+    const hcTitle = document.getElementById('hcTitle');
+    const hcTextbox = document.getElementById('healthCareNum');
+    const verifyBtn = document.getElementById('verifyNum');
+    const checkInBtn = document.getElementById('checkInBtn');
+
+    if (currentUserNum == 2 || currentUserNum == 3) {
+        console.log("doctor or nurse");
+        hcTitle.style.visibility = 'hidden';
+        hcTextbox.style.visibility = 'hidden';
+        verifyBtn.style.visibility = 'hidden';
+        checkInBtn.style.visibility = 'hidden';
+    }
+});
