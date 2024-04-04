@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
     currentUserNum = localStorage.getItem("role");
     modifyNavbar();
     bookApptRoles();
+    patientRecordsRoles();
 });
 
 function modifyNavbar() {
@@ -23,5 +24,18 @@ function bookApptRoles() {
         bookBtn.style.visibility = 'hidden';
         editAppt.style.visibility = 'hidden';
         cancelAppt.style.visibility = 'hidden';
+    }
+}
+
+function patientRecordsRoles() {
+    const createPrBtn = document.getElementById('createPrBtn');
+    const deletePrBtn = document.getElementById('deletePrBtn');
+    const editBtn = document.getElementById('editSaveB');
+    if (currentUserNum == 2 || currentUserNum == 3) {
+        createPrBtn.style.visibility = 'hidden';
+        deletePrBtn.style.visibility = 'hidden';
+    }
+    if (currentUserNum == 3) {
+        editBtn.style.visibility = 'hidden';
     }
 }
