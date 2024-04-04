@@ -1,18 +1,3 @@
-// const apps = document.querySelectorAll('.apps');
-
-// apps.forEach(app => {
-//     app.addEventListener('click', function() {
-//         const patientName = this.querySelector('.patientName').textContent;
-//         const patientTime = this.querySelector('.patientTime').textContent;
-//         const doctorName = this.querySelector('.doctorName').textContent;
-
-//         document.getElementById('pName').textContent = patientName;
-//         document.getElementById('pTime').textContent = patientTime;
-//         document.getElementById('dName').textContent = doctorName;
-//     });
-// });
-
-
 let patientName;
 let patientTime;
 let doctorName;

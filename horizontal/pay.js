@@ -1,3 +1,8 @@
+// import {currentUser} from './login.js';
+
+document.getElementById("special").innerHTML = currentUser.role;
+console.log(currentUser.role)
+
 // for popup interaction
 function random_chance() {
   var randomNum = Math.random();

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="commonStyle.css">
     
     <title>MediClinic</title>
+
+    <script src="userRoles.js"></script>
     <script src="checkIn.js" defer></script>
     <script>
         window.onload = function() {
@@ -46,6 +48,7 @@
         }
 
     </script>
+
     <style>
         body {
             display: flex;
@@ -193,10 +196,17 @@
             <a href="patientRecords.html">Patient Records</a>
             <a href="checkIn.html">Check-in</a>
             <a href="appointments.html">Appointments</a>
-            <a href="payments.html">Payment</a>
+            <a href="payments.html" class="payID">Payment</a>
 
             <a href="#logoutPopup" class="logout aButton">Logout</a>
         </div>
+
+        <script>
+            // Call modifyNavbar() to dynamically modify the navbar
+            window.addEventListener('DOMContentLoaded', () => {
+                modifyNavbar();
+            });
+        </script>
 
         <div id="logoutPopup" class="popup">
             <div class="popup-content">
