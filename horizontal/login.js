@@ -115,16 +115,16 @@ function clickLogin() {
 
   if (current == 1) {
     chosenPW = recepPW;
-    currentUser.role = "reception";
   } else if (current == 2) {
     chosenPW = docPW;
-    currentUser.role = "doctor";
   } else if (current == 3) {
     chosenPW = nursePW;
-    currentUser.role = "nurse";
   }
 
-  console.log(currentUser.role);
+  localStorage.removeItem("role");
+  localStorage.setItem("role", current);
+
+  // console.log(currentUser.role);
 
   let mismatchMsg = document.getElementById("mismatchMsg");
 
