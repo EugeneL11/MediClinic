@@ -28,6 +28,3 @@ function modifyNavbar() {
         paymentLink.style.display = 'none'; // Hide payment link
     }
 }
-
-// export { currentUser, userRoles, modifyNavbar };
-// export { currentUser, modifyNavbar };

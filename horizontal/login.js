@@ -124,7 +124,7 @@ function clickLogin() {
   localStorage.removeItem("role");
   localStorage.setItem("role", current);
 
-  // console.log(currentUser.role);
+  console.log(current);
 
   let mismatchMsg = document.getElementById("mismatchMsg");
 
@@ -136,5 +136,3 @@ function clickLogin() {
     pwBox.value = "";
   }
 }
-
-// export {currentUser};
