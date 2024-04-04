@@ -7,6 +7,11 @@
 //     NURSE: 'nurse'
 // };
 
+// Call modifyNavbar() to dynamically modify the navbar
+window.addEventListener('DOMContentLoaded', () => {
+    modifyNavbar();
+});
+
 class User {
     constructor(){
         this.role = null;
@@ -16,7 +21,7 @@ class User {
 const currentUser = new User();
 
 function modifyNavbar() {
-    const paymentLink = document.getElementsByClassName('payID');
+    const paymentLink = document.getElementById('payID');
     let currentUserNum = localStorage.getItem("role");
     console.log(currentUserNum); 
     if (currentUserNum == 2 || currentUserNum == 3) {
