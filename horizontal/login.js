@@ -103,6 +103,12 @@ function toggleVisibility() {
   }
 }
 
+function loginKey(event) {
+  if (event.keyCode == 13) {
+    clickLogin();
+  }
+}
+
 function clickLogin() {
   recepPW = 123456;
   docPW = 123321;
