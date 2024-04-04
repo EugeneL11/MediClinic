@@ -19,6 +19,7 @@ function pay_yes() {
                 <a href="#" class="aButton" onclick="pay_return()">Close</a>
             </div>
         `;
+    clearCB();
   } else {
     pay_pop.innerHTML = `
             <a href="#" class="close-btn" onclick="pay_return()">&times;</a>
