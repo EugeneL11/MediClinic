@@ -7,6 +7,13 @@ window.addEventListener('DOMContentLoaded', () => {
     if (currentUserNum == 2 || currentUserNum == 3) {
         paymentLink.style.display = 'none'; // Hide payment link
     }
+
+    if(currentUserNum == 1)
+        document.getElementById("receptionistImg").classList.remove("hiddenElement");
+    else if(currentUserNum == 2)
+        document.getElementById("doctorImg").classList.remove("hiddenElement");
+    else if(currentUserNum == 3)
+        document.getElementById("nurseImg").classList.remove("hiddenElement");
 });
 
 //Appointments
