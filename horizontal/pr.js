@@ -88,23 +88,58 @@ const editSaveB = document.getElementById("editSaveB");
 const displayInfo = document.getElementById('displayInfo');
 const editForm = document.getElementById('editForm');
 
-let fullName1 = document.getElementById("fullName1");
-let gender1 = document.getElementById("gender1");
-let dob1 = document.getElementById("dob1");
-let phoneNum1 = document.getElementById("phoneNum1");
-let email1 = document.getElementById("email1");
-let healthNum1 = document.getElementById("healthNum1");
-let cond1 = document.getElementById("cond1");
+// let fullName1 = document.getElementById("fullName1");
+// let gender1 = document.getElementById("gender1");
+// let dob1 = document.getElementById("dob1");
+// let phoneNum1 = document.getElementById("phoneNum1");
+// let email1 = document.getElementById("email1");
+// let healthNum1 = document.getElementById("healthNum1");
+// let cond1 = document.getElementById("cond1");
 
-let fullName2 = document.getElementById("fullName2");
-let gender2 = document.getElementById("gender2");
-let dob2 = document.getElementById("dob2");
-let phoneNum2 = document.getElementById("phoneNum2");
-let email2 = document.getElementById("email2");
-let healthNum2 = document.getElementById("healthNum2");
-let cond2 = document.getElementById("cond2");
+// let fullName2 = document.getElementById("fullName2");
+// let gender2 = document.getElementById("gender2");
+// let dob2 = document.getElementById("dob2");
+// let phoneNum2 = document.getElementById("phoneNum2");
+// let email2 = document.getElementById("email2");
+// let healthNum2 = document.getElementById("healthNum2");
+// let cond2 = document.getElementById("cond2");
+
+let fullName1;
+let gender1;
+let dob1;
+let phoneNum1;
+let email1;
+let healthNum1;
+let cond1;
+
+let fullName2;
+let gender2;
+let dob2;
+let phoneNum2;
+let email2;
+let healthNum2;
+let cond2;
+
+function initVars() {
+    fullName1 = document.getElementById("fullName1");
+    gender1 = document.getElementById("gender1");
+    dob1 = document.getElementById("dob1");
+    phoneNum1 = document.getElementById("phoneNum1");
+    email1 = document.getElementById("email1");
+    healthNum1 = document.getElementById("healthNum1");
+    cond1 = document.getElementById("cond1");
+    
+    fullName2 = document.getElementById("fullName2");
+    gender2 = document.getElementById("gender2");
+    dob2 = document.getElementById("dob2");
+    phoneNum2 = document.getElementById("phoneNum2");
+    email2 = document.getElementById("email2");
+    healthNum2 = document.getElementById("healthNum2");
+    cond2 = document.getElementById("cond2");
+}
 
 function edit() {
+    initVars();
     // this is switching to edit mode
     if (editSaveB.textContent === 'Edit') {
         editSaveB.textContent = 'Save';
@@ -157,6 +192,10 @@ function del_yes() {
         </div>
     `;
 
+    if (editSaveB.textContent === 'Save') {
+        edit();
+    }
+    initVars();
     fullName1.textContent = "";
     gender1.textContent = "";
     dob1.textContent = "";
@@ -216,6 +255,10 @@ function create_yes() {
         </div>
     `;
 
+    if (editSaveB.textContent === 'Save') {
+        edit();
+    }
+    initVars();
     fullName1.textContent = "";
     gender1.textContent = "";
     dob1.textContent = "";
@@ -325,6 +368,79 @@ function updateDropdown(input) {
 searchInput.addEventListener("input", (event) => {
   updateDropdown(event.target.value);
 });
+
+// Event listener for dropdown item selection
+dropdown.addEventListener('click', (event) => {
+    const selectedText = event.target.textContent;
+    const selectedPatient = patients.find(patient => {
+      const [name, phone] = selectedText.split(' ('); // Extract name from the selected text
+      return patient.name == name.trim(); // Compare with the name in the patient data
+    });
+  
+    const vh = document.getElementById('vhID');
+    const ua = document.getElementById('uaID');
+    const results = document.getElementById('resultsTable');
+
+    // Jimmy hard coded values
+    if (selectedPatient.name == "Donald Duck") {
+        console.log("donald read");
+        location.reload();
+    }
+  
+    // fred feet hard coded values
+    if (selectedPatient.name == "Fredrick Feet") {
+        console.log("fred read");
+        displayInfo.innerHTML = `
+            <li>Full name: <span id="fullName1">Fredrick Feet</span></li>
+            <li>Gender: <span id="gender1">Male</span></li>
+            <li>Date of birth: <span id="dob1">December 25th, 1975</span></li>
+            <li>Phone number: <span id="phoneNum1">4031567891</span></li>
+            <li>Email address: <span id="email1">freddyfeet@gmail.com</span></li>
+            <li>Health care number: <span id="healthNum1">45682-9873</span></li>
+            <li>Notable conditions: <span id="cond1">Flu</span></li>
+        `;
+        vh.innerHTML = `
+            <tr>
+                <th>Date & Time</th><th>Doctor Name</th><th>Reason</th>
+            </tr>
+            <tr> <td>November 10th, 1:00 PM 2023</td><td>Dr. Andrew Apple</td><td>Ankle sprain</td> </tr>
+            <tr> <td>July 22nd, 2:35 PM 2023</td><td>Dr. Penny Pepper</td><td>Head ache</td> </tr>
+            <tr> <td>March 3rd, 3:55 PM 2023</td><td>Dr. Penny Pepper</td><td>Flu shot</td> </tr>
+            <tr> <td>October 28th, 1:00 PM 2022</td><td>Dr. Reese Rogers</td><td>X-ray</td> </tr>
+            <tr> <td>February 20th, 11:00 AM 2021</td><td>Dr. Andrew Apple</td><td>Check-up</td> </tr>
+        `;
+        ua.innerHTML = `
+            <tr>
+                <th>Date & Time</th><th>Doctor Name</th><th>Reason</th>
+            </tr>
+            <tr> <td>June 23rd, 10:00 AM 2023</td><td>Dr. Penny Pepper</td><td>X-Ray follow-up</td> </tr>
+            <tr> <td>December 27th, 3:30 PM 2023</td><td>Dr. Warren Waters</td><td>Ultrasound</td> </tr>
+            <tr> <td>November 7th, 1:00 PM 2024</td><td>Dr. Reese Rogers</td><td>Check-up</td> </tr>
+            <tr> <td>July 19th, 2:30 PM 2025</td><td>Dr. Penny Pepper</td><td>Colonoscopy</td> </tr>
+        `;
+        results.innerHTML = `
+            <tr>
+                <td>
+                <div class="testRes">
+                    <a href="./med_records/Ultrasound.pdf" class="field" target="_blank">Ultrasound.pdf</a>
+                    <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>
+                </div>
+                </td>
+                <td class="testDate">August 17th, 12:00 PM 2022</td>
+            </tr>
+            <tr>
+                <td>
+                <div class="testRes">
+                    <a href="./med_records/xray.pdf" class="field">X-ray.pdf</a>
+                    <a href="#download" class="dlIcon"><img src="./images/downloadIcon.png"></a>
+                </div>
+                </td>
+                <td class="testDate">March 1st, 1:00 PM 2022</td>
+            </tr>
+        `;
+    }
+  
+  });
 
 // Hide dropdown when clicked outside
 document.addEventListener("click", (event) => {
