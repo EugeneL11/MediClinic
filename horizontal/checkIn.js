@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }));
 
             // Redirect to the check-in screen
-            window.location.href = 'checkIn.html';
+            window.location.href = './checkIn.html';
         });
     });
 

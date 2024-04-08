@@ -72,21 +72,21 @@ function update() {
   let nurseImg = document.getElementById("nurseImg");
 
   if (receptionistFlag) {
-    receptionistImg.src = "images/receptionist.png";
+    receptionistImg.src = "./images/receptionist.png";
   } else {
-    receptionistImg.src = "images/receptionistGray.png";
+    receptionistImg.src = "./images/receptionistGray.png";
   }
 
   if (doctorFlag) {
-    doctorImg.src = "images/doctor.png";
+    doctorImg.src = "./images/doctor.png";
   } else {
-    doctorImg.src = "images/doctorGray.png";
+    doctorImg.src = "./images/doctorGray.png";
   }
 
   if (nurseFlag) {
-    nurseImg.src = "images/nurse.png";
+    nurseImg.src = "./images/nurse.png";
   } else {
-    nurseImg.src = "images/nurseGray.png";
+    nurseImg.src = "./images/nurseGray.png";
   }
 }
 

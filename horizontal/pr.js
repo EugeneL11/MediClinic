@@ -88,22 +88,6 @@ const editSaveB = document.getElementById("editSaveB");
 const displayInfo = document.getElementById('displayInfo');
 const editForm = document.getElementById('editForm');
 
-// let fullName1 = document.getElementById("fullName1");
-// let gender1 = document.getElementById("gender1");
-// let dob1 = document.getElementById("dob1");
-// let phoneNum1 = document.getElementById("phoneNum1");
-// let email1 = document.getElementById("email1");
-// let healthNum1 = document.getElementById("healthNum1");
-// let cond1 = document.getElementById("cond1");
-
-// let fullName2 = document.getElementById("fullName2");
-// let gender2 = document.getElementById("gender2");
-// let dob2 = document.getElementById("dob2");
-// let phoneNum2 = document.getElementById("phoneNum2");
-// let email2 = document.getElementById("email2");
-// let healthNum2 = document.getElementById("healthNum2");
-// let cond2 = document.getElementById("cond2");
-
 let fullName1;
 let gender1;
 let dob1;
