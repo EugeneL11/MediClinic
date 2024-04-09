@@ -8,6 +8,7 @@ Members: Eugene Lee, Steven Nguyen, Zainab Syeda
 Title: MediClinic Software System
 
 Our project was developed by using just pure HTML, CSS, and JavaScript. 
+Our software was designed to be only used on desktop screens, and built specifically for the screen size at the clinic. For the optimal view, make sure to go to inspect the page and manually set the screen size to 1540px x 780px. The zoom may need to be adjusted accordingly. This is mentioned as everyone has different screen sizes they are viewing this software on, which may cause unexpected errors. 
 To access our MediClinic software, the user first needs to access it in this link: https://eugenel11.github.io/MediClinic/horizontal/login.html , will take you to the login page.
 
 Login Page: 
